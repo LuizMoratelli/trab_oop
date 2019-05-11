@@ -31,5 +31,11 @@ namespace Locar
             FrmConsultaCarros form = new FrmConsultaCarros(conexao);
             form.Show();
         }
+
+        private void BtnClientes_Click(object sender, EventArgs e)
+        {
+            FrmConsultaClientes form = new FrmConsultaClientes(conexao);
+            form.Show();
+        }
     }
 }

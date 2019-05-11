@@ -36,7 +36,7 @@ namespace Locar.Controllers
 
             try
             {
-                string sql = "INSERT INTO carro(nome, descricao, data_aquisicao) values(@nome, @descricao, @data_aquisicao)";
+                string sql = "INSERT INTO carro(nome, descricao, data_aquisicao) VALUES(@nome, @descricao, @data_aquisicao)";
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
                 cmd.Parameters.Add("@nome", NpgsqlTypes.NpgsqlDbType.Varchar).Value = carro.nome;
                 cmd.Parameters.Add("@descricao", NpgsqlTypes.NpgsqlDbType.Varchar).Value = carro.descricao;
@@ -58,7 +58,7 @@ namespace Locar.Controllers
 
             try
             {
-                string sql = "DELETE FROM carro where id = @id";
+                string sql = "DELETE FROM carro WHERE id = @id";
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
                 cmd.Parameters.Add("@id", NpgsqlTypes.NpgsqlDbType.Integer).Value = id;
 
