@@ -42,6 +42,7 @@
             this.BtnCarros.TabIndex = 0;
             this.BtnCarros.Text = "Carros";
             this.BtnCarros.UseVisualStyleBackColor = true;
+            this.BtnCarros.Click += new System.EventHandler(this.BtnCarros_Click);
             // 
             // BtnClientes
             // 

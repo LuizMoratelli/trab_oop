@@ -68,15 +68,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\CarroDB.cs" />
     <Compile Include="Controllers\Conexao.cs" />
+    <Compile Include="FrmConsultaCarros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsultaCarros.Designer.cs">
+      <DependentUpon>FrmConsultaCarros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNovoCarro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNovoCarro.Designer.cs">
+      <DependentUpon>FrmNovoCarro.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Carro.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmConsultaCarros.resx">
+      <DependentUpon>FrmConsultaCarros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNovoCarro.resx">
+      <DependentUpon>FrmNovoCarro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,7 +124,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="Views\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

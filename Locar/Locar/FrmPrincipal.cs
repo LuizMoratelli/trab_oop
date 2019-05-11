@@ -25,5 +25,11 @@ namespace Locar
         {
             Conexao.setFechaConexao(conexao);
         }
+
+        private void BtnCarros_Click(object sender, EventArgs e)
+        {
+            FrmConsultaCarros form = new FrmConsultaCarros(conexao);
+            form.Show();
+        }
     }
 }
