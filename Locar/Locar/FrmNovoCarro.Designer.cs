@@ -46,6 +46,7 @@
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome";
+            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // TbNome
             // 
@@ -53,6 +54,7 @@
             this.TbNome.Name = "TbNome";
             this.TbNome.Size = new System.Drawing.Size(162, 20);
             this.TbNome.TabIndex = 1;
+            this.TbNome.TextChanged += new System.EventHandler(this.TbNome_TextChanged);
             // 
             // label2
             // 
@@ -62,6 +64,7 @@
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Descricao";
+            this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
             // TbDescricao
             // 
@@ -69,6 +72,7 @@
             this.TbDescricao.Name = "TbDescricao";
             this.TbDescricao.Size = new System.Drawing.Size(162, 20);
             this.TbDescricao.TabIndex = 3;
+            this.TbDescricao.TextChanged += new System.EventHandler(this.TbDescricao_TextChanged);
             // 
             // label3
             // 
@@ -78,6 +82,7 @@
             this.label3.Size = new System.Drawing.Size(94, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Data de Aquisição";
+            this.label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // TbDataAquisicao
             // 
@@ -85,6 +90,7 @@
             this.TbDataAquisicao.Name = "TbDataAquisicao";
             this.TbDataAquisicao.Size = new System.Drawing.Size(162, 20);
             this.TbDataAquisicao.TabIndex = 5;
+            this.TbDataAquisicao.TextChanged += new System.EventHandler(this.TbDataAquisicao_TextChanged);
             // 
             // BtnSalvar
             // 

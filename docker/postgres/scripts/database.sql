@@ -7,7 +7,7 @@ CREATE TABLE "carro" (
 );
 
 CREATE TABLE "cliente" (
-  "cpf" int PRIMARY KEY NOT NULL,
+  "cpf" bigint PRIMARY KEY NOT NULL,
   "nome" varchar,
   "data_nascimento" timestamp
 );
@@ -23,7 +23,7 @@ CREATE TABLE "aluguel" (
 );
 
 CREATE TABLE "vendedor" (
-  "cpf" int PRIMARY KEY NOT NULL,
+  "cpf" bigint PRIMARY KEY NOT NULL,
   "nome" varchar,
   "qtd_vendas" int
 );

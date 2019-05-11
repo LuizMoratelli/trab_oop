@@ -38,7 +38,7 @@ namespace Locar
 
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
-            int id = (int)Dgw.CurrentRow.Cells[0].Value;
+            int id = (int) Dgw.CurrentRow.Cells[0].Value;
             bool excluiu = CarroDB.setExcluiCarro(conexao, id);
 
             if (excluiu)
