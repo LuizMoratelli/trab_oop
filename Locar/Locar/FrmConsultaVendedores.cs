@@ -69,13 +69,5 @@ namespace Locar
                 atualizaTela();
             }
         }
-
-        private void BtnNovo_Click_1(object sender, EventArgs e)
-        {
-            FrmNovoVendedor form = new FrmNovoVendedor(conexao);
-            form.ShowDialog();
-            atualizaTela();
-        }
-
     }
 }

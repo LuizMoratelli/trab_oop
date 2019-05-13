@@ -61,7 +61,7 @@
             this.BtnNovo.TabIndex = 9;
             this.BtnNovo.Text = "Novo";
             this.BtnNovo.UseVisualStyleBackColor = true;
-            this.BtnNovo.Click += new System.EventHandler(this.BtnNovo_Click_1);
+            this.BtnNovo.Click += new System.EventHandler(this.BtnNovo_Click);
             // 
             // Dgw
             // 

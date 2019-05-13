@@ -55,6 +55,7 @@
             this.BtnSalvar.TabIndex = 22;
             this.BtnSalvar.Text = "Salvar";
             this.BtnSalvar.UseVisualStyleBackColor = true;
+            this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 
             // TbQtdVendas
             // 
@@ -68,10 +69,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 87);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 13);
+            this.label3.Size = new System.Drawing.Size(116, 13);
             this.label3.TabIndex = 20;
             this.label3.Text = "Quantidade de Vendas";
-            //this.label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // TbNome
             // 

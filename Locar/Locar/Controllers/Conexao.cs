@@ -15,7 +15,7 @@ namespace Locar.Controllers
             NpgsqlConnection conexao = null;
             try
             {
-                conexao = new NpgsqlConnection("Server=localhost;Port=5434;User Id=postgres;Password=hoffmannhugo;Database=locar");
+                conexao = new NpgsqlConnection("Server=localhost;Port=5432;User Id=postgres;Password=;Database=locar");
                 conexao.Open();
             }
             catch (NpgsqlException e)
