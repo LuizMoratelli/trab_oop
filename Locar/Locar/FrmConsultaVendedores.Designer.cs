@@ -61,6 +61,7 @@
             this.BtnNovo.TabIndex = 9;
             this.BtnNovo.Text = "Novo";
             this.BtnNovo.UseVisualStyleBackColor = true;
+            this.BtnNovo.Click += new System.EventHandler(this.BtnNovo_Click_1);
             // 
             // Dgw
             // 
@@ -81,7 +82,6 @@
             this.Controls.Add(this.Dgw);
             this.Name = "FrmConsultaVendedores";
             this.Text = "FrmConsultaVendedores";
-            this.Load += new System.EventHandler(this.FrmConsultaVendedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Dgw)).EndInit();
             this.ResumeLayout(false);
 

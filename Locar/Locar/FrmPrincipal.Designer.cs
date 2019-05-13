@@ -62,6 +62,7 @@
             this.BtnVendedores.TabIndex = 2;
             this.BtnVendedores.Text = "Vendedores";
             this.BtnVendedores.UseVisualStyleBackColor = true;
+            this.BtnVendedores.Click += new System.EventHandler(this.BtnVendedores_Click);
             // 
             // BtnAlugueis
             // 

@@ -13,10 +13,10 @@ using System.Windows.Forms;
 
 namespace Locar
 {
-    public partial class FrmNovoCliente : Form
+    public partial class FrmNovoVendedor : Form
     {
         internal NpgsqlConnection conexao = null;
-        public FrmNovoCliente(NpgsqlConnection conexao)
+        public FrmNovoVendedor(NpgsqlConnection conexao)
         {
             InitializeComponent();
             this.conexao = conexao;
@@ -26,19 +26,19 @@ namespace Locar
         {
             long cpf = Convert.ToInt64(TbCpf.Text);
             string nome = TbNome.Text;
-            string data_nascimento = TbDataNascimento.Text;
+            int qtd_vendas = Convert.ToInt16(TbQtdVendas.Text);
 
-            Cliente cliente = new Cliente(cpf, nome, data_nascimento);
-            bool incluiu = ClienteDB.setIncluiCliente(conexao, cliente);
+            Vendedor vendedor = new Vendedor(cpf, nome, qtd_vendas);
+            bool incluiu = VendedorDB.setIncluiVendedor(conexao, vendedor);
 
             if (incluiu)
             {
-                MessageBox.Show("Cliente incluído com sucesso!");
+                MessageBox.Show("Vendedor incluído com sucesso!");
                 Close();
             }
             else
             {
-                MessageBox.Show("Ocorreu um erro ao tentar incluir um novo cliente.");
+                MessageBox.Show("Ocorreu um erro ao tentar incluir um novo vendedor.");
             }
         }
 

@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace Locar
 {
-    public partial class FrmConsultaVendores : Form
+    public partial class FrmConsultaVendedores : Form
     {
         internal NpgsqlConnection conexao = null;
         public FrmConsultaVendedores(NpgsqlConnection conexao)
@@ -55,7 +55,7 @@ namespace Locar
         {
             long cpf = (long)Dgw.CurrentRow.Cells[0].Value;
             string nome = Dgw.CurrentRow.Cells[1].Value.ToString();
-            string qtd_vendas = Dgw.CurrentRow.Cells[2].Value;
+            int qtd_vendas = (int)Dgw.CurrentRow.Cells[2].Value;
             Vendedor vendedor = new Vendedor(cpf, nome, qtd_vendas);
             bool alterou = VendedorDB.setAlteraVendedor(conexao, vendedor);
 
@@ -69,5 +69,13 @@ namespace Locar
                 atualizaTela();
             }
         }
+
+        private void BtnNovo_Click_1(object sender, EventArgs e)
+        {
+            FrmNovoVendedor form = new FrmNovoVendedor(conexao);
+            form.ShowDialog();
+            atualizaTela();
+        }
+
     }
 }

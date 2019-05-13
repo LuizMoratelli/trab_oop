@@ -12,7 +12,7 @@ namespace Locar.Controllers
 {
     public class VendedorDB
     {
-        public static DataTable getConsultaClientes(NpgsqlConnection conexao)
+        public static DataTable getConsultaVendedores(NpgsqlConnection conexao)
         {
             DataTable dt = new DataTable();
 
