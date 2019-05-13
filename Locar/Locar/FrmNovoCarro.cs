@@ -46,35 +46,5 @@ namespace Locar
                 MessageBox.Show("Ocorreu um erro ao tentar incluir um novo carro.");
             }
         }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TbDescricao_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TbDataAquisicao_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TbNome_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
