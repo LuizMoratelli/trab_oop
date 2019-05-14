@@ -28,6 +28,12 @@ namespace Locar
         {
             ArrayList clientes = ClienteDB.getConsultaClientes(conexao);
             CBCliente.DataSource = clientes;
+
+            ArrayList carros = CarroDB.getConsultaCarros(conexao);
+            CBCarro.DataSource = carros;
+
+            ArrayList vendedores = VendedorDB.getConsultaVendedores(conexao);
+            CBVendedor.DataSource = vendedores;
         }
     }
 }

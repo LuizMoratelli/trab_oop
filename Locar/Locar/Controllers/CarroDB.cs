@@ -1,6 +1,7 @@
 ﻿using Locar.Models;
 using Npgsql;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -12,22 +13,33 @@ namespace Locar.Controllers
 {
     public class CarroDB
     {
-        public static DataTable getConsultaCarros(NpgsqlConnection conexao)
+        public static ArrayList getConsultaCarros(NpgsqlConnection conexao)
         {
-            DataTable dt = new DataTable();
+            ArrayList lista = new ArrayList();
             try
             {
                 string sql = "SELECT * FROM carro";
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
-                NpgsqlDataAdapter dat = new NpgsqlDataAdapter(cmd);
-                dat.Fill(dt);
+                NpgsqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    Carro carro = new Carro(
+                        (int)dr["id"],
+                        (string)dr["nome"],
+                        (string)dr["descricao"],
+                        Convert.ToString(dr["data_aquisicao"])
+                    );
+                    lista.Add(carro);
+                }
+                dr.Close();
             }
             catch (NpgsqlException e)
             {
                 MessageBox.Show($"Ocorreu um erro com o banco de dados: {e.Message}");
             }
 
-            return dt;
+            return lista;
         }
 
         public static bool setIncluiCarro(NpgsqlConnection conexao, Carro carro)

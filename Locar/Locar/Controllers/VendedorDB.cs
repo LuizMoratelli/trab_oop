@@ -1,6 +1,7 @@
 ﻿using Locar.Models;
 using Npgsql;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -12,23 +13,33 @@ namespace Locar.Controllers
 {
     public class VendedorDB
     {
-        public static DataTable getConsultaVendedores(NpgsqlConnection conexao)
+        public static ArrayList getConsultaVendedores(NpgsqlConnection conexao)
         {
-            DataTable dt = new DataTable();
+            ArrayList lista = new ArrayList();
 
             try
             {
-                string sql = "SELECT  * FROM vendedor";
+                string sql = "SELECT * FROM vendedor";
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
-                NpgsqlDataAdapter dat = new NpgsqlDataAdapter(cmd);
-                dat.Fill(dt);
+                NpgsqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    Vendedor vendedor = new Vendedor(
+                        (long)dr["cpf"],
+                        (string)dr["nome"],
+                        (int)(dr["qtd_vendas"])
+                    );
+                    lista.Add(vendedor);
+                }
+                dr.Close();
             }
             catch (NpgsqlException e)
             {
                 MessageBox.Show($"Ocorreu um erro com o banco de dados: {e.Message}");
             }
 
-            return dt;
+            return lista;
         }
 
         public static bool setIncluiVendedor(NpgsqlConnection conexao, Vendedor vendedor)
@@ -38,12 +49,10 @@ namespace Locar.Controllers
             try
             {
                 string sql = "INSERT INTO vendedor(cpf, nome, qtd_vendas) VALUES(@cpf, @nome, @qtd_vendas)";
-                Console.WriteLine(sql);
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
                 cmd.Parameters.Add("@cpf", NpgsqlTypes.NpgsqlDbType.Bigint).Value = vendedor.cpf;
                 cmd.Parameters.Add("@nome", NpgsqlTypes.NpgsqlDbType.Varchar).Value = vendedor.nome;
                 cmd.Parameters.Add("@qtd_vendas", NpgsqlTypes.NpgsqlDbType.Integer).Value = vendedor.qtd_vendas;
-
                 incluiu = cmd.ExecuteNonQuery() == 1 ? true : false;
             }
             catch (NpgsqlException e)

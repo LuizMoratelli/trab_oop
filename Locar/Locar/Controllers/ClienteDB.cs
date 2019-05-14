@@ -25,7 +25,11 @@ namespace Locar.Controllers
 
                 while(dr.Read())
                 {
-                    Cliente cliente = new Cliente((long) dr["cpf"], (string)dr["nome"], Convert.ToString(dr["data_nascimento"]));
+                    Cliente cliente = new Cliente(
+                        (long) dr["cpf"],
+                        (string)dr["nome"],
+                        Convert.ToString(dr["data_nascimento"])
+                    );
                     lista.Add(cliente);
                 }
 
@@ -46,7 +50,6 @@ namespace Locar.Controllers
             try
             {
                 string sql = "INSERT INTO cliente(cpf, nome, data_nascimento) VALUES(@cpf, @nome, @data_nascimento)";
-                Console.WriteLine(sql);
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
                 cmd.Parameters.Add("@cpf", NpgsqlTypes.NpgsqlDbType.Bigint).Value = cliente.cpf;
                 cmd.Parameters.Add("@nome", NpgsqlTypes.NpgsqlDbType.Varchar).Value = cliente.nome;

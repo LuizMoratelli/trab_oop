@@ -24,5 +24,10 @@ namespace Locar.Models
             this.nome = nome;
             this.qtd_vendas = qtd_vendas;
         }
+
+        public override string ToString()
+        {
+            return nome;
+        }
     }
 }
