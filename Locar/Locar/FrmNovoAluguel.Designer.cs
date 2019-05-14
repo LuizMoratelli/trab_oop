@@ -33,9 +33,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TBDataInicio = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TBDataFim = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.CBCarro = new System.Windows.Forms.ComboBox();
             this.CBCliente = new System.Windows.Forms.ComboBox();
@@ -59,6 +59,7 @@
             this.BtnSalvar.TabIndex = 14;
             this.BtnSalvar.Text = "Salvar";
             this.BtnSalvar.UseVisualStyleBackColor = true;
+            this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 
             // label3
             // 
@@ -87,12 +88,12 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Carro";
             // 
-            // textBox1
+            // TBDataInicio
             // 
-            this.textBox1.Location = new System.Drawing.Point(15, 142);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(162, 20);
-            this.textBox1.TabIndex = 17;
+            this.TBDataInicio.Location = new System.Drawing.Point(15, 142);
+            this.TBDataInicio.Name = "TBDataInicio";
+            this.TBDataInicio.Size = new System.Drawing.Size(162, 20);
+            this.TBDataInicio.TabIndex = 17;
             // 
             // label4
             // 
@@ -103,12 +104,12 @@
             this.label4.TabIndex = 16;
             this.label4.Text = "Data início";
             // 
-            // textBox2
+            // TBDataFim
             // 
-            this.textBox2.Location = new System.Drawing.Point(15, 181);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(162, 20);
-            this.textBox2.TabIndex = 19;
+            this.TBDataFim.Location = new System.Drawing.Point(15, 181);
+            this.TBDataFim.Name = "TBDataFim";
+            this.TBDataFim.Size = new System.Drawing.Size(162, 20);
+            this.TBDataFim.TabIndex = 19;
             // 
             // label5
             // 
@@ -151,9 +152,9 @@
             this.Controls.Add(this.CBVendedor);
             this.Controls.Add(this.CBCliente);
             this.Controls.Add(this.CBCarro);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.TBDataFim);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TBDataInicio);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnSalvar);
@@ -174,9 +175,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TBDataInicio;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TBDataFim;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox CBCarro;
         private System.Windows.Forms.ComboBox CBCliente;
