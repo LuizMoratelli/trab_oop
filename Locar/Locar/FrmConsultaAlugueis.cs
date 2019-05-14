@@ -40,8 +40,8 @@ namespace Locar
         {
             int id = (int)Dgw.CurrentRow.Cells[0].Value;
             int carro_id = (int) Dgw.CurrentRow.Cells[1].Value;
-            long cliente_id = (long) Dgw.CurrentRow.Cells[2].Value;
-            long vendedor_id = (long)Dgw.CurrentRow.Cells[3].Value;
+            long cliente_id = Convert.ToInt64(Dgw.CurrentRow.Cells[2].Value);
+            long vendedor_id = Convert.ToInt64(Dgw.CurrentRow.Cells[3].Value);
             string data_inicio = Dgw.CurrentRow.Cells[4].Value.ToString();
             string data_fim = Dgw.CurrentRow.Cells[5].Value.ToString();
 

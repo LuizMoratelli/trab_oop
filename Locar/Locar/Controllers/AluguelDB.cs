@@ -89,9 +89,9 @@ namespace Locar.Controllers
 
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
                 cmd.Parameters.Add("@id", NpgsqlTypes.NpgsqlDbType.Integer).Value = aluguel.id;
-                cmd.Parameters.Add("@carro_id", NpgsqlTypes.NpgsqlDbType.Varchar).Value = aluguel.carro_id;
-                cmd.Parameters.Add("@cliente_id", NpgsqlTypes.NpgsqlDbType.Varchar).Value = aluguel.cliente_id;
-                cmd.Parameters.Add("@vendedor_id", NpgsqlTypes.NpgsqlDbType.Varchar).Value = aluguel.vendedor_id;
+                cmd.Parameters.Add("@carro_id", NpgsqlTypes.NpgsqlDbType.Integer).Value = aluguel.carro_id;
+                cmd.Parameters.Add("@cliente_id", NpgsqlTypes.NpgsqlDbType.Bigint).Value = aluguel.cliente_id;
+                cmd.Parameters.Add("@vendedor_id", NpgsqlTypes.NpgsqlDbType.Bigint).Value = aluguel.vendedor_id;
                 cmd.Parameters.Add("@data_inicio", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = Convert.ToDateTime(aluguel.data_inicio);
                 cmd.Parameters.Add("@data_fim", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = Convert.ToDateTime(aluguel.data_fim);
 
