@@ -73,6 +73,12 @@
     <Compile Include="Controllers\ClienteDB.cs" />
     <Compile Include="Controllers\Conexao.cs" />
     <Compile Include="Controllers\VendedorDB.cs" />
+    <Compile Include="FrmConsultaAlugueis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsultaAlugueis.Designer.cs">
+      <DependentUpon>FrmConsultaAlugueis.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmConsultaCarros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,12 @@
     </Compile>
     <Compile Include="FrmConsultaVendedores.Designer.cs">
       <DependentUpon>FrmConsultaVendedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNovoAluguel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNovoAluguel.Designer.cs">
+      <DependentUpon>FrmNovoAluguel.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmNovoCarro.cs">
       <SubType>Form</SubType>
@@ -121,6 +133,9 @@
     <Compile Include="Models\Vendedor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmConsultaAlugueis.resx">
+      <DependentUpon>FrmConsultaAlugueis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmConsultaCarros.resx">
       <DependentUpon>FrmConsultaCarros.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConsultaVendedores.resx">
       <DependentUpon>FrmConsultaVendedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNovoAluguel.resx">
+      <DependentUpon>FrmNovoAluguel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNovoCarro.resx">
       <DependentUpon>FrmNovoCarro.cs</DependentUpon>

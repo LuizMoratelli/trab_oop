@@ -24,5 +24,9 @@ namespace Locar.Models
             this.nome = nome;
             this.data_nascimento = data_nascimento;
         }
+        public override string ToString()
+        {
+            return nome;
+        }
     }
 }

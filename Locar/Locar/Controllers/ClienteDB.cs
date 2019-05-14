@@ -2,6 +2,7 @@
 using Npgsql;
 using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -12,23 +13,30 @@ namespace Locar.Controllers
 {
     public class ClienteDB
     {
-        public static DataTable getConsultaClientes(NpgsqlConnection conexao)
+        public static ArrayList getConsultaClientes(NpgsqlConnection conexao)
         {
-            DataTable dt = new DataTable();
+            ArrayList lista = new ArrayList();
 
             try
             {
                 string sql = "SELECT  * FROM cliente";
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
-                NpgsqlDataAdapter dat = new NpgsqlDataAdapter(cmd);
-                dat.Fill(dt);
+                NpgsqlDataReader dr = cmd.ExecuteReader();
+
+                while(dr.Read())
+                {
+                    Cliente cliente = new Cliente((long) dr["cpf"], (string)dr["nome"], Convert.ToString(dr["data_nascimento"]));
+                    lista.Add(cliente);
+                }
+
+                dr.Close();
             }
             catch (NpgsqlException e)
             {
                 MessageBox.Show($"Ocorreu um erro com o banco de dados: {e.Message}");
             }
 
-            return dt;
+            return lista;
         }
 
         public static bool setIncluiCliente(NpgsqlConnection conexao, Cliente cliente)

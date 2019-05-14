@@ -11,7 +11,6 @@ namespace Locar.Models
         public int id { get; set; }
         public string nome { get; set; }
         public string descricao { get; set; }
-        //Timestamp
         public string data_aquisicao { get; set; }
 
         public Carro(string nome, string descricao, string data_aquisicao)
@@ -27,6 +26,11 @@ namespace Locar.Models
             this.nome = nome;
             this.descricao = descricao;
             this.data_aquisicao = data_aquisicao;
+        }
+
+        public override string ToString()
+        {
+            return nome;
         }
     }
 }

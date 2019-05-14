@@ -72,6 +72,7 @@
             this.BtnAlugueis.TabIndex = 3;
             this.BtnAlugueis.Text = "Alugueis";
             this.BtnAlugueis.UseVisualStyleBackColor = true;
+            this.BtnAlugueis.Click += new System.EventHandler(this.BtnAlugueis_Click);
             // 
             // FrmPrincipal
             // 

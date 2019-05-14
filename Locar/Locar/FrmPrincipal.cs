@@ -43,5 +43,11 @@ namespace Locar
             FrmConsultaVendedores form = new FrmConsultaVendedores(conexao);
             form.Show();
         }
+
+        private void BtnAlugueis_Click(object sender, EventArgs e)
+        {
+            FrmConsultaAlugueis form = new FrmConsultaAlugueis(conexao);
+            form.Show();
+        }
     }
 }
