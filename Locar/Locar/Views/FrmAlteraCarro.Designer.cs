@@ -112,6 +112,7 @@
             // 
             this.TbId.Location = new System.Drawing.Point(15, 25);
             this.TbId.Name = "TbId";
+            this.TbId.ReadOnly = true;
             this.TbId.Size = new System.Drawing.Size(162, 20);
             this.TbId.TabIndex = 17;
             // 

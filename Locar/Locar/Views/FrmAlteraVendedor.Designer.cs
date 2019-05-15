@@ -94,6 +94,7 @@
             // 
             this.TbCpf.Location = new System.Drawing.Point(15, 25);
             this.TbCpf.Name = "TbCpf";
+            this.TbCpf.ReadOnly = true;
             this.TbCpf.Size = new System.Drawing.Size(162, 20);
             this.TbCpf.TabIndex = 25;
             // 

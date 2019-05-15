@@ -151,6 +151,7 @@
             // 
             this.TBId.Location = new System.Drawing.Point(15, 25);
             this.TBId.Name = "TBId";
+            this.TBId.ReadOnly = true;
             this.TBId.Size = new System.Drawing.Size(162, 20);
             this.TBId.TabIndex = 36;
             // 
