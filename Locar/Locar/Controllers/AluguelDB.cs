@@ -1,6 +1,7 @@
 ﻿using Locar.Models;
 using Npgsql;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -12,23 +13,37 @@ namespace Locar.Controllers
 {
     public class AluguelDB
     {
-        public static DataTable getConsultaAlugueis(NpgsqlConnection conexao)
+        public static ArrayList getConsultaAlugueis(NpgsqlConnection conexao)
         {
-            DataTable dt = new DataTable();
+            ArrayList lista = new ArrayList();
 
             try
             {
                 string sql = "SELECT  * FROM aluguel";
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
-                NpgsqlDataAdapter dat = new NpgsqlDataAdapter(cmd);
-                dat.Fill(dt);
+                NpgsqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    Aluguel aluguel = new Aluguel(
+                        (int)dr["id"],
+                        (int)dr["carro_id"],
+                        Convert.ToInt64(dr["cliente_id"]),
+                        Convert.ToInt64(dr["vendedor_id"]),
+                        Convert.ToString(dr["data_inicio"]),
+                        Convert.ToString(dr["data_fim"])
+                    );
+                   lista.Add(aluguel);
+                }
+
+                dr.Close();
             }
             catch (NpgsqlException e)
             {
                 MessageBox.Show($"Ocorreu um erro com o banco de dados: {e.Message}");
             }
 
-            return dt;
+            return lista;
         }
 
         public static bool setExcluiAluguel(NpgsqlConnection conexao, int id)
