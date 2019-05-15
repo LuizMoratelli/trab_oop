@@ -53,21 +53,10 @@ namespace Locar.Views
 
         private void BtnAlterar_Click(object sender, EventArgs e)
         {
-            long cpf = (long)Dgw.CurrentRow.Cells[0].Value;
-            string nome = Dgw.CurrentRow.Cells[1].Value.ToString();
-            string data_nascimento = Dgw.CurrentRow.Cells[2].Value.ToString();
-            Cliente cliente = new Cliente(cpf, nome, data_nascimento);
-            bool alterou = ClienteDB.setAlteraCliente(conexao, cliente);
-
-            if (alterou)
-            {
-                MessageBox.Show("Cliente alterado com sucesso!");
-            }
-            else
-            {
-                MessageBox.Show("Não foi possível alterar o cliente");
-                atualizaTela();
-            }
+            long cpf = Convert.ToInt64(Dgw.CurrentRow.Cells[0].Value);
+            FrmAlteraCliente form = new FrmAlteraCliente(conexao, cpf);
+            form.ShowDialog();
+            atualizaTela();
         }
     }
 }

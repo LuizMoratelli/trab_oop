@@ -73,58 +73,76 @@
     <Compile Include="Controllers\ClienteDB.cs" />
     <Compile Include="Controllers\Conexao.cs" />
     <Compile Include="Controllers\VendedorDB.cs" />
-    <Compile Include="FrmAlteraCarro.cs">
+    <Compile Include="Views\FrmAlteraAluguel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAlteraCarro.Designer.cs">
+    <Compile Include="Views\FrmAlteraAluguel.Designer.cs">
+      <DependentUpon>FrmAlteraAluguel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmAlteraCarro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmAlteraCarro.Designer.cs">
       <DependentUpon>FrmAlteraCarro.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmConsultaAlugueis.cs">
+    <Compile Include="Views\FrmAlteraCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmConsultaAlugueis.Designer.cs">
+    <Compile Include="Views\FrmAlteraCliente.Designer.cs">
+      <DependentUpon>FrmAlteraCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmAlteraVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmAlteraVendedor.Designer.cs">
+      <DependentUpon>FrmAlteraVendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmConsultaAlugueis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmConsultaAlugueis.Designer.cs">
       <DependentUpon>FrmConsultaAlugueis.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmConsultaCarros.cs">
+    <Compile Include="Views\FrmConsultaCarros.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmConsultaCarros.Designer.cs">
+    <Compile Include="Views\FrmConsultaCarros.Designer.cs">
       <DependentUpon>FrmConsultaCarros.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmConsultaClientes.cs">
+    <Compile Include="Views\FrmConsultaClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmConsultaClientes.Designer.cs">
+    <Compile Include="Views\FrmConsultaClientes.Designer.cs">
       <DependentUpon>FrmConsultaClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmConsultaVendedores.cs">
+    <Compile Include="Views\FrmConsultaVendedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmConsultaVendedores.Designer.cs">
+    <Compile Include="Views\FrmConsultaVendedores.Designer.cs">
       <DependentUpon>FrmConsultaVendedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmNovoAluguel.cs">
+    <Compile Include="Views\FrmNovoAluguel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmNovoAluguel.Designer.cs">
+    <Compile Include="Views\FrmNovoAluguel.Designer.cs">
       <DependentUpon>FrmNovoAluguel.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmNovoCarro.cs">
+    <Compile Include="Views\FrmNovoCarro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmNovoCarro.Designer.cs">
+    <Compile Include="Views\FrmNovoCarro.Designer.cs">
       <DependentUpon>FrmNovoCarro.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmNovoCliente.cs">
+    <Compile Include="Views\FrmNovoCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmNovoCliente.Designer.cs">
+    <Compile Include="Views\FrmNovoCliente.Designer.cs">
       <DependentUpon>FrmNovoCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmNovoVendedor.cs">
+    <Compile Include="Views\FrmNovoVendedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmNovoVendedor.Designer.cs">
+    <Compile Include="Views\FrmNovoVendedor.Designer.cs">
       <DependentUpon>FrmNovoVendedor.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPrincipal.cs">
@@ -139,31 +157,34 @@
     <Compile Include="Models\Vendedor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmAlteraCarro.resx">
+    <EmbeddedResource Include="Views\FrmAlteraCarro.resx">
       <DependentUpon>FrmAlteraCarro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmConsultaAlugueis.resx">
+    <EmbeddedResource Include="Views\FrmAlteraCliente.resx">
+      <DependentUpon>FrmAlteraCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmConsultaAlugueis.resx">
       <DependentUpon>FrmConsultaAlugueis.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmConsultaCarros.resx">
+    <EmbeddedResource Include="Views\FrmConsultaCarros.resx">
       <DependentUpon>FrmConsultaCarros.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmConsultaClientes.resx">
+    <EmbeddedResource Include="Views\FrmConsultaClientes.resx">
       <DependentUpon>FrmConsultaClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmConsultaVendedores.resx">
+    <EmbeddedResource Include="Views\FrmConsultaVendedores.resx">
       <DependentUpon>FrmConsultaVendedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmNovoAluguel.resx">
+    <EmbeddedResource Include="Views\FrmNovoAluguel.resx">
       <DependentUpon>FrmNovoAluguel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmNovoCarro.resx">
+    <EmbeddedResource Include="Views\FrmNovoCarro.resx">
       <DependentUpon>FrmNovoCarro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmNovoCliente.resx">
+    <EmbeddedResource Include="Views\FrmNovoCliente.resx">
       <DependentUpon>FrmNovoCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmNovoVendedor.resx">
+    <EmbeddedResource Include="Views\FrmNovoVendedor.resx">
       <DependentUpon>FrmNovoVendedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
@@ -192,8 +213,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
