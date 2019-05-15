@@ -52,6 +52,7 @@
             this.BtnAlterar.TabIndex = 10;
             this.BtnAlterar.Text = "Alterar";
             this.BtnAlterar.UseVisualStyleBackColor = true;
+            this.BtnAlterar.Click += new System.EventHandler(this.BtnAlterar_Click);
             // 
             // BtnNovo
             // 
