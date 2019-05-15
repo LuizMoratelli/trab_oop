@@ -13,6 +13,30 @@ namespace Locar.Controllers
 {
     public class ClienteDB
     {
+        public static int getIndexCliente(NpgsqlConnection conexao, Cliente cliente)
+        {
+            ArrayList clientes = getConsultaClientes(conexao);
+            int i = 0;
+
+            foreach (Cliente dataCliente in clientes)
+            {
+                if (dataCliente.cpf == cliente.cpf)
+                {
+                    return i;
+                }
+
+                i++;
+            }
+
+            return 0;
+        }
+
+        public static Cliente getIndexCliente(NpgsqlConnection conexao, int id)
+        {
+            ArrayList clientes = getConsultaClientes(conexao);
+            return (Cliente)clientes[id];
+        }
+
         public static Cliente getCliente(NpgsqlConnection conexao, long cpf)
         {
             Cliente cliente = null;

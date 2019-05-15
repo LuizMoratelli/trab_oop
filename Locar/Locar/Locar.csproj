@@ -157,6 +157,9 @@
     <Compile Include="Models\Vendedor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Views\FrmAlteraAluguel.resx">
+      <DependentUpon>FrmAlteraAluguel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmAlteraCarro.resx">
       <DependentUpon>FrmAlteraCarro.cs</DependentUpon>
     </EmbeddedResource>

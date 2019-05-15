@@ -13,6 +13,30 @@ namespace Locar.Controllers
 {
     public class CarroDB
     {
+        public static int getIndexCarro(NpgsqlConnection conexao, Carro carro)
+        {
+            ArrayList carros = getConsultaCarros(conexao);
+            int i = 0;
+
+            foreach (Carro dataCarro in carros)
+            {
+                if (dataCarro.id == carro.id)
+                {
+                    return i;
+                }
+
+                i++;
+            }
+
+            return 0;
+
+        }
+
+        public static Carro getIndexCarro(NpgsqlConnection conexao, int id) {
+            ArrayList carros = getConsultaCarros(conexao);
+            return (Carro) carros[id];
+        }
+
         public static Carro getCarro(NpgsqlConnection conexao, int id)
         {
             Carro carro = null;

@@ -13,6 +13,36 @@ namespace Locar.Controllers
 {
     public class AluguelDB
     {
+        public static Aluguel getAluguel(NpgsqlConnection conexao, int id)
+        {
+            Aluguel aluguel = null;
+
+            try
+            {
+                string sql = "SELECT * FROM aluguel WHERE id = @id";
+                NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
+                cmd.Parameters.Add("@id", NpgsqlTypes.NpgsqlDbType.Integer).Value = id;
+
+                NpgsqlDataReader dr = cmd.ExecuteReader();
+                dr.Read();
+                aluguel = new Aluguel(
+                    id,
+                    (int)dr["carro_id"],
+                    (int)dr["cliente_id"],
+                    (int)dr["vendedor_id"],
+                    Convert.ToString(dr["data_inicio"]),
+                    Convert.ToString(dr["data_fim"])
+                );
+                dr.Close();
+            }
+            catch (NpgsqlException e)
+            {
+                MessageBox.Show($"Ocorreu um erro com o banco de dados: {e.Message}");
+            }
+
+            return aluguel;
+        }
+
         public static ArrayList getConsultaAlugueis(NpgsqlConnection conexao)
         {
             ArrayList lista = new ArrayList();

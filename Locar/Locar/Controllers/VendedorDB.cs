@@ -13,6 +13,30 @@ namespace Locar.Controllers
 {
     public class VendedorDB
     {
+        public static int getIndexVendedor(NpgsqlConnection conexao, Vendedor vendedor)
+        {
+            ArrayList vendedores = getConsultaVendedores(conexao);
+            int i = 0;
+
+            foreach (Vendedor dataVendedor in vendedores)
+            {
+                if (dataVendedor.cpf == vendedor.cpf)
+                {
+                    return i;
+                }
+
+                i++;
+            }
+
+            return 0;
+        }
+
+        public static Vendedor getIndexVendedor(NpgsqlConnection conexao, int id)
+        {
+            ArrayList vendedores = getConsultaVendedores(conexao);
+            return (Vendedor)vendedores[id];
+        }
+
         public static Vendedor getVendedor(NpgsqlConnection conexao, long cpf)
         {
             Vendedor vendedor = null;
