@@ -139,7 +139,7 @@ namespace Locar.Controllers
                 cmd.Parameters.Add("@vendedor_id", NpgsqlTypes.NpgsqlDbType.Bigint).Value = aluguel.vendedor_id;
                 cmd.Parameters.Add("@data_inicio", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = Convert.ToDateTime(aluguel.data_inicio);
                 cmd.Parameters.Add("@data_fim", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = Convert.ToDateTime(aluguel.data_fim);
-                Console.WriteLine(cmd.CommandText);
+
                 alterou = cmd.ExecuteNonQuery() == 1 ? true : false;
             }
             catch (NpgsqlException e)

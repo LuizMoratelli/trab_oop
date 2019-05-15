@@ -57,8 +57,6 @@ namespace Locar.Views
             long vendedor_id = VendedorDB.getIndexVendedor(conexao, CBVendedor.SelectedIndex).cpf;
             string data_inicio = TBDataInicio.Text;
             string data_fim = TBDataFim.Text;
-            Console.WriteLine(data_inicio);
-            Console.WriteLine(data_fim);
 
             Aluguel aluguel = new Aluguel(id, carro_id, cliente_id, vendedor_id, data_inicio, data_fim);
             bool alterou = AluguelDB.setAlteraAluguel(conexao, aluguel);
