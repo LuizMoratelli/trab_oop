@@ -13,6 +13,29 @@ namespace Locar.Controllers
 {
     public class CarroDB
     {
+        public static Carro getCarro(NpgsqlConnection conexao, int id)
+        {
+            Carro carro = null;
+
+            try
+            {
+                string sql = "SELECT * FROM carro WHERE id = @id";
+                NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
+                cmd.Parameters.Add("@id", NpgsqlTypes.NpgsqlDbType.Integer).Value = id;
+
+                NpgsqlDataReader dr = cmd.ExecuteReader();
+                dr.Read();
+                carro = new Carro(id, (string)dr["nome"], (string)dr["descricao"], Convert.ToString(dr["data_aquisicao"]));
+                dr.Close();
+            }
+            catch (NpgsqlException e)
+            {
+                MessageBox.Show($"Ocorreu um erro com o banco de dados: {e.Message}");
+            }
+
+            return carro;
+        }
+
         public static ArrayList getConsultaCarros(NpgsqlConnection conexao)
         {
             ArrayList lista = new ArrayList();

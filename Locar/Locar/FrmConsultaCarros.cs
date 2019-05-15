@@ -54,22 +54,10 @@ namespace Locar
 
         private void BtnAlterar_Click(object sender, EventArgs e)
         {
-            int id = (int) Dgw.CurrentRow.Cells[0].Value;
-            string nome = Dgw.CurrentRow.Cells[1].Value.ToString();
-            string descricao = Dgw.CurrentRow.Cells[2].Value.ToString();
-            string data_aquisicao = Dgw.CurrentRow.Cells[3].Value.ToString();
-            Carro carro = new Carro(id, nome, descricao, data_aquisicao);
-            bool alterou = CarroDB.setAlteraCarro(conexao, carro);
-
-            if (alterou)
-            {
-                MessageBox.Show("Carro alterado com sucesso!");
-            }
-            else
-            {
-                MessageBox.Show("Não foi possível alterar o carro");
-                atualizaTela();
-            }
+            int id= (int)Dgw.CurrentRow.Cells[0].Value;
+            FrmAlteraCarro form = new FrmAlteraCarro(conexao, id);
+            form.ShowDialog();
+            atualizaTela();
         }
     }
 }

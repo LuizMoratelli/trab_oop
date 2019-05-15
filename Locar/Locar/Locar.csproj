@@ -73,6 +73,12 @@
     <Compile Include="Controllers\ClienteDB.cs" />
     <Compile Include="Controllers\Conexao.cs" />
     <Compile Include="Controllers\VendedorDB.cs" />
+    <Compile Include="FrmAlteraCarro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAlteraCarro.Designer.cs">
+      <DependentUpon>FrmAlteraCarro.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmConsultaAlugueis.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     <Compile Include="Models\Vendedor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAlteraCarro.resx">
+      <DependentUpon>FrmAlteraCarro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmConsultaAlugueis.resx">
       <DependentUpon>FrmConsultaAlugueis.cs</DependentUpon>
     </EmbeddedResource>
