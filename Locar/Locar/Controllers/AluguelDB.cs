@@ -128,7 +128,7 @@ namespace Locar.Controllers
             try
             {
                 string sql = @"UPDATE aluguel
-                                  SET carro_id = @carro_id, cliente_id = @cliente_id, vendedor_id = @vendedor_id
+                                  SET carro_id = @carro_id, cliente_id = @cliente_id, vendedor_id = @vendedor_id,
                                       data_inicio = @data_inicio, data_fim = @data_fim
                                 WHERE id = @id";
 
@@ -139,7 +139,7 @@ namespace Locar.Controllers
                 cmd.Parameters.Add("@vendedor_id", NpgsqlTypes.NpgsqlDbType.Bigint).Value = aluguel.vendedor_id;
                 cmd.Parameters.Add("@data_inicio", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = Convert.ToDateTime(aluguel.data_inicio);
                 cmd.Parameters.Add("@data_fim", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = Convert.ToDateTime(aluguel.data_fim);
-
+                Console.WriteLine(cmd.CommandText);
                 alterou = cmd.ExecuteNonQuery() == 1 ? true : false;
             }
             catch (NpgsqlException e)
