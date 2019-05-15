@@ -11,40 +11,40 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Locar
+namespace Locar.Views
 {
-    public partial class FrmNovoCliente : Form
+    public partial class FrmNovoCarro : Form
     {
         internal NpgsqlConnection conexao = null;
-        public FrmNovoCliente(NpgsqlConnection conexao)
+        public FrmNovoCarro(NpgsqlConnection conexao)
         {
             InitializeComponent();
             this.conexao = conexao;
         }
 
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
-            long cpf = Convert.ToInt64(TbCpf.Text);
             string nome = TbNome.Text;
-            string data_nascimento = TbDataNascimento.Text;
+            string descricao = TbDescricao.Text;
+            string data_aquisicao = TbDataAquisicao.Text;
 
-            Cliente cliente = new Cliente(cpf, nome, data_nascimento);
-            bool incluiu = ClienteDB.setIncluiCliente(conexao, cliente);
+            Carro carro = new Carro(nome, descricao, data_aquisicao);
+            bool incluiu = CarroDB.setIncluiCarro(conexao, carro);
 
             if (incluiu)
             {
-                MessageBox.Show("Cliente incluído com sucesso!");
+                MessageBox.Show("Carro incluído com sucesso!");
                 Close();
             }
             else
             {
-                MessageBox.Show("Ocorreu um erro ao tentar incluir um novo cliente.");
+                MessageBox.Show("Ocorreu um erro ao tentar incluir um novo carro.");
             }
-        }
-
-        private void BtnCancelar_Click(object sender, EventArgs e)
-        {
-            Close();
         }
     }
 }

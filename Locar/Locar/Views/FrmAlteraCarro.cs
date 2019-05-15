@@ -11,15 +11,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Locar
+namespace Locar.Views
 {
-    public partial class FrmNovoCarro : Form
+    public partial class FrmAlteraCarro : Form
     {
         internal NpgsqlConnection conexao = null;
-        public FrmNovoCarro(NpgsqlConnection conexao)
+        public FrmAlteraCarro(NpgsqlConnection conexao, int id)
         {
             InitializeComponent();
             this.conexao = conexao;
+            TbId.Text = Convert.ToString(id);
+            buscaCarro();
+        }
+
+        private void buscaCarro()
+        {
+            Carro carro = CarroDB.getCarro(conexao, Convert.ToInt32(TbId.Text));
+            TbNome.Text = carro.nome;
+            TbDescricao.Text = carro.descricao;
+            TbDataAquisicao.Text = carro.data_aquisicao;
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -29,21 +39,21 @@ namespace Locar
 
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
+            int id = Convert.ToInt32(TbId.Text);
             string nome = TbNome.Text;
             string descricao = TbDescricao.Text;
             string data_aquisicao = TbDataAquisicao.Text;
+            Carro carro = new Carro(id, nome, descricao, data_aquisicao);
+            bool alterou = CarroDB.setAlteraCarro(conexao, carro);
 
-            Carro carro = new Carro(nome, descricao, data_aquisicao);
-            bool incluiu = CarroDB.setIncluiCarro(conexao, carro);
-
-            if (incluiu)
+            if (alterou)
             {
-                MessageBox.Show("Carro incluído com sucesso!");
+                MessageBox.Show("Carro alterado com sucesso!");
                 Close();
             }
             else
             {
-                MessageBox.Show("Ocorreu um erro ao tentar incluir um novo carro.");
+                MessageBox.Show("Não foi possível alterar o carro");
             }
         }
     }

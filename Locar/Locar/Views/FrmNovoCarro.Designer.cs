@@ -1,4 +1,4 @@
-﻿namespace Locar
+﻿namespace Locar.Views
 {
     partial class FrmNovoCarro
     {

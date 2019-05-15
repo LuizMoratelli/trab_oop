@@ -1,4 +1,5 @@
 ﻿using Locar.Controllers;
+using Locar.Views;
 using Npgsql;
 using System;
 using System.Collections.Generic;

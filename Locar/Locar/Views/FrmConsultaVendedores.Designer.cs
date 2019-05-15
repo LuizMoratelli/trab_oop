@@ -1,6 +1,6 @@
-﻿namespace Locar
+﻿namespace Locar.Views
 {
-    partial class FrmConsultaAlugueis
+    partial class FrmConsultaVendedores
     {
         /// <summary>
         /// Required designer variable.
@@ -37,30 +37,29 @@
             // 
             // BtnExcluir
             // 
-            this.BtnExcluir.Location = new System.Drawing.Point(174, 352);
+            this.BtnExcluir.Location = new System.Drawing.Point(177, 352);
             this.BtnExcluir.Name = "BtnExcluir";
             this.BtnExcluir.Size = new System.Drawing.Size(75, 23);
-            this.BtnExcluir.TabIndex = 7;
+            this.BtnExcluir.TabIndex = 11;
             this.BtnExcluir.Text = "Excluir";
             this.BtnExcluir.UseVisualStyleBackColor = true;
-            this.BtnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
             // 
             // BtnAlterar
             // 
-            this.BtnAlterar.Location = new System.Drawing.Point(93, 352);
+            this.BtnAlterar.Location = new System.Drawing.Point(96, 352);
             this.BtnAlterar.Name = "BtnAlterar";
             this.BtnAlterar.Size = new System.Drawing.Size(75, 23);
-            this.BtnAlterar.TabIndex = 6;
+            this.BtnAlterar.TabIndex = 10;
             this.BtnAlterar.Text = "Alterar";
             this.BtnAlterar.UseVisualStyleBackColor = true;
             this.BtnAlterar.Click += new System.EventHandler(this.BtnAlterar_Click);
             // 
             // BtnNovo
             // 
-            this.BtnNovo.Location = new System.Drawing.Point(12, 352);
+            this.BtnNovo.Location = new System.Drawing.Point(15, 352);
             this.BtnNovo.Name = "BtnNovo";
             this.BtnNovo.Size = new System.Drawing.Size(75, 23);
-            this.BtnNovo.TabIndex = 5;
+            this.BtnNovo.TabIndex = 9;
             this.BtnNovo.Text = "Novo";
             this.BtnNovo.UseVisualStyleBackColor = true;
             this.BtnNovo.Click += new System.EventHandler(this.BtnNovo_Click);
@@ -71,19 +70,19 @@
             this.Dgw.Location = new System.Drawing.Point(12, 12);
             this.Dgw.Name = "Dgw";
             this.Dgw.Size = new System.Drawing.Size(621, 334);
-            this.Dgw.TabIndex = 4;
+            this.Dgw.TabIndex = 8;
             // 
-            // FrmConsultaAlugueis
+            // FrmConsultaVendedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 386);
+            this.ClientSize = new System.Drawing.Size(641, 385);
             this.Controls.Add(this.BtnExcluir);
             this.Controls.Add(this.BtnAlterar);
             this.Controls.Add(this.BtnNovo);
             this.Controls.Add(this.Dgw);
-            this.Name = "FrmConsultaAlugueis";
-            this.Text = "FrmConsultaAlugueis";
+            this.Name = "FrmConsultaVendedores";
+            this.Text = "FrmConsultaVendedores";
             ((System.ComponentModel.ISupportInitialize)(this.Dgw)).EndInit();
             this.ResumeLayout(false);
 

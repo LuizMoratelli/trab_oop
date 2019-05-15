@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections;
 
-namespace Locar
+namespace Locar.Views
 {
     public partial class FrmNovoAluguel : Form
     {
