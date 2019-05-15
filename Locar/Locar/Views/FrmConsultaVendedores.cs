@@ -53,21 +53,10 @@ namespace Locar.Views
 
         private void BtnAlterar_Click(object sender, EventArgs e)
         {
-            long cpf = (long)Dgw.CurrentRow.Cells[0].Value;
-            string nome = Dgw.CurrentRow.Cells[1].Value.ToString();
-            int qtd_vendas = (int)Dgw.CurrentRow.Cells[2].Value;
-            Vendedor vendedor = new Vendedor(cpf, nome, qtd_vendas);
-            bool alterou = VendedorDB.setAlteraVendedor(conexao, vendedor);
-
-            if (alterou)
-            {
-                MessageBox.Show("Vendedor alterado com sucesso!");
-            }
-            else
-            {
-                MessageBox.Show("Não foi possível alterar o vendedor");
-                atualizaTela();
-            }
+            long cpf = Convert.ToInt64(Dgw.CurrentRow.Cells[0].Value);
+            FrmAlteraVendedor form = new FrmAlteraVendedor(conexao, cpf);
+            form.ShowDialog();
+            atualizaTela();
         }
     }
 }

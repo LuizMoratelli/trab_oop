@@ -13,6 +13,30 @@ namespace Locar.Controllers
 {
     public class VendedorDB
     {
+        public static Vendedor getVendedor(NpgsqlConnection conexao, long cpf)
+        {
+            Vendedor vendedor = null;
+
+            try
+            {
+                string sql = "SELECT * FROM vendedor WHERE cpf = @cpf";
+                NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
+                cmd.Parameters.Add("@cpf", NpgsqlTypes.NpgsqlDbType.Bigint).Value = cpf;
+
+                NpgsqlDataReader dr = cmd.ExecuteReader();
+                dr.Read();
+                vendedor = new Vendedor(cpf, (string)dr["nome"], Convert.ToInt32(dr["qtd_vendas"]));
+                dr.Close();
+            }
+            catch (NpgsqlException e)
+            {
+                MessageBox.Show($"Ocorreu um erro com o banco de dados: {e.Message}");
+            }
+
+
+            return vendedor;
+        }
+
         public static ArrayList getConsultaVendedores(NpgsqlConnection conexao)
         {
             ArrayList lista = new ArrayList();

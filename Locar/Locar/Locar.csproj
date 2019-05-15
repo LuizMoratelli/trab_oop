@@ -163,6 +163,9 @@
     <EmbeddedResource Include="Views\FrmAlteraCliente.resx">
       <DependentUpon>FrmAlteraCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmAlteraVendedor.resx">
+      <DependentUpon>FrmAlteraVendedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmConsultaAlugueis.resx">
       <DependentUpon>FrmConsultaAlugueis.cs</DependentUpon>
     </EmbeddedResource>
