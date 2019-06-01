@@ -20,12 +20,9 @@ namespace Locar.Models
             this.data_aquisicao = data_aquisicao;
         }
 
-        public Carro(int id, string nome, string descricao, string data_aquisicao)
+        public Carro(int id, string nome, string descricao, string data_aquisicao) : this(nome, descricao, data_aquisicao)
         {
             this.id = id;
-            this.nome = nome;
-            this.descricao = descricao;
-            this.data_aquisicao = data_aquisicao;
         }
 
         public override string ToString()

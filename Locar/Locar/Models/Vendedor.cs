@@ -18,11 +18,9 @@ namespace Locar.Models
             this.qtd_vendas = qtd_vendas;
         }
 
-        public Vendedor(long cpf, string nome, int qtd_vendas)
+        public Vendedor(long cpf, string nome, int qtd_vendas) : this (nome, qtd_vendas)
         {
             this.cpf = cpf;
-            this.nome = nome;
-            this.qtd_vendas = qtd_vendas;
         }
 
         public override string ToString()

@@ -18,11 +18,9 @@ namespace Locar.Models
             this.data_nascimento = data_nascimento;
         }
 
-        public Cliente(long cpf, string nome, string data_nascimento)
+        public Cliente(long cpf, string nome, string data_nascimento) : this(nome, data_nascimento)
         {
             this.cpf = cpf;
-            this.nome = nome;
-            this.data_nascimento = data_nascimento;
         }
         public override string ToString()
         {
