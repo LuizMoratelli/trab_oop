@@ -6,8 +6,10 @@ CREATE TABLE "carro" (
   "data_aquisicao" timestamp
 );
 
+CREATE SEQUENCE cliente_id_seq;
 CREATE TABLE "cliente" (
-  "cpf" bigint PRIMARY KEY NOT NULL,
+  "id" int PRIMARY KEY NOT NULL DEFAULT nextval('cliente_id_seq'),
+  "cpf" varchar,
   "nome" varchar,
   "data_nascimento" timestamp
 );
@@ -22,8 +24,10 @@ CREATE TABLE "aluguel" (
   "data_fim" timestamp
 );
 
+CREATE SEQUENCE vendedor_id_seq;
 CREATE TABLE "vendedor" (
-  "cpf" bigint PRIMARY KEY NOT NULL,
+  "id" int PRIMARY KEY NOT NULL DEFAULT nextval('vendedor_id_seq'),
+  "cpf" varchar,
   "nome" varchar,
   "qtd_vendas" int
 );
@@ -34,8 +38,14 @@ OWNED BY carro.id;
 ALTER SEQUENCE aluguel_id_seq
 OWNED BY aluguel.id;
 
+ALTER SEQUENCE cliente_id_seq
+OWNED BY cliente.id;
+
+ALTER SEQUENCE vendedor_id_seq
+OWNED BY vendedor.id;
+
 ALTER TABLE "aluguel" ADD FOREIGN KEY ("carro_id") REFERENCES "carro" ("id");
 
-ALTER TABLE "aluguel" ADD FOREIGN KEY ("cliente_id") REFERENCES "cliente" ("cpf");
+ALTER TABLE "aluguel" ADD FOREIGN KEY ("cliente_id") REFERENCES "cliente" ("id");
 
-ALTER TABLE "aluguel" ADD FOREIGN KEY ("vendedor_id") REFERENCES "vendedor" ("cpf");
+ALTER TABLE "aluguel" ADD FOREIGN KEY ("vendedor_id") REFERENCES "vendedor" ("id");
