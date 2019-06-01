@@ -16,17 +16,18 @@ namespace Locar.Views
     public partial class FrmAlteraCliente : Form
     {
         internal NpgsqlConnection conexao = null;
-        public FrmAlteraCliente(NpgsqlConnection conexao, long cpf)
+        public FrmAlteraCliente(NpgsqlConnection conexao, int id)
         {
             InitializeComponent();
             this.conexao = conexao;
-            TbCpf.Text = Convert.ToString(cpf);
+            TbId.Text = Convert.ToString(id);
             buscaCliente();
         }
 
         private void buscaCliente()
         {
-            Cliente cliente = ClienteDB.getCliente(conexao, Convert.ToInt64(TbCpf.Text));
+            Cliente cliente = ClienteDB.getCliente(conexao, Convert.ToInt32(TbId.Text));
+            TbCpf.Text = cliente.cpf;
             TbNome.Text = cliente.nome;
             TbDataNascimento.Text = cliente.data_nascimento;
         }
@@ -38,10 +39,11 @@ namespace Locar.Views
 
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
-            long cpf = Convert.ToInt64(TbCpf.Text);
+            int id = Convert.ToInt32(TbId.Text);
+            string cpf = TbCpf.Text;
             string nome = TbNome.Text;
             string data_nascimento = TbDataNascimento.Text;
-            Cliente cliente = new Cliente(cpf, nome, data_nascimento);
+            Cliente cliente = new Cliente(id, cpf, nome, data_nascimento);
             bool alterou = ClienteDB.setAlteraCliente(conexao, cliente);
 
             if (alterou)

@@ -30,8 +30,8 @@ namespace Locar.Views
 
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
-            long cpf = (long)Dgw.CurrentRow.Cells[0].Value;
-            bool excluiu = ClienteDB.setExcluiCliente(conexao, cpf);
+            int id = (int)Dgw.CurrentRow.Cells[0].Value;
+            bool excluiu = ClienteDB.setExcluiCliente(conexao, id);
 
             if (excluiu)
             {
@@ -53,8 +53,8 @@ namespace Locar.Views
 
         private void BtnAlterar_Click(object sender, EventArgs e)
         {
-            long cpf = Convert.ToInt64(Dgw.CurrentRow.Cells[0].Value);
-            FrmAlteraCliente form = new FrmAlteraCliente(conexao, cpf);
+            int id = Convert.ToInt32(Dgw.CurrentRow.Cells[0].Value);
+            FrmAlteraCliente form = new FrmAlteraCliente(conexao, id);
             form.ShowDialog();
             atualizaTela();
         }

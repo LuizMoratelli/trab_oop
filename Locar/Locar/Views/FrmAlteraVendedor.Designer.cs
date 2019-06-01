@@ -36,11 +36,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.TbCpf = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.TbId = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BtnCancelar
             // 
-            this.BtnCancelar.Location = new System.Drawing.Point(15, 138);
+            this.BtnCancelar.Location = new System.Drawing.Point(15, 177);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(75, 23);
             this.BtnCancelar.TabIndex = 31;
@@ -50,7 +52,7 @@
             // 
             // BtnSalvar
             // 
-            this.BtnSalvar.Location = new System.Drawing.Point(102, 138);
+            this.BtnSalvar.Location = new System.Drawing.Point(102, 177);
             this.BtnSalvar.Name = "BtnSalvar";
             this.BtnSalvar.Size = new System.Drawing.Size(75, 23);
             this.BtnSalvar.TabIndex = 30;
@@ -60,7 +62,7 @@
             // 
             // TbQtdVendas
             // 
-            this.TbQtdVendas.Location = new System.Drawing.Point(15, 103);
+            this.TbQtdVendas.Location = new System.Drawing.Point(15, 142);
             this.TbQtdVendas.Name = "TbQtdVendas";
             this.TbQtdVendas.Size = new System.Drawing.Size(162, 20);
             this.TbQtdVendas.TabIndex = 29;
@@ -68,7 +70,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 87);
+            this.label3.Location = new System.Drawing.Point(12, 126);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(116, 13);
             this.label3.TabIndex = 28;
@@ -76,7 +78,7 @@
             // 
             // TbNome
             // 
-            this.TbNome.Location = new System.Drawing.Point(15, 64);
+            this.TbNome.Location = new System.Drawing.Point(15, 103);
             this.TbNome.Name = "TbNome";
             this.TbNome.Size = new System.Drawing.Size(162, 20);
             this.TbNome.TabIndex = 27;
@@ -84,7 +86,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 48);
+            this.label2.Location = new System.Drawing.Point(12, 87);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 26;
@@ -92,26 +94,44 @@
             // 
             // TbCpf
             // 
-            this.TbCpf.Location = new System.Drawing.Point(15, 25);
+            this.TbCpf.Location = new System.Drawing.Point(15, 64);
             this.TbCpf.Name = "TbCpf";
-            this.TbCpf.ReadOnly = true;
             this.TbCpf.Size = new System.Drawing.Size(162, 20);
             this.TbCpf.TabIndex = 25;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(12, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 13);
+            this.label1.Size = new System.Drawing.Size(27, 13);
             this.label1.TabIndex = 24;
-            this.label1.Text = "Cpf (apenas números)";
+            this.label1.Text = "CPF";
+            // 
+            // TbId
+            // 
+            this.TbId.Location = new System.Drawing.Point(15, 25);
+            this.TbId.Name = "TbId";
+            this.TbId.ReadOnly = true;
+            this.TbId.Size = new System.Drawing.Size(162, 20);
+            this.TbId.TabIndex = 33;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(16, 13);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "Id";
             // 
             // FrmAlteraVendedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(185, 169);
+            this.ClientSize = new System.Drawing.Size(185, 205);
+            this.Controls.Add(this.TbId);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnSalvar);
             this.Controls.Add(this.TbQtdVendas);
@@ -137,5 +157,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TbCpf;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox TbId;
+        private System.Windows.Forms.Label label4;
     }
 }

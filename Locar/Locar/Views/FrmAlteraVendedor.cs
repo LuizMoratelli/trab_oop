@@ -16,17 +16,18 @@ namespace Locar.Views
     public partial class FrmAlteraVendedor : Form
     {
         internal NpgsqlConnection conexao = null;
-        public FrmAlteraVendedor(NpgsqlConnection conexao, long cpf)
+        public FrmAlteraVendedor(NpgsqlConnection conexao, int id)
         {
             InitializeComponent();
             this.conexao = conexao;
-            TbCpf.Text = Convert.ToString(cpf);
+            TbId.Text = Convert.ToString(id);
             buscaVendedor();
         }
 
         private void buscaVendedor()
         {
-            Vendedor vendedor = VendedorDB.getVendedor(conexao, Convert.ToInt64(TbCpf.Text));
+            Vendedor vendedor = VendedorDB.getVendedor(conexao, Convert.ToInt32(TbId.Text));
+            TbCpf.Text = vendedor.cpf;
             TbNome.Text = vendedor.nome;
             TbQtdVendas.Text = Convert.ToString(vendedor.qtd_vendas);
         }
@@ -38,11 +39,12 @@ namespace Locar.Views
 
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
-            long cpf = Convert.ToInt64(TbCpf.Text);
+            int id = Convert.ToInt32(TbId.Text);
+            string cpf = TbCpf.Text;
             string nome = TbNome.Text;
             int qtd_vendas = Convert.ToInt32(TbQtdVendas.Text);
 
-            Vendedor vendedor = new Vendedor(cpf, nome, qtd_vendas);
+            Vendedor vendedor = new Vendedor(id, cpf, nome, qtd_vendas);
             bool alterou = VendedorDB.setAlteraVendedor(conexao, vendedor);
 
             if (alterou)

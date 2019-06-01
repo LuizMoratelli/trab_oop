@@ -24,7 +24,7 @@ namespace Locar.Views
 
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
-            long cpf = Convert.ToInt64(TbCpf.Text);
+            string cpf = TbCpf.Text;
             string nome = TbNome.Text;
             string data_nascimento = TbDataNascimento.Text;
 

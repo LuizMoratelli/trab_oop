@@ -37,19 +37,19 @@ namespace Locar.Controllers
             return (Cliente)clientes[id];
         }
 
-        public static Cliente getCliente(NpgsqlConnection conexao, long cpf)
+        public static Cliente getCliente(NpgsqlConnection conexao, int id)
         {
             Cliente cliente = null;
 
             try
             {
-                string sql = "SELECT * FROM cliente WHERE cpf = @cpf";
+                string sql = "SELECT * FROM cliente WHERE id = @id";
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
-                cmd.Parameters.Add("@cpf", NpgsqlTypes.NpgsqlDbType.Bigint).Value = cpf;
+                cmd.Parameters.Add("@id", NpgsqlTypes.NpgsqlDbType.Integer).Value = id;
 
                 NpgsqlDataReader dr = cmd.ExecuteReader();
                 dr.Read();
-                cliente = new Cliente(cpf, (string)dr["nome"], Convert.ToString(dr["data_nascimento"]));
+                cliente = new Cliente(id, (string)dr["cpf"], (string)dr["nome"], Convert.ToString(dr["data_nascimento"]));
                 dr.Close();
             }
             catch (NpgsqlException e)
@@ -73,7 +73,8 @@ namespace Locar.Controllers
                 while(dr.Read())
                 {
                     Cliente cliente = new Cliente(
-                        (long) dr["cpf"],
+                        (int)dr["id"],
+                        (string) dr["cpf"],
                         (string)dr["nome"],
                         Convert.ToString(dr["data_nascimento"])
                     );
@@ -98,7 +99,7 @@ namespace Locar.Controllers
             {
                 string sql = "INSERT INTO cliente(cpf, nome, data_nascimento) VALUES(@cpf, @nome, @data_nascimento)";
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
-                cmd.Parameters.Add("@cpf", NpgsqlTypes.NpgsqlDbType.Bigint).Value = cliente.cpf;
+                cmd.Parameters.Add("@cpf", NpgsqlTypes.NpgsqlDbType.Varchar).Value = cliente.cpf;
                 cmd.Parameters.Add("@nome", NpgsqlTypes.NpgsqlDbType.Varchar).Value = cliente.nome;
                 cmd.Parameters.Add("@data_nascimento", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = Convert.ToDateTime(cliente.data_nascimento);
 
@@ -112,15 +113,15 @@ namespace Locar.Controllers
             return incluiu;
         }
 
-        public static bool setExcluiCliente(NpgsqlConnection conexao, long cpf)
+        public static bool setExcluiCliente(NpgsqlConnection conexao, int id)
         {
             bool excluiu = false;
 
             try
             {
-                string sql = "DELETE FROM cliente where cpf = @cpf";
+                string sql = "DELETE FROM cliente where id = @id";
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
-                cmd.Parameters.Add("@cpf", NpgsqlTypes.NpgsqlDbType.Bigint).Value = cpf;
+                cmd.Parameters.Add("@id", NpgsqlTypes.NpgsqlDbType.Integer).Value = id;
 
                 excluiu = cmd.ExecuteNonQuery() == 1 ? true : false;
             }
@@ -138,11 +139,12 @@ namespace Locar.Controllers
             try
             {
                 string sql = @"UPDATE cliente
-                                  SET nome = @nome, data_nascimento = @data_nascimento
-                                WHERE cpf = @cpf";
+                                  SET nome = @nome, data_nascimento = @data_nascimento, cpf = @cpf
+                                WHERE id = @id";
 
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
-                cmd.Parameters.Add("@cpf", NpgsqlTypes.NpgsqlDbType.Bigint).Value = cliente.cpf;
+                cmd.Parameters.Add("@id", NpgsqlTypes.NpgsqlDbType.Integer).Value = cliente.id;
+                cmd.Parameters.Add("@cpf", NpgsqlTypes.NpgsqlDbType.Varchar).Value = cliente.cpf;
                 cmd.Parameters.Add("@nome", NpgsqlTypes.NpgsqlDbType.Varchar).Value = cliente.nome;
                 cmd.Parameters.Add("@data_nascimento", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = Convert.ToDateTime(cliente.data_nascimento);
 

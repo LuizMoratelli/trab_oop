@@ -28,17 +28,14 @@ namespace Locar.Views
         {
             Aluguel aluguel = AluguelDB.getAluguel(conexao, Convert.ToInt32(TBId.Text));
 
-            Carro carro = CarroDB.getCarro(conexao, aluguel.carro_id);
             CBCarro.DataSource = CarroDB.getConsultaCarros(conexao);
-            CBCarro.SelectedIndex = CarroDB.getIndexCarro(conexao, carro);
+            CBCarro.SelectedIndex = CarroDB.getIndexCarro(conexao, aluguel.carro);
 
-            Cliente cliente = ClienteDB.getCliente(conexao, aluguel.cliente_id);
             CBCliente.DataSource = ClienteDB.getConsultaClientes(conexao);
-            CBCliente.SelectedIndex = ClienteDB.getIndexCliente(conexao, cliente);
+            CBCliente.SelectedIndex = ClienteDB.getIndexCliente(conexao, aluguel.cliente);
 
-            Vendedor vendedor = VendedorDB.getVendedor(conexao, aluguel.vendedor_id);
             CBVendedor.DataSource = VendedorDB.getConsultaVendedores(conexao);
-            CBVendedor.SelectedIndex = VendedorDB.getIndexVendedor(conexao, vendedor);
+            CBVendedor.SelectedIndex = VendedorDB.getIndexVendedor(conexao, aluguel.vendedor);
 
             TBDataInicio.Text = aluguel.data_inicio;
             TBDataFim.Text = aluguel.data_fim;
@@ -52,13 +49,13 @@ namespace Locar.Views
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(TBId.Text);
-            int carro_id = CarroDB.getIndexCarro(conexao, CBCarro.SelectedIndex).id;
-            long cliente_id = ClienteDB.getIndexCliente(conexao, CBCliente.SelectedIndex).cpf;
-            long vendedor_id = VendedorDB.getIndexVendedor(conexao, CBVendedor.SelectedIndex).cpf;
+            Carro carro = CarroDB.getIndexCarro(conexao, CBCarro.SelectedIndex);
+            Cliente cliente = ClienteDB.getIndexCliente(conexao, CBCliente.SelectedIndex);
+            Vendedor vendedor  = VendedorDB.getIndexVendedor(conexao, CBVendedor.SelectedIndex);
             string data_inicio = TBDataInicio.Text;
             string data_fim = TBDataFim.Text;
 
-            Aluguel aluguel = new Aluguel(id, carro_id, cliente_id, vendedor_id, data_inicio, data_fim);
+            Aluguel aluguel = new Aluguel(id, carro, cliente, vendedor, data_inicio, data_fim);
             bool alterou = AluguelDB.setAlteraAluguel(conexao, aluguel);
 
             if (alterou)

@@ -37,19 +37,19 @@ namespace Locar.Controllers
             return (Vendedor)vendedores[id];
         }
 
-        public static Vendedor getVendedor(NpgsqlConnection conexao, long cpf)
+        public static Vendedor getVendedor(NpgsqlConnection conexao, int id)
         {
             Vendedor vendedor = null;
 
             try
             {
-                string sql = "SELECT * FROM vendedor WHERE cpf = @cpf";
+                string sql = "SELECT * FROM vendedor WHERE id = @id";
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
-                cmd.Parameters.Add("@cpf", NpgsqlTypes.NpgsqlDbType.Bigint).Value = cpf;
+                cmd.Parameters.Add("@cpf", NpgsqlTypes.NpgsqlDbType.Integer).Value = id;
 
                 NpgsqlDataReader dr = cmd.ExecuteReader();
                 dr.Read();
-                vendedor = new Vendedor(cpf, (string)dr["nome"], Convert.ToInt32(dr["qtd_vendas"]));
+                vendedor = new Vendedor(id, (string)dr["cpf"], (string)dr["nome"], Convert.ToInt32(dr["qtd_vendas"]));
                 dr.Close();
             }
             catch (NpgsqlException e)
@@ -74,7 +74,8 @@ namespace Locar.Controllers
                 while (dr.Read())
                 {
                     Vendedor vendedor = new Vendedor(
-                        (long)dr["cpf"],
+                        (int)dr["id"],
+                        (string)dr["cpf"],
                         (string)dr["nome"],
                         (int)(dr["qtd_vendas"])
                     );
@@ -98,7 +99,7 @@ namespace Locar.Controllers
             {
                 string sql = "INSERT INTO vendedor(cpf, nome, qtd_vendas) VALUES(@cpf, @nome, @qtd_vendas)";
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
-                cmd.Parameters.Add("@cpf", NpgsqlTypes.NpgsqlDbType.Bigint).Value = vendedor.cpf;
+                cmd.Parameters.Add("@cpf", NpgsqlTypes.NpgsqlDbType.Varchar).Value = vendedor.cpf;
                 cmd.Parameters.Add("@nome", NpgsqlTypes.NpgsqlDbType.Varchar).Value = vendedor.nome;
                 cmd.Parameters.Add("@qtd_vendas", NpgsqlTypes.NpgsqlDbType.Integer).Value = vendedor.qtd_vendas;
                 incluiu = cmd.ExecuteNonQuery() == 1 ? true : false;
@@ -111,15 +112,15 @@ namespace Locar.Controllers
             return incluiu;
         }
 
-        public static bool setExcluiVendedor(NpgsqlConnection conexao, long cpf)
+        public static bool setExcluiVendedor(NpgsqlConnection conexao, int id)
         {
             bool excluiu = false;
 
             try
             {
-                string sql = "DELETE FROM vendedor where cpf = @cpf";
+                string sql = "DELETE FROM vendedor where id = @id";
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
-                cmd.Parameters.Add("@cpf", NpgsqlTypes.NpgsqlDbType.Bigint).Value = cpf;
+                cmd.Parameters.Add("@id", NpgsqlTypes.NpgsqlDbType.Integer).Value = id;
 
                 excluiu = cmd.ExecuteNonQuery() == 1 ? true : false;
             }
@@ -137,11 +138,12 @@ namespace Locar.Controllers
             try
             {
                 string sql = @"UPDATE vendedor
-                                  SET nome = @nome, qtd_vendas = @qtd_vendas
-                                WHERE cpf = @cpf";
+                                  SET nome = @nome, qtd_vendas = @qtd_vendas, cpf = @cpf
+                                WHERE id = @id";
 
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
-                cmd.Parameters.Add("@cpf", NpgsqlTypes.NpgsqlDbType.Bigint).Value = vendedor.cpf;
+                cmd.Parameters.Add("@id", NpgsqlTypes.NpgsqlDbType.Integer).Value = vendedor.id;
+                cmd.Parameters.Add("@cpf", NpgsqlTypes.NpgsqlDbType.Varchar).Value = vendedor.cpf;
                 cmd.Parameters.Add("@nome", NpgsqlTypes.NpgsqlDbType.Varchar).Value = vendedor.nome;
                 cmd.Parameters.Add("@qtd_vendas", NpgsqlTypes.NpgsqlDbType.Integer).Value = vendedor.qtd_vendas;
 

@@ -25,15 +25,17 @@ namespace Locar.Controllers
 
                 NpgsqlDataReader dr = cmd.ExecuteReader();
                 dr.Read();
+                Hashtable dados = getDados(dr);
+                dr.Close();
+
                 aluguel = new Aluguel(
                     id,
-                    (int)dr["carro_id"],
-                    (int)dr["cliente_id"],
-                    (int)dr["vendedor_id"],
-                    Convert.ToString(dr["data_inicio"]),
-                    Convert.ToString(dr["data_fim"])
+                    CarroDB.getCarro(conexao, (int)dados["carro_id"]),
+                    ClienteDB.getCliente(conexao, (int)dados["cliente_id"]),
+                    VendedorDB.getVendedor(conexao, (int)dados["vendedor_id"]),
+                    Convert.ToString(dados["data_inicio"]),
+                    Convert.ToString(dados["data_fim"])
                 );
-                dr.Close();
             }
             catch (NpgsqlException e)
             {
@@ -46,6 +48,7 @@ namespace Locar.Controllers
         public static ArrayList getConsultaAlugueis(NpgsqlConnection conexao)
         {
             ArrayList lista = new ArrayList();
+            ArrayList listaDados = new ArrayList();
 
             try
             {
@@ -55,18 +58,25 @@ namespace Locar.Controllers
 
                 while (dr.Read())
                 {
-                    Aluguel aluguel = new Aluguel(
-                        (int)dr["id"],
-                        (int)dr["carro_id"],
-                        Convert.ToInt64(dr["cliente_id"]),
-                        Convert.ToInt64(dr["vendedor_id"]),
-                        Convert.ToString(dr["data_inicio"]),
-                        Convert.ToString(dr["data_fim"])
-                    );
-                   lista.Add(aluguel);
+                    Hashtable dados = getDados(dr);
+                    listaDados.Add(dados);
                 }
 
                 dr.Close();
+
+                foreach (Hashtable dados in listaDados)
+                {
+                    Aluguel aluguel = new Aluguel(
+                        (int)dados["id"],
+                        CarroDB.getCarro(conexao, (int)dados["carro_id"]),
+                        ClienteDB.getCliente(conexao, (int)dados["cliente_id"]),
+                        VendedorDB.getVendedor(conexao, (int)dados["vendedor_id"]),
+                        Convert.ToString(dados["data_inicio"]),
+                        Convert.ToString(dados["data_fim"])
+                    );
+
+                    lista.Add(aluguel);
+                }
             }
             catch (NpgsqlException e)
             {
@@ -105,9 +115,9 @@ namespace Locar.Controllers
                 string sql = "INSERT INTO aluguel(carro_id, cliente_id, vendedor_id, data_inicio, data_fim)" +
                                           "VALUES(@carro_id, @cliente_id, @vendedor_id, @data_inicio, @data_fim)";
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
-                cmd.Parameters.Add("@carro_id", NpgsqlTypes.NpgsqlDbType.Integer).Value = aluguel.carro_id;
-                cmd.Parameters.Add("@cliente_id", NpgsqlTypes.NpgsqlDbType.Integer).Value = aluguel.cliente_id;
-                cmd.Parameters.Add("@vendedor_id", NpgsqlTypes.NpgsqlDbType.Integer).Value = aluguel.vendedor_id;
+                cmd.Parameters.Add("@carro_id", NpgsqlTypes.NpgsqlDbType.Integer).Value = aluguel.carro.id;
+                cmd.Parameters.Add("@cliente_id", NpgsqlTypes.NpgsqlDbType.Integer).Value = aluguel.cliente.id;
+                cmd.Parameters.Add("@vendedor_id", NpgsqlTypes.NpgsqlDbType.Integer).Value = aluguel.vendedor.id;
                 cmd.Parameters.Add("@data_inicio", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = Convert.ToDateTime(aluguel.data_inicio);
                 cmd.Parameters.Add("@data_fim", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = Convert.ToDateTime(aluguel.data_fim);
 
@@ -134,9 +144,9 @@ namespace Locar.Controllers
 
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
                 cmd.Parameters.Add("@id", NpgsqlTypes.NpgsqlDbType.Integer).Value = aluguel.id;
-                cmd.Parameters.Add("@carro_id", NpgsqlTypes.NpgsqlDbType.Integer).Value = aluguel.carro_id;
-                cmd.Parameters.Add("@cliente_id", NpgsqlTypes.NpgsqlDbType.Bigint).Value = aluguel.cliente_id;
-                cmd.Parameters.Add("@vendedor_id", NpgsqlTypes.NpgsqlDbType.Bigint).Value = aluguel.vendedor_id;
+                cmd.Parameters.Add("@carro_id", NpgsqlTypes.NpgsqlDbType.Integer).Value = aluguel.carro.id;
+                cmd.Parameters.Add("@cliente_id", NpgsqlTypes.NpgsqlDbType.Integer).Value = aluguel.cliente.id;
+                cmd.Parameters.Add("@vendedor_id", NpgsqlTypes.NpgsqlDbType.Integer).Value = aluguel.vendedor.id;
                 cmd.Parameters.Add("@data_inicio", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = Convert.ToDateTime(aluguel.data_inicio);
                 cmd.Parameters.Add("@data_fim", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = Convert.ToDateTime(aluguel.data_fim);
 
@@ -148,6 +158,19 @@ namespace Locar.Controllers
             }
 
             return alterou;
+        }
+
+        private static Hashtable getDados(NpgsqlDataReader dr)
+        {
+            Hashtable dados = new Hashtable();
+            dados.Add("id", dr["id"]);
+            dados.Add("carro_id", dr["carro_id"]);
+            dados.Add("cliente_id", dr["cliente_id"]);
+            dados.Add("vendedor_id", dr["vendedor_id"]);
+            dados.Add("data_inicio", dr["data_inicio"]);
+            dados.Add("data_fim", dr["data_fim"]);
+
+            return dados;
         }
     }
 }

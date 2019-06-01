@@ -44,7 +44,7 @@ namespace Locar.Views
             string data_inicio = TBDataInicio.Text;
             string data_fim = TBDataFim.Text;
 
-            Aluguel aluguel = new Aluguel(carro.id, cliente.cpf, vendedor.cpf, data_inicio, data_fim);
+            Aluguel aluguel = new Aluguel(carro, cliente, vendedor, data_inicio, data_fim);
             bool incluiu = AluguelDB.setIncluiAluguel(conexao, aluguel);
 
             if (incluiu)

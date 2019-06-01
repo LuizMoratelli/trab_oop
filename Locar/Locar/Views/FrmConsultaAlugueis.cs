@@ -43,9 +43,9 @@ namespace Locar.Views
             {
                 Dgw.Rows.Add(
                     aluguel.id,
-                    CarroDB.getCarro(conexao, aluguel.carro_id),
-                    ClienteDB.getCliente(conexao, aluguel.cliente_id),
-                    VendedorDB.getVendedor(conexao, aluguel.vendedor_id),
+                    CarroDB.getCarro(conexao, aluguel.carro.id),
+                    ClienteDB.getCliente(conexao, aluguel.cliente.id),
+                    VendedorDB.getVendedor(conexao, aluguel.vendedor.id),
                     aluguel.data_inicio,
                     aluguel.data_fim
                 );

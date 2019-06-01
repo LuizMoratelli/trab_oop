@@ -8,19 +8,21 @@ namespace Locar.Models
 {
     public class Vendedor
     {
-        public long cpf { get; set; }
+        public int id { get; set; }
+        public string cpf { get; set; }
         public string nome { get; set; }
         public int qtd_vendas { get; set; }
 
-        public Vendedor(string nome, int qtd_vendas)
+        public Vendedor(string cpf, string nome, int qtd_vendas)
         {
+            this.cpf = cpf;
             this.nome = nome;
             this.qtd_vendas = qtd_vendas;
         }
 
-        public Vendedor(long cpf, string nome, int qtd_vendas) : this (nome, qtd_vendas)
+        public Vendedor(int id, string cpf, string nome, int qtd_vendas) : this (cpf, nome, qtd_vendas)
         {
-            this.cpf = cpf;
+            this.id = id;
         }
 
         public override string ToString()
