@@ -30,7 +30,6 @@
         {
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnSalvar = new System.Windows.Forms.Button();
-            this.TbDataAquisicao = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.TbDescricao = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TbId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.TbDataAquisicao = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // BtnCancelar
@@ -59,13 +59,6 @@
             this.BtnSalvar.Text = "Salvar";
             this.BtnSalvar.UseVisualStyleBackColor = true;
             this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
-            // 
-            // TbDataAquisicao
-            // 
-            this.TbDataAquisicao.Location = new System.Drawing.Point(15, 142);
-            this.TbDataAquisicao.Name = "TbDataAquisicao";
-            this.TbDataAquisicao.Size = new System.Drawing.Size(162, 20);
-            this.TbDataAquisicao.TabIndex = 13;
             // 
             // label3
             // 
@@ -125,16 +118,24 @@
             this.label4.TabIndex = 16;
             this.label4.Text = "ID";
             // 
+            // TbDataAquisicao
+            // 
+            this.TbDataAquisicao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.TbDataAquisicao.Location = new System.Drawing.Point(15, 142);
+            this.TbDataAquisicao.Name = "TbDataAquisicao";
+            this.TbDataAquisicao.Size = new System.Drawing.Size(162, 20);
+            this.TbDataAquisicao.TabIndex = 18;
+            // 
             // FrmAlteraCarro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(194, 206);
+            this.Controls.Add(this.TbDataAquisicao);
             this.Controls.Add(this.TbId);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnSalvar);
-            this.Controls.Add(this.TbDataAquisicao);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.TbDescricao);
             this.Controls.Add(this.label2);
@@ -151,7 +152,6 @@
 
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.Button BtnSalvar;
-        private System.Windows.Forms.TextBox TbDataAquisicao;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TbDescricao;
         private System.Windows.Forms.Label label2;
@@ -159,5 +159,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TbId;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker TbDataAquisicao;
     }
 }

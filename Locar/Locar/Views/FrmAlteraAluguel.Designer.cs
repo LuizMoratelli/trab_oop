@@ -31,9 +31,7 @@
             this.CBVendedor = new System.Windows.Forms.ComboBox();
             this.CBCliente = new System.Windows.Forms.ComboBox();
             this.CBCarro = new System.Windows.Forms.ComboBox();
-            this.TBDataFim = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.TBDataInicio = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnSalvar = new System.Windows.Forms.Button();
@@ -42,6 +40,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TBId = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.TBDataInicio = new System.Windows.Forms.DateTimePicker();
+            this.TBDataFim = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // CBVendedor
@@ -68,13 +68,6 @@
             this.CBCarro.Size = new System.Drawing.Size(162, 21);
             this.CBCarro.TabIndex = 32;
             // 
-            // TBDataFim
-            // 
-            this.TBDataFim.Location = new System.Drawing.Point(15, 220);
-            this.TBDataFim.Name = "TBDataFim";
-            this.TBDataFim.Size = new System.Drawing.Size(162, 20);
-            this.TBDataFim.TabIndex = 31;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -83,13 +76,6 @@
             this.label5.Size = new System.Drawing.Size(46, 13);
             this.label5.TabIndex = 30;
             this.label5.Text = "Data fim";
-            // 
-            // TBDataInicio
-            // 
-            this.TBDataInicio.Location = new System.Drawing.Point(15, 181);
-            this.TBDataInicio.Name = "TBDataInicio";
-            this.TBDataInicio.Size = new System.Drawing.Size(162, 20);
-            this.TBDataInicio.TabIndex = 29;
             // 
             // label4
             // 
@@ -164,19 +150,35 @@
             this.label6.TabIndex = 35;
             this.label6.Text = "ID";
             // 
+            // TBDataInicio
+            // 
+            this.TBDataInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.TBDataInicio.Location = new System.Drawing.Point(15, 181);
+            this.TBDataInicio.Name = "TBDataInicio";
+            this.TBDataInicio.Size = new System.Drawing.Size(162, 20);
+            this.TBDataInicio.TabIndex = 37;
+            // 
+            // TBDataFim
+            // 
+            this.TBDataFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.TBDataFim.Location = new System.Drawing.Point(15, 220);
+            this.TBDataFim.Name = "TBDataFim";
+            this.TBDataFim.Size = new System.Drawing.Size(162, 20);
+            this.TBDataFim.TabIndex = 38;
+            // 
             // FrmAlteraAluguel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(194, 281);
+            this.Controls.Add(this.TBDataFim);
+            this.Controls.Add(this.TBDataInicio);
             this.Controls.Add(this.TBId);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.CBVendedor);
             this.Controls.Add(this.CBCliente);
             this.Controls.Add(this.CBCarro);
-            this.Controls.Add(this.TBDataFim);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.TBDataInicio);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnSalvar);
@@ -195,9 +197,7 @@
         private System.Windows.Forms.ComboBox CBVendedor;
         private System.Windows.Forms.ComboBox CBCliente;
         private System.Windows.Forms.ComboBox CBCarro;
-        private System.Windows.Forms.TextBox TBDataFim;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox TBDataInicio;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.Button BtnSalvar;
@@ -206,5 +206,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TBId;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker TBDataInicio;
+        private System.Windows.Forms.DateTimePicker TBDataFim;
     }
 }

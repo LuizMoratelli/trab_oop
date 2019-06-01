@@ -71,8 +71,8 @@ namespace Locar.Controllers
                         CarroDB.getCarro(conexao, (int)dados["carro_id"]),
                         ClienteDB.getCliente(conexao, (int)dados["cliente_id"]),
                         VendedorDB.getVendedor(conexao, (int)dados["vendedor_id"]),
-                        Convert.ToDateTime(dr["data_inicio"]).ToString("dd/MM/yyyy"),
-                        Convert.ToDateTime(dr["data_fim"]).ToString("dd/MM/yyyy")
+                        Convert.ToDateTime(dados["data_inicio"]).ToString("dd/MM/yyyy"),
+                        Convert.ToDateTime(dados["data_fim"]).ToString("dd/MM/yyyy")
                     );
 
                     lista.Add(aluguel);

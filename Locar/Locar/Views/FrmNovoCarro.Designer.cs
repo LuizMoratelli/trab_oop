@@ -33,9 +33,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.TbDescricao = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.TbDataAquisicao = new System.Windows.Forms.TextBox();
             this.BtnSalvar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
+            this.TbDataAquisicao = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -79,13 +79,6 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Data de Aquisição";
             // 
-            // TbDataAquisicao
-            // 
-            this.TbDataAquisicao.Location = new System.Drawing.Point(15, 103);
-            this.TbDataAquisicao.Name = "TbDataAquisicao";
-            this.TbDataAquisicao.Size = new System.Drawing.Size(162, 20);
-            this.TbDataAquisicao.TabIndex = 5;
-            // 
             // BtnSalvar
             // 
             this.BtnSalvar.Location = new System.Drawing.Point(102, 138);
@@ -106,14 +99,22 @@
             this.BtnCancelar.UseVisualStyleBackColor = true;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
+            // TbDataAquisicao
+            // 
+            this.TbDataAquisicao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.TbDataAquisicao.Location = new System.Drawing.Point(15, 103);
+            this.TbDataAquisicao.Name = "TbDataAquisicao";
+            this.TbDataAquisicao.Size = new System.Drawing.Size(162, 20);
+            this.TbDataAquisicao.TabIndex = 8;
+            // 
             // FrmNovoCarro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(194, 173);
+            this.Controls.Add(this.TbDataAquisicao);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnSalvar);
-            this.Controls.Add(this.TbDataAquisicao);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.TbDescricao);
             this.Controls.Add(this.label2);
@@ -133,8 +134,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TbDescricao;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TbDataAquisicao;
         private System.Windows.Forms.Button BtnSalvar;
         private System.Windows.Forms.Button BtnCancelar;
+        private System.Windows.Forms.DateTimePicker TbDataAquisicao;
     }
 }

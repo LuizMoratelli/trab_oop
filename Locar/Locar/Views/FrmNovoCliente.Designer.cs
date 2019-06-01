@@ -30,12 +30,12 @@
         {
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnSalvar = new System.Windows.Forms.Button();
-            this.TbDataNascimento = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.TbNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.TbCpf = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.TbDataNascimento = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // BtnCancelar
@@ -57,13 +57,6 @@
             this.BtnSalvar.Text = "Salvar";
             this.BtnSalvar.UseVisualStyleBackColor = true;
             this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
-            // 
-            // TbDataNascimento
-            // 
-            this.TbDataNascimento.Location = new System.Drawing.Point(15, 103);
-            this.TbDataNascimento.Name = "TbDataNascimento";
-            this.TbDataNascimento.Size = new System.Drawing.Size(162, 20);
-            this.TbDataNascimento.TabIndex = 13;
             // 
             // label3
             // 
@@ -106,14 +99,22 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "CPF";
             // 
+            // TbDataNascimento
+            // 
+            this.TbDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.TbDataNascimento.Location = new System.Drawing.Point(15, 103);
+            this.TbDataNascimento.Name = "TbDataNascimento";
+            this.TbDataNascimento.Size = new System.Drawing.Size(162, 20);
+            this.TbDataNascimento.TabIndex = 16;
+            // 
             // FrmNovoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(194, 167);
+            this.Controls.Add(this.TbDataNascimento);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnSalvar);
-            this.Controls.Add(this.TbDataNascimento);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.TbNome);
             this.Controls.Add(this.label2);
@@ -130,11 +131,11 @@
 
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.Button BtnSalvar;
-        private System.Windows.Forms.TextBox TbDataNascimento;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TbNome;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TbCpf;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker TbDataNascimento;
     }
 }

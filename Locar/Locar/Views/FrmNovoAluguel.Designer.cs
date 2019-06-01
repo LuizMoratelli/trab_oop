@@ -33,13 +33,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.TBDataInicio = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.TBDataFim = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.CBCarro = new System.Windows.Forms.ComboBox();
             this.CBCliente = new System.Windows.Forms.ComboBox();
             this.CBVendedor = new System.Windows.Forms.ComboBox();
+            this.TBDataInicio = new System.Windows.Forms.DateTimePicker();
+            this.TBDataFim = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // BtnCancelar
@@ -88,13 +88,6 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Carro";
             // 
-            // TBDataInicio
-            // 
-            this.TBDataInicio.Location = new System.Drawing.Point(15, 142);
-            this.TBDataInicio.Name = "TBDataInicio";
-            this.TBDataInicio.Size = new System.Drawing.Size(162, 20);
-            this.TBDataInicio.TabIndex = 17;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -103,13 +96,6 @@
             this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 16;
             this.label4.Text = "Data início";
-            // 
-            // TBDataFim
-            // 
-            this.TBDataFim.Location = new System.Drawing.Point(15, 181);
-            this.TBDataFim.Name = "TBDataFim";
-            this.TBDataFim.Size = new System.Drawing.Size(162, 20);
-            this.TBDataFim.TabIndex = 19;
             // 
             // label5
             // 
@@ -144,17 +130,33 @@
             this.CBVendedor.Size = new System.Drawing.Size(162, 21);
             this.CBVendedor.TabIndex = 22;
             // 
+            // TBDataInicio
+            // 
+            this.TBDataInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.TBDataInicio.Location = new System.Drawing.Point(15, 142);
+            this.TBDataInicio.Name = "TBDataInicio";
+            this.TBDataInicio.Size = new System.Drawing.Size(162, 20);
+            this.TBDataInicio.TabIndex = 23;
+            // 
+            // TBDataFim
+            // 
+            this.TBDataFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.TBDataFim.Location = new System.Drawing.Point(15, 181);
+            this.TBDataFim.Name = "TBDataFim";
+            this.TBDataFim.Size = new System.Drawing.Size(162, 20);
+            this.TBDataFim.TabIndex = 24;
+            // 
             // FrmNovoAluguel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(195, 233);
+            this.Controls.Add(this.TBDataFim);
+            this.Controls.Add(this.TBDataInicio);
             this.Controls.Add(this.CBVendedor);
             this.Controls.Add(this.CBCliente);
             this.Controls.Add(this.CBCarro);
-            this.Controls.Add(this.TBDataFim);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.TBDataInicio);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnSalvar);
@@ -175,12 +177,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox TBDataInicio;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox TBDataFim;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox CBCarro;
         private System.Windows.Forms.ComboBox CBCliente;
         private System.Windows.Forms.ComboBox CBVendedor;
+        private System.Windows.Forms.DateTimePicker TBDataInicio;
+        private System.Windows.Forms.DateTimePicker TBDataFim;
     }
 }
