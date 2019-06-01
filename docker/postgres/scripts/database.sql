@@ -3,7 +3,7 @@ CREATE TABLE "carro" (
   "id" int PRIMARY KEY NOT NULL DEFAULT nextval('carro_id_seq'),
   "nome" varchar,
   "descricao" varchar,
-  "data_aquisicao" timestamp
+  "data_aquisicao" date
 );
 
 CREATE SEQUENCE cliente_id_seq;
@@ -11,7 +11,7 @@ CREATE TABLE "cliente" (
   "id" int PRIMARY KEY NOT NULL DEFAULT nextval('cliente_id_seq'),
   "cpf" varchar,
   "nome" varchar,
-  "data_nascimento" timestamp
+  "data_nascimento" date
 );
 
 CREATE SEQUENCE aluguel_id_seq;
@@ -20,8 +20,8 @@ CREATE TABLE "aluguel" (
   "carro_id" int,
   "cliente_id" int,
   "vendedor_id" int,
-  "data_inicio" timestamp,
-  "data_fim" timestamp
+  "data_inicio" date,
+  "data_fim" date
 );
 
 CREATE SEQUENCE vendedor_id_seq;
