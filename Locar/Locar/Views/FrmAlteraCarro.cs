@@ -29,7 +29,7 @@ namespace Locar.Views
             Carro carro = CarroDB.getCarro(conexao, Convert.ToInt32(TbId.Text));
             TbNome.Text = carro.nome;
             TbDescricao.Text = carro.descricao;
-            TbDataAquisicao.Text = carro.data_aquisicao;
+            TbDataAquisicao.Text = Convert.ToDateTime(carro.data_aquisicao).ToString("dd/MM/yyyy");
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)

@@ -29,7 +29,7 @@ namespace Locar.Views
             Cliente cliente = ClienteDB.getCliente(conexao, Convert.ToInt32(TbId.Text));
             TbCpf.Text = cliente.cpf;
             TbNome.Text = cliente.nome;
-            TbDataNascimento.Text = cliente.data_nascimento;
+            TbDataNascimento.Text = Convert.ToDateTime(cliente.data_nascimento).ToString("dd/MM/yyyy");
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)

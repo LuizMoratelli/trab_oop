@@ -37,8 +37,8 @@ namespace Locar.Views
             CBVendedor.DataSource = VendedorDB.getConsultaVendedores(conexao);
             CBVendedor.SelectedIndex = VendedorDB.getIndexVendedor(conexao, aluguel.vendedor);
 
-            TBDataInicio.Text = aluguel.data_inicio;
-            TBDataFim.Text = aluguel.data_fim;
+            TBDataInicio.Text = Convert.ToDateTime(aluguel.data_inicio).ToString("dd/MM/yyyy");
+            TBDataFim.Text = Convert.ToDateTime(aluguel.data_fim).ToString("dd/MM/yyyy");
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)

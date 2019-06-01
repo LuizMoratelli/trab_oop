@@ -75,10 +75,12 @@ namespace Locar.Controllers
                         (int)dr["id"],
                         (string)dr["nome"],
                         (string)dr["descricao"],
-                        Convert.ToString(dr["data_aquisicao"])
+                        Convert.ToDateTime(dr["data_aquisicao"]).ToString("dd/MM/yyyy")
                     );
+
                     lista.Add(carro);
                 }
+
                 dr.Close();
             }
             catch (NpgsqlException e)

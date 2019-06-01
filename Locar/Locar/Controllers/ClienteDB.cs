@@ -76,7 +76,7 @@ namespace Locar.Controllers
                         (int)dr["id"],
                         (string) dr["cpf"],
                         (string)dr["nome"],
-                        Convert.ToString(dr["data_nascimento"])
+                        Convert.ToDateTime(dr["data_nascimento"]).ToString("dd/MM/yyyy")
                     );
                     lista.Add(cliente);
                 }
