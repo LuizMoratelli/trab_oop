@@ -34,7 +34,7 @@ namespace Locar.Views
             {
                 if (!Carro.camposBloqueados.Contains(campo.Name))
                 {
-                    campos.Add(campo.Name.First().ToString().ToUpper() + campo.Name.Substring(1));
+                    campos.Add(campo.Name);
                 }
             }
 
@@ -44,6 +44,7 @@ namespace Locar.Views
         private void atualizaTela()
         {
             CBCampo.DataSource = getAllProperties();
+            CBTipo.SelectedItem = CBTipo.Items[0];
             Dgw.DataSource = CarroDB.getConsultaCarros(conexao);
         }
 
