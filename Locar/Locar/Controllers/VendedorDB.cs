@@ -20,7 +20,7 @@ namespace Locar.Controllers
 
             foreach (Vendedor dataVendedor in vendedores)
             {
-                if (dataVendedor.cpf == vendedor.cpf)
+                if (dataVendedor.id == vendedor.id)
                 {
                     return i;
                 }

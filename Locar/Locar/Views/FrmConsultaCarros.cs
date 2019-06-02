@@ -2,11 +2,13 @@
 using Locar.Models;
 using Npgsql;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,8 +26,24 @@ namespace Locar.Views
             atualizaTela();
         }
 
+        private ArrayList getAllProperties()
+        {
+            ArrayList campos = new ArrayList();
+
+            foreach (PropertyInfo campo in typeof(Carro).GetProperties())
+            {
+                if (!Carro.camposBloqueados.Contains(campo.Name))
+                {
+                    campos.Add(campo.Name.First().ToString().ToUpper() + campo.Name.Substring(1));
+                }
+            }
+
+            return campos;
+        }
+
         private void atualizaTela()
         {
+            CBCampo.DataSource = getAllProperties();
             Dgw.DataSource = CarroDB.getConsultaCarros(conexao);
         }
 
