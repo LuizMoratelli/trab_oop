@@ -73,6 +73,7 @@
     <Compile Include="Controllers\ClienteDB.cs" />
     <Compile Include="Controllers\Conexao.cs" />
     <Compile Include="Controllers\VendedorDB.cs" />
+    <Compile Include="Models\Consulta.cs" />
     <Compile Include="Views\FrmAlteraAluguel.cs">
       <SubType>Form</SubType>
     </Compile>

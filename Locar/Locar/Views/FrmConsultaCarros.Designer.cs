@@ -83,6 +83,7 @@
             this.TBValor.Name = "TBValor";
             this.TBValor.Size = new System.Drawing.Size(332, 20);
             this.TBValor.TabIndex = 4;
+            this.TBValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBValor_KeyPress);
             // 
             // CBCampo
             // 

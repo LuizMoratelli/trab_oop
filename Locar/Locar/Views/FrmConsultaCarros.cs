@@ -44,6 +44,7 @@ namespace Locar.Views
         private void atualizaTela()
         {
             CBCampo.DataSource = getAllProperties();
+            CBTipo.DataSource = new Consulta().tipos;
             CBTipo.SelectedItem = CBTipo.Items[0];
             Dgw.DataSource = CarroDB.getConsultaCarros(conexao);
         }
@@ -77,6 +78,21 @@ namespace Locar.Views
             FrmAlteraCarro form = new FrmAlteraCarro(conexao, id);
             form.ShowDialog();
             atualizaTela();
+        }
+
+        private void Consulta()
+        {
+            Consulta consulta = new Consulta(CBCampo.SelectedValue.ToString(), CBTipo.SelectedIndex, TBValor.Text);
+            Dgw.DataSource = CarroDB.getConsultaCarros(conexao, consulta);
+        }
+
+        private void TBValor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Se pressionado a tecla enter
+            if (e.KeyChar == (char)13)
+            {
+                Consulta();
+            }
         }
     }
 }
