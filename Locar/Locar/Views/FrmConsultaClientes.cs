@@ -50,17 +50,20 @@ namespace Locar.Views
 
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
-            int id = (int)Dgw.CurrentRow.Cells[0].Value;
-            bool excluiu = ClienteDB.setExcluiCliente(conexao, id);
+            if (Dgw.RowCount != 0)
+            {
+                int id = (int)Dgw.CurrentRow.Cells[0].Value;
+                bool excluiu = ClienteDB.setExcluiCliente(conexao, id);
 
-            if (excluiu)
-            {
-                MessageBox.Show("Cliente excluído com sucesso!");
-                atualizaTela();
-            }
-            else
-            {
-                MessageBox.Show("Não foi possível excluir o cliente");
+                if (excluiu)
+                {
+                    MessageBox.Show("Cliente excluído com sucesso!");
+                    atualizaTela();
+                }
+                else
+                {
+                    MessageBox.Show("Não foi possível excluir o cliente");
+                }
             }
         }
 
@@ -73,10 +76,13 @@ namespace Locar.Views
 
         private void BtnAlterar_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(Dgw.CurrentRow.Cells[0].Value);
-            FrmAlteraCliente form = new FrmAlteraCliente(conexao, id);
-            form.ShowDialog();
-            atualizaTela();
+            if (Dgw.RowCount != 0)
+            {
+                int id = Convert.ToInt32(Dgw.CurrentRow.Cells[0].Value);
+                FrmAlteraCliente form = new FrmAlteraCliente(conexao, id);
+                form.ShowDialog();
+                atualizaTela();
+            }
         }
 
         private void Consulta()

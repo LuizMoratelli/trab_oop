@@ -58,26 +58,32 @@ namespace Locar.Views
 
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
-            int id = (int) Dgw.CurrentRow.Cells[0].Value;
-            bool excluiu = CarroDB.setExcluiCarro(conexao, id);
+            if (Dgw.RowCount != 0)
+            {
+                int id = (int) Dgw.CurrentRow.Cells[0].Value;
+                bool excluiu = CarroDB.setExcluiCarro(conexao, id);
 
-            if (excluiu)
-            {
-                MessageBox.Show("Carro excluído com sucesso!");
-                atualizaTela();
-            }
-            else
-            {
-                MessageBox.Show("Não foi possível excluir o carro");
+                if (excluiu)
+                {
+                    MessageBox.Show("Carro excluído com sucesso!");
+                    atualizaTela();
+                }
+                else
+                {
+                    MessageBox.Show("Não foi possível excluir o carro");
+                }
             }
         }
 
         private void BtnAlterar_Click(object sender, EventArgs e)
         {
-            int id= (int)Dgw.CurrentRow.Cells[0].Value;
-            FrmAlteraCarro form = new FrmAlteraCarro(conexao, id);
-            form.ShowDialog();
-            atualizaTela();
+            if (Dgw.RowCount != 0)
+            {
+                int id = (int)Dgw.CurrentRow.Cells[0].Value;
+                FrmAlteraCarro form = new FrmAlteraCarro(conexao, id);
+                form.ShowDialog();
+                atualizaTela();
+            }
         }
 
         private void Consulta()
