@@ -32,12 +32,16 @@
             this.BtnAlterar = new System.Windows.Forms.Button();
             this.BtnNovo = new System.Windows.Forms.Button();
             this.Dgw = new System.Windows.Forms.DataGridView();
+            this.CBTipo = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.CBCampo = new System.Windows.Forms.ComboBox();
+            this.TBValor = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Dgw)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnExcluir
             // 
-            this.BtnExcluir.Location = new System.Drawing.Point(174, 352);
+            this.BtnExcluir.Location = new System.Drawing.Point(174, 392);
             this.BtnExcluir.Name = "BtnExcluir";
             this.BtnExcluir.Size = new System.Drawing.Size(75, 23);
             this.BtnExcluir.TabIndex = 7;
@@ -47,7 +51,7 @@
             // 
             // BtnAlterar
             // 
-            this.BtnAlterar.Location = new System.Drawing.Point(93, 352);
+            this.BtnAlterar.Location = new System.Drawing.Point(93, 392);
             this.BtnAlterar.Name = "BtnAlterar";
             this.BtnAlterar.Size = new System.Drawing.Size(75, 23);
             this.BtnAlterar.TabIndex = 6;
@@ -57,7 +61,7 @@
             // 
             // BtnNovo
             // 
-            this.BtnNovo.Location = new System.Drawing.Point(12, 352);
+            this.BtnNovo.Location = new System.Drawing.Point(12, 392);
             this.BtnNovo.Name = "BtnNovo";
             this.BtnNovo.Size = new System.Drawing.Size(75, 23);
             this.BtnNovo.TabIndex = 5;
@@ -68,16 +72,71 @@
             // Dgw
             // 
             this.Dgw.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgw.Location = new System.Drawing.Point(12, 12);
+            this.Dgw.Location = new System.Drawing.Point(12, 52);
             this.Dgw.Name = "Dgw";
             this.Dgw.Size = new System.Drawing.Size(621, 334);
             this.Dgw.TabIndex = 4;
+            // 
+            // CBTipo
+            // 
+            this.CBTipo.AutoCompleteCustomSource.AddRange(new string[] {
+            "Contém",
+            "Começa com",
+            "Termina com",
+            "Maior que ",
+            "Menor que",
+            "Igual à",
+            "Maior ou igual à",
+            "Menor ou igual à"});
+            this.CBTipo.FormattingEnabled = true;
+            this.CBTipo.Items.AddRange(new object[] {
+            "Contém",
+            "Começa com",
+            "Termina com",
+            "Igual à",
+            "Maior que",
+            "Maior ou igual à",
+            "Menor que ",
+            "Menor ou igual à"});
+            this.CBTipo.Location = new System.Drawing.Point(174, 25);
+            this.CBTipo.Name = "CBTipo";
+            this.CBTipo.Size = new System.Drawing.Size(121, 21);
+            this.CBTipo.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Filtro";
+            // 
+            // CBCampo
+            // 
+            this.CBCampo.FormattingEnabled = true;
+            this.CBCampo.Location = new System.Drawing.Point(12, 25);
+            this.CBCampo.Name = "CBCampo";
+            this.CBCampo.Size = new System.Drawing.Size(156, 21);
+            this.CBCampo.TabIndex = 9;
+            // 
+            // TBValor
+            // 
+            this.TBValor.Location = new System.Drawing.Point(301, 25);
+            this.TBValor.Name = "TBValor";
+            this.TBValor.Size = new System.Drawing.Size(332, 20);
+            this.TBValor.TabIndex = 8;
+            this.TBValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBValor_KeyPress);
             // 
             // FrmConsultaClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(642, 385);
+            this.ClientSize = new System.Drawing.Size(642, 422);
+            this.Controls.Add(this.CBTipo);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.CBCampo);
+            this.Controls.Add(this.TBValor);
             this.Controls.Add(this.BtnExcluir);
             this.Controls.Add(this.BtnAlterar);
             this.Controls.Add(this.BtnNovo);
@@ -86,6 +145,7 @@
             this.Text = "FrmConsultaClientes";
             ((System.ComponentModel.ISupportInitialize)(this.Dgw)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -95,5 +155,9 @@
         private System.Windows.Forms.Button BtnAlterar;
         private System.Windows.Forms.Button BtnNovo;
         private System.Windows.Forms.DataGridView Dgw;
+        private System.Windows.Forms.ComboBox CBTipo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox CBCampo;
+        private System.Windows.Forms.TextBox TBValor;
     }
 }

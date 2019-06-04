@@ -60,43 +60,18 @@ namespace Locar.Controllers
             return carro;
         }
 
-        public static ArrayList getConsultaCarros(NpgsqlConnection conexao, Consulta consulta)
-        {
-            ArrayList lista = new ArrayList();
-            try
-            {
-                string sql = $"SELECT * FROM carro WHERE {consulta.getCondicao()}";
-                NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
-                NpgsqlDataReader dr = cmd.ExecuteReader();
-
-                while (dr.Read())
-                {
-                    Carro carro = new Carro(
-                        (int)dr["id"],
-                        (string)dr["nome"],
-                        (string)dr["descricao"],
-                        Convert.ToDateTime(dr["data_aquisicao"]).ToString("dd/MM/yyyy")
-                    );
-
-                    lista.Add(carro);
-                }
-
-                dr.Close();
-            }
-            catch (NpgsqlException e)
-            {
-                MessageBox.Show($"Ocorreu um erro com o banco de dados: {e.Message}");
-            }
-
-            return lista;
-        }
-
-        public static ArrayList getConsultaCarros(NpgsqlConnection conexao)
+        public static ArrayList getConsultaCarros(NpgsqlConnection conexao, Consulta consulta = null)
         {
             ArrayList lista = new ArrayList();
             try
             {
                 string sql = "SELECT * FROM carro";
+                
+                if (consulta != null)
+                {
+                    sql += $" WHERE {consulta.getCondicao()}";
+                }
+
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
                 NpgsqlDataReader dr = cmd.ExecuteReader();
 
