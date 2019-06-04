@@ -88,7 +88,6 @@ namespace Locar.Views
 
         private void TBValor_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //Se pressionado a tecla enter
             if (e.KeyChar == (char)13)
             {
                 Consulta();
