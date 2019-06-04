@@ -20,7 +20,7 @@ namespace Locar.Controllers
 
             foreach (Cliente dataCliente in clientes)
             {
-                if (dataCliente.cpf == cliente.cpf)
+                if (dataCliente.id == cliente.id)
                 {
                     return i;
                 }
@@ -60,21 +60,27 @@ namespace Locar.Controllers
             return cliente;
         }
 
-        public static ArrayList getConsultaClientes(NpgsqlConnection conexao)
+        public static ArrayList getConsultaClientes(NpgsqlConnection conexao, Consulta consulta = null)
         {
             ArrayList lista = new ArrayList();
 
             try
             {
-                string sql = "SELECT  * FROM cliente";
+                string sql = $"SELECT  * FROM cliente";
+
+                if (consulta != null)
+                {
+                    sql += $" WHERE {consulta.getCondicao()}";
+                }
+
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
                 NpgsqlDataReader dr = cmd.ExecuteReader();
 
-                while(dr.Read())
+                while (dr.Read())
                 {
                     Cliente cliente = new Cliente(
                         (int)dr["id"],
-                        (string) dr["cpf"],
+                        (string)dr["cpf"],
                         (string)dr["nome"],
                         Convert.ToDateTime(dr["data_nascimento"]).ToString("dd/MM/yyyy")
                     );

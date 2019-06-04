@@ -60,12 +60,18 @@ namespace Locar.Controllers
             return carro;
         }
 
-        public static ArrayList getConsultaCarros(NpgsqlConnection conexao)
+        public static ArrayList getConsultaCarros(NpgsqlConnection conexao, Consulta consulta = null)
         {
             ArrayList lista = new ArrayList();
             try
             {
                 string sql = "SELECT * FROM carro";
+                
+                if (consulta != null)
+                {
+                    sql += $" WHERE {consulta.getCondicao()}";
+                }
+
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
                 NpgsqlDataReader dr = cmd.ExecuteReader();
 

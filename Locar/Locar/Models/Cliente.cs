@@ -8,6 +8,7 @@ namespace Locar.Models
 {
     public class Cliente
     {
+        public static string[] camposBloqueados = new string[] { "id" };
         public int id { get; set; }
         public string cpf { get; set; }
         public string nome { get; set; }
@@ -24,6 +25,7 @@ namespace Locar.Models
         {
             this.id = id;
         }
+
         public override string ToString()
         {
             return nome;

@@ -8,6 +8,7 @@ namespace Locar.Models
 {
     public class Carro
     {
+        public static string[] camposBloqueados = new string[] { "id" };
         public int id { get; set; }
         public string nome { get; set; }
         public string descricao { get; set; }

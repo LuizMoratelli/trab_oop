@@ -20,7 +20,7 @@ namespace Locar.Controllers
 
             foreach (Vendedor dataVendedor in vendedores)
             {
-                if (dataVendedor.cpf == vendedor.cpf)
+                if (dataVendedor.id == vendedor.id)
                 {
                     return i;
                 }
@@ -61,13 +61,19 @@ namespace Locar.Controllers
             return vendedor;
         }
 
-        public static ArrayList getConsultaVendedores(NpgsqlConnection conexao)
+        public static ArrayList getConsultaVendedores(NpgsqlConnection conexao, Consulta consulta = null)
         {
             ArrayList lista = new ArrayList();
 
             try
             {
                 string sql = "SELECT * FROM vendedor";
+
+                if (consulta != null)
+                {
+                    sql += $" WHERE {consulta.getCondicao()}";
+                }
+
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
                 NpgsqlDataReader dr = cmd.ExecuteReader();
 
