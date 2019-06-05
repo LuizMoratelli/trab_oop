@@ -36,6 +36,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CBCampo = new System.Windows.Forms.ComboBox();
             this.TBValor = new System.Windows.Forms.TextBox();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.data_nascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Dgw)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,6 +76,11 @@
             // Dgw
             // 
             this.Dgw.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgw.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.cpf,
+            this.nome,
+            this.data_nascimento});
             this.Dgw.Location = new System.Drawing.Point(12, 52);
             this.Dgw.Name = "Dgw";
             this.Dgw.Size = new System.Drawing.Size(621, 334);
@@ -128,6 +137,35 @@
             this.TBValor.TabIndex = 8;
             this.TBValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBValor_KeyPress);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // cpf
+            // 
+            this.cpf.DataPropertyName = "cpf";
+            this.cpf.HeaderText = "CPF";
+            this.cpf.Name = "cpf";
+            this.cpf.ReadOnly = true;
+            // 
+            // nome
+            // 
+            this.nome.DataPropertyName = "nome";
+            this.nome.HeaderText = "Nome";
+            this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
+            // 
+            // data_nascimento
+            // 
+            this.data_nascimento.DataPropertyName = "data_nascimento";
+            this.data_nascimento.HeaderText = "Data de Nascimento";
+            this.data_nascimento.Name = "data_nascimento";
+            this.data_nascimento.ReadOnly = true;
+            this.data_nascimento.Width = 130;
+            // 
             // FrmConsultaClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,5 +197,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox CBCampo;
         private System.Windows.Forms.TextBox TBValor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cpf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn data_nascimento;
     }
 }

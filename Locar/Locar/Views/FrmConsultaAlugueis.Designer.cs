@@ -36,6 +36,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CBCampo = new System.Windows.Forms.ComboBox();
             this.TBValor = new System.Windows.Forms.TextBox();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.data_inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.data_fim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Dgw)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,6 +78,13 @@
             // Dgw
             // 
             this.Dgw.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgw.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.vendedor,
+            this.carro,
+            this.cliente,
+            this.data_inicio,
+            this.data_fim});
             this.Dgw.Location = new System.Drawing.Point(12, 52);
             this.Dgw.Name = "Dgw";
             this.Dgw.Size = new System.Drawing.Size(621, 334);
@@ -128,6 +141,48 @@
             this.TBValor.TabIndex = 12;
             this.TBValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBValor_KeyPress);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // vendedor
+            // 
+            this.vendedor.DataPropertyName = "Vendedor";
+            this.vendedor.HeaderText = "Vendedor";
+            this.vendedor.Name = "vendedor";
+            this.vendedor.ReadOnly = true;
+            // 
+            // carro
+            // 
+            this.carro.DataPropertyName = "Carro";
+            this.carro.HeaderText = "Carro";
+            this.carro.Name = "carro";
+            this.carro.ReadOnly = true;
+            // 
+            // cliente
+            // 
+            this.cliente.DataPropertyName = "Cliente";
+            this.cliente.HeaderText = "Cliente";
+            this.cliente.Name = "cliente";
+            this.cliente.ReadOnly = true;
+            // 
+            // data_inicio
+            // 
+            this.data_inicio.DataPropertyName = "data_inicio";
+            this.data_inicio.HeaderText = "Data de Início";
+            this.data_inicio.Name = "data_inicio";
+            this.data_inicio.ReadOnly = true;
+            // 
+            // data_fim
+            // 
+            this.data_fim.DataPropertyName = "data_fim";
+            this.data_fim.HeaderText = "Data de Fim";
+            this.data_fim.Name = "data_fim";
+            this.data_fim.ReadOnly = true;
+            // 
             // FrmConsultaAlugueis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,5 +214,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox CBCampo;
         private System.Windows.Forms.TextBox TBValor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vendedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn carro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn data_inicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn data_fim;
     }
 }
