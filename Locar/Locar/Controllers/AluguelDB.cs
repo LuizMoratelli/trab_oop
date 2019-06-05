@@ -11,8 +11,17 @@ using System.Windows.Forms;
 
 namespace Locar.Controllers
 {
+    /// <summary>
+    /// Realiza a busca das informações do banco de dados do modelo <see cref="Aluguel"/>
+    /// </summary>
     public class AluguelDB
     {
+        /// <summary>
+        /// Realiza a busca de um determinado <see cref="Aluguel"/> de acordo com o respectivo <paramref name="id"/> e retorna o modelo do banco de dados
+        /// </summary>
+        /// <param name="conexao"></param>
+        /// <param name="id"></param>
+        /// <returns><see cref="Aluguel"/> de determinado <paramref name="id"/></returns>
         public static Aluguel getAluguel(NpgsqlConnection conexao, int id)
         {
             Aluguel aluguel = null;
@@ -45,6 +54,12 @@ namespace Locar.Controllers
             return aluguel;
         }
 
+        /// <summary>
+        /// Realiza a busca dos <see cref="Aluguel"/> que satisfaçam a <paramref name="consulta"/>
+        /// </summary>
+        /// <param name="conexao"></param>
+        /// <param name="consulta"></param>
+        /// <returns>Lista de <see cref="Aluguel"/> com os filtros da <paramref name="consulta"/></returns>
         public static ArrayList getConsultaAlugueis(NpgsqlConnection conexao, Consulta consulta = null)
         {
             ArrayList lista = new ArrayList();
@@ -92,6 +107,12 @@ namespace Locar.Controllers
             return lista;
         }
 
+        /// <summary>
+        /// Realiza a inserção do novo <see cref="Aluguel"/> no banco de dados
+        /// </summary>
+        /// <param name="conexao"></param>
+        /// <param name="id"></param>
+        /// <returns>Verdadeiro se conseguiu alterar, falso se não</returns>
         public static bool setExcluiAluguel(NpgsqlConnection conexao, int id)
         {
             bool excluiu = false;
@@ -112,6 +133,12 @@ namespace Locar.Controllers
             return excluiu;
         }
 
+        /// <summary>
+        /// Realiza a remoção de determinado <see cref="Aluguel"/> do banco de dados
+        /// </summary>
+        /// <param name="conexao"></param>
+        /// <param name="aluguel"></param>
+        /// <returns>Verdadeiro se conseguiu alterar, falso se não</returns>
         public static bool setIncluiAluguel(NpgsqlConnection conexao, Aluguel aluguel)
         {
             bool incluiu = false;
@@ -121,9 +148,9 @@ namespace Locar.Controllers
                 string sql = "INSERT INTO aluguel(carro_id, cliente_id, vendedor_id, data_inicio, data_fim)" +
                                           "VALUES(@carro_id, @cliente_id, @vendedor_id, @data_inicio, @data_fim)";
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
-                cmd.Parameters.Add("@carro_id", NpgsqlTypes.NpgsqlDbType.Integer).Value = aluguel.carro.id;
-                cmd.Parameters.Add("@cliente_id", NpgsqlTypes.NpgsqlDbType.Integer).Value = aluguel.cliente.id;
-                cmd.Parameters.Add("@vendedor_id", NpgsqlTypes.NpgsqlDbType.Integer).Value = aluguel.vendedor.id;
+                cmd.Parameters.Add("@carro_id", NpgsqlTypes.NpgsqlDbType.Integer).Value = aluguel.Carro.id;
+                cmd.Parameters.Add("@cliente_id", NpgsqlTypes.NpgsqlDbType.Integer).Value = aluguel.Cliente.id;
+                cmd.Parameters.Add("@vendedor_id", NpgsqlTypes.NpgsqlDbType.Integer).Value = aluguel.Vendedor.id;
                 cmd.Parameters.Add("@data_inicio", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = Convert.ToDateTime(aluguel.data_inicio);
                 cmd.Parameters.Add("@data_fim", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = Convert.ToDateTime(aluguel.data_fim);
 
@@ -137,6 +164,12 @@ namespace Locar.Controllers
             return incluiu;
         }
 
+        /// <summary>
+        /// Realiza a alteração de determinado <see cref="Aluguel"/> do banco de dados
+        /// </summary>
+        /// <param name="conexao"></param>
+        /// <param name="aluguel"></param>
+        /// <returns>Verdadeiro se conseguiu alterar, falso se não</returns>
         public static bool setAlteraAluguel(NpgsqlConnection conexao, Aluguel aluguel)
         {
             bool alterou = false;
@@ -150,9 +183,9 @@ namespace Locar.Controllers
 
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
                 cmd.Parameters.Add("@id", NpgsqlTypes.NpgsqlDbType.Integer).Value = aluguel.id;
-                cmd.Parameters.Add("@carro_id", NpgsqlTypes.NpgsqlDbType.Integer).Value = aluguel.carro.id;
-                cmd.Parameters.Add("@cliente_id", NpgsqlTypes.NpgsqlDbType.Integer).Value = aluguel.cliente.id;
-                cmd.Parameters.Add("@vendedor_id", NpgsqlTypes.NpgsqlDbType.Integer).Value = aluguel.vendedor.id;
+                cmd.Parameters.Add("@carro_id", NpgsqlTypes.NpgsqlDbType.Integer).Value = aluguel.Carro.id;
+                cmd.Parameters.Add("@cliente_id", NpgsqlTypes.NpgsqlDbType.Integer).Value = aluguel.Cliente.id;
+                cmd.Parameters.Add("@vendedor_id", NpgsqlTypes.NpgsqlDbType.Integer).Value = aluguel.Vendedor.id;
                 cmd.Parameters.Add("@data_inicio", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = Convert.ToDateTime(aluguel.data_inicio);
                 cmd.Parameters.Add("@data_fim", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = Convert.ToDateTime(aluguel.data_fim);
 
@@ -166,6 +199,11 @@ namespace Locar.Controllers
             return alterou;
         }
 
+        /// <summary>
+        /// Retorna os dados do aluguel em forma de HashTable
+        /// </summary>
+        /// <param name="dr"></param>
+        /// <returns>Hashtable de dados do <see cref="Aluguel"/></returns>
         private static Hashtable getDados(NpgsqlDataReader dr)
         {
             Hashtable dados = new Hashtable();
@@ -179,6 +217,10 @@ namespace Locar.Controllers
             return dados;
         }
 
+        /// <summary>
+        /// Retorna todas as propridades permitidas do <see cref="Aluguel"/>
+        /// </summary>
+        /// <returns>Propriedades do <see cref="Aluguel"/></returns>
         public static ArrayList getAllProperties()
         {
             return new Aluguel().getAllProperties();

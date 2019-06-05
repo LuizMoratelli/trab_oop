@@ -15,7 +15,14 @@ namespace Locar
 {
     public partial class FrmPrincipal : Form
     {
+        /// <summary>
+        /// Conexão com banco de dados
+        /// </summary>
         public NpgsqlConnection conexao = null;
+
+        /// <summary>
+        /// Inicialização da aplicação
+        /// </summary>
         public FrmPrincipal()
         {
             InitializeComponent();

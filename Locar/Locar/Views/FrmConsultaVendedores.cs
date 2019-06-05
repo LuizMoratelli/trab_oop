@@ -15,9 +15,17 @@ using System.Windows.Forms;
 
 namespace Locar.Views
 {
+    /// <summary>
+    /// Formulário de consulta do <see cref="Vendedor"/>
+    /// </summary>
     public partial class FrmConsultaVendedores : Form
     {
         internal NpgsqlConnection conexao = null;
+
+        /// <summary>
+        /// Inicialização do formulário
+        /// </summary>
+        /// <param name="conexao"></param>
         public FrmConsultaVendedores(NpgsqlConnection conexao)
         {
             InitializeComponent();

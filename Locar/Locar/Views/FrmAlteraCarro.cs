@@ -13,9 +13,18 @@ using System.Windows.Forms;
 
 namespace Locar.Views
 {
+    /// <summary>
+    /// Formulário de altearação de <see cref="Carro"/>
+    /// </summary>
     public partial class FrmAlteraCarro : Form
     {
         internal NpgsqlConnection conexao = null;
+
+        /// <summary>
+        /// Inicialização do formulário
+        /// </summary>
+        /// <param name="conexao"></param>
+        /// <param name="id"></param>
         public FrmAlteraCarro(NpgsqlConnection conexao, int id)
         {
             InitializeComponent();

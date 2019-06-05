@@ -7,12 +7,27 @@ using System.Threading.Tasks;
 
 namespace Locar.Models
 {
+    /// <summary>
+    /// Classe genérica para filtro dos SQLs nas views
+    /// </summary>
     public class Consulta
     {
+        /// <summary>
+        /// <see cref="campo"/> do banco de dados à ser filtrado
+        /// </summary>
         public string campo;
+        /// <summary>
+        /// <see cref="tipo"/> de <see cref="Consulta"/>  que será realizada
+        /// </summary>
         public int tipo;
+        /// <summary>
+        /// <see cref="valor"/> de <see cref="Consulta"/> 
+        /// </summary>
         public string valor;
 
+        /// <summary>
+        /// <see cref="tipos"/> de <see cref="Consulta"/> permitidos nas views
+        /// </summary>
         public string[] tipos = new string[] {
             "Contém",
             "Começa com",
@@ -25,11 +40,20 @@ namespace Locar.Models
             "Data"
         };
 
+        /// <summary>
+        /// Construtor simples
+        /// </summary>
         public Consulta()
         {
 
         }
 
+        /// <summary>
+        /// Construtor de nova <see cref="Consulta"/> à ser realizada
+        /// </summary>
+        /// <param name="campo"></param>
+        /// <param name="tipo"></param>
+        /// <param name="valor"></param>
         public Consulta(string campo, int tipo, string valor)
         {
             this.campo = campo;
@@ -37,6 +61,11 @@ namespace Locar.Models
             this.valor = valor;
         }
 
+        /// <summary>
+        /// Retorna a string de condicação do SQL
+        /// Ex: nome ILIKE '%Luiz%'
+        /// </summary>
+        /// <returns></returns>
         public string getCondicao()
         {
             string condicao = "";
