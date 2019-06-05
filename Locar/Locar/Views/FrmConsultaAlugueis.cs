@@ -15,10 +15,17 @@ using System.Dynamic;
 
 namespace Locar.Views
 {
+    /// <summary>
+    /// Formulário de consulta de <see cref="Aluguel"/>
+    /// </summary>
     public partial class FrmConsultaAlugueis : Form
     {
         internal NpgsqlConnection conexao = null;
 
+        /// <summary>
+        /// Inicialização do formulário
+        /// </summary>
+        /// <param name="conexao"></param>
         public FrmConsultaAlugueis(NpgsqlConnection conexao)
         {
             InitializeComponent();

@@ -11,8 +11,17 @@ using System.Windows.Forms;
 
 namespace Locar.Controllers
 {
+    /// <summary>
+    /// Realiza a busca das informações do banco de dados do modelo <see cref="Cliente"/>
+    /// </summary>
     public class ClienteDB
     {
+        /// <summary>
+        /// Realiza a busca de um determinado <see cref="Cliente"/> de acordo com o banco de dados e retorna a respectiva posição
+        /// </summary>
+        /// <param name="conexao"></param>
+        /// <param name="cliente"></param>
+        /// <returns>Indice de um <see cref="Cliente"/> na listagem</returns>
         public static int getIndexCliente(NpgsqlConnection conexao, Cliente cliente)
         {
             ArrayList clientes = getConsultaClientes(conexao);
@@ -31,12 +40,12 @@ namespace Locar.Controllers
             return 0;
         }
 
-        public static Cliente getIndexCliente(NpgsqlConnection conexao, int id)
-        {
-            ArrayList clientes = getConsultaClientes(conexao);
-            return (Cliente)clientes[id];
-        }
-
+        /// <summary>
+        /// Realiza a busca de um determinado <see cref="Cliente"/> de acordo com o respectivo <paramref name="id"/> e retorna o modelo do banco de dados
+        /// </summary>
+        /// <param name="conexao"></param>
+        /// <param name="id"></param>
+        /// <returns><see cref="Cliente"/> de determinado <paramref name="id"/></returns>
         public static Cliente getCliente(NpgsqlConnection conexao, int id)
         {
             Cliente cliente = null;
@@ -60,6 +69,12 @@ namespace Locar.Controllers
             return cliente;
         }
 
+        /// <summary>
+        /// Realiza a busca dos <see cref="Cliente"/> que satisfaçam a <paramref name="consulta"/>
+        /// </summary>
+        /// <param name="conexao"></param>
+        /// <param name="consulta"></param>
+        /// <returns>Lista de <see cref="Cliente"/> com os filtros da <paramref name="consulta"/></returns>
         public static ArrayList getConsultaClientes(NpgsqlConnection conexao, Consulta consulta = null)
         {
             ArrayList lista = new ArrayList();
@@ -97,6 +112,12 @@ namespace Locar.Controllers
             return lista;
         }
 
+        /// <summary>
+        /// Realiza a inserção do novo <see cref="Cliente"/> no banco de dados
+        /// </summary>
+        /// <param name="conexao"></param>
+        /// <param name="cliente"></param>
+        /// <returns>Verdadeiro se conseguiu incluir, falso se não</returns>
         public static bool setIncluiCliente(NpgsqlConnection conexao, Cliente cliente)
         {
             bool incluiu = false;
@@ -119,6 +140,12 @@ namespace Locar.Controllers
             return incluiu;
         }
 
+        /// <summary>
+        /// Realiza a remoção de determinado <see cref="Cliente"/> do banco de dados
+        /// </summary>
+        /// <param name="conexao"></param>
+        /// <param name="id"></param>
+        /// <returns>Verdadeiro se conseguiu excluir, falso se não</returns>
         public static bool setExcluiCliente(NpgsqlConnection conexao, int id)
         {
             bool excluiu = false;
@@ -138,6 +165,12 @@ namespace Locar.Controllers
 
             return excluiu;
         }
+        /// <summary>
+        /// Realiza a alteração de determinado <see cref="Cliente"/> do banco de dados
+        /// </summary>
+        /// <param name="conexao"></param>
+        /// <param name="cliente"></param>
+        /// <returns>Verdadeiro se conseguiu alterar, falso se não</returns>
         public static bool setAlteraCliente(NpgsqlConnection conexao, Cliente cliente)
         {
             bool alterou = false;
@@ -164,6 +197,10 @@ namespace Locar.Controllers
             return alterou;
         }
 
+        /// <summary>
+        /// Retorna todas as propridades permitidas do <see cref="Cliente"/>
+        /// </summary>
+        /// <returns>Propriedades do <see cref="Cliente"/></returns>
         public static ArrayList getAllProperties()
         {
             return new Cliente().getAllProperties();

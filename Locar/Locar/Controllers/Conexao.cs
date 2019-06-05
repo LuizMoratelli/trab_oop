@@ -8,8 +8,15 @@ using System.Windows.Forms;
 
 namespace Locar.Controllers
 {
+    /// <summary>
+    /// Realiza a conexão com o banco de dados PostgreSQL
+    /// </summary>
     public class Conexao
     {
+        /// <summary>
+        /// Realiza a conexão através dos dados de acesso definidos
+        /// </summary>
+        /// <returns>Conexão com o banco de dados</returns>
         public static NpgsqlConnection getConexao()
         {
             NpgsqlConnection conexao = null;
@@ -25,6 +32,11 @@ namespace Locar.Controllers
 
             return conexao;
         }
+
+        /// <summary>
+        /// Encerra a <paramref name="conexao"/>
+        /// </summary>
+        /// <param name="conexao"></param>
         public static void setFechaConexao(NpgsqlConnection conexao)
         {
             if (conexao != null)

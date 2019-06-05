@@ -13,9 +13,18 @@ using System.Windows.Forms;
 
 namespace Locar.Views
 {
+    /// <summary>
+    /// Formulário de alteração de <see cref="Aluguel"/>
+    /// </summary>
     public partial class FrmAlteraAluguel : Form
     {
         internal NpgsqlConnection conexao = null;
+
+        /// <summary>
+        /// Inicialização do formulário
+        /// </summary>
+        /// <param name="conexao"></param>
+        /// <param name="id"></param>
         public FrmAlteraAluguel(NpgsqlConnection conexao, int id)
         {
             InitializeComponent();
@@ -29,13 +38,13 @@ namespace Locar.Views
             Aluguel aluguel = AluguelDB.getAluguel(conexao, Convert.ToInt32(TBId.Text));
 
             CBCarro.DataSource = CarroDB.getConsultaCarros(conexao);
-            CBCarro.SelectedIndex = CarroDB.getIndexCarro(conexao, aluguel.carro);
+            CBCarro.SelectedIndex = CarroDB.getIndexCarro(conexao, aluguel.Carro);
 
             CBCliente.DataSource = ClienteDB.getConsultaClientes(conexao);
-            CBCliente.SelectedIndex = ClienteDB.getIndexCliente(conexao, aluguel.cliente);
+            CBCliente.SelectedIndex = ClienteDB.getIndexCliente(conexao, aluguel.Cliente);
 
             CBVendedor.DataSource = VendedorDB.getConsultaVendedores(conexao);
-            CBVendedor.SelectedIndex = VendedorDB.getIndexVendedor(conexao, aluguel.vendedor);
+            CBVendedor.SelectedIndex = VendedorDB.getIndexVendedor(conexao, aluguel.Vendedor);
 
             TBDataInicio.Text = Convert.ToDateTime(aluguel.data_inicio).ToString("dd/MM/yyyy");
             TBDataFim.Text = Convert.ToDateTime(aluguel.data_fim).ToString("dd/MM/yyyy");
@@ -49,9 +58,9 @@ namespace Locar.Views
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(TBId.Text);
-            Carro carro = CarroDB.getIndexCarro(conexao, CBCarro.SelectedIndex);
-            Cliente cliente = ClienteDB.getIndexCliente(conexao, CBCliente.SelectedIndex);
-            Vendedor vendedor  = VendedorDB.getIndexVendedor(conexao, CBVendedor.SelectedIndex);
+            Carro carro = (Carro) CBCarro.SelectedItem;
+            Cliente cliente = (Cliente) CBCliente.SelectedItem;
+            Vendedor vendedor  = (Vendedor) CBVendedor.SelectedItem;
             string data_inicio = TBDataInicio.Text;
             string data_fim = TBDataFim.Text;
 

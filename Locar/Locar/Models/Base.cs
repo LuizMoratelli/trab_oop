@@ -8,20 +8,31 @@ using System.Threading.Tasks;
 
 namespace Locar.Models
 {
+    /// <summary>
+    /// Classe abstrata que serve de base para as demais classes
+    /// </summary>
     public abstract class Base
     {
         private string[] camposBloqueados;
 
+        /// <summary>
+        /// Define os campos que serão bloqueados nas views
+        /// </summary>
+        /// <param name="camposBloqueados"></param>
         public Base(string[] camposBloqueados)
         {
             this.camposBloqueados = camposBloqueados;
         }
 
+        /// <summary>
+        /// Retorna todas as propriedades não bloqueadas
+        /// </summary>
+        /// <returns>Propriedades da classe derivada</returns>
         public ArrayList getAllProperties()
         {
             ArrayList campos = new ArrayList();
 
-            foreach (PropertyInfo campo in this.GetType().GetProperties())
+            foreach (PropertyInfo campo in GetType().GetProperties())
             {
                 if (!camposBloqueados.Contains(campo.Name))
                 {
