@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Locar.Models
 {
-    public class Aluguel
+    public class Aluguel : Base
     {
+        public static string[] camposBloqueados = new string[] { "id" };
         public int id { get; set; }
         public Cliente cliente { get; set; }
         public Carro carro { get; set; }
@@ -15,7 +16,14 @@ namespace Locar.Models
         public string data_inicio { get; set; }
         public string data_fim { get; set; }
 
+        public Aluguel() 
+            : base(camposBloqueados)
+        {
+
+        }
+
         public Aluguel(Carro carro, Cliente cliente, Vendedor vendedor, string data_inicio, string data_fim)
+            : this()
         {
             this.carro = carro;
             this.cliente = cliente;

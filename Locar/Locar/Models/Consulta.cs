@@ -14,22 +14,23 @@ namespace Locar.Models
         public string valor;
 
         public string[] tipos = new string[] {
-            "Contém" ,
+            "Contém",
             "Começa com",
             "Termina com",
             "Igual à",
             "Maior que",
             "Maior ou igual à",
             "Menor que",
-            "Menor ou igual à"
-        }; 
+            "Menor ou igual à",
+            "Data"
+        };
 
-        public Consulta ()
+        public Consulta()
         {
 
         }
 
-        public Consulta (string campo, int tipo, string valor)
+        public Consulta(string campo, int tipo, string valor)
         {
             this.campo = campo;
             this.tipo = tipo;
@@ -40,9 +41,10 @@ namespace Locar.Models
         {
             string condicao = "";
 
-            switch (tipo) { 
+            switch (tipo)
+            {
                 case 0:
-                    condicao = $"{campo} ILIKE '%{valor}%'";
+                    condicao = $"{campo}::text ILIKE '%{valor}%'";
                     break;
                 case 1:
                     condicao = $"{campo} ILIKE '{valor}%'";
@@ -64,6 +66,16 @@ namespace Locar.Models
                     break;
                 case 7:
                     condicao = $"{campo} <= '{valor}'";
+                    break;
+                case 8:
+                    try
+                    {
+                        condicao = $"{campo}::text ILIKE '%{Convert.ToDateTime(valor).ToString("yyyy-MM-dd")}%'";
+                    }
+                    catch
+                    {
+                        condicao = $"{campo}::text ILIKE '%{valor}%'";
+                    }
                     break;
             }
 

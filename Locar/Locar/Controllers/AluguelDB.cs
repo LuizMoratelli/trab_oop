@@ -45,7 +45,7 @@ namespace Locar.Controllers
             return aluguel;
         }
 
-        public static ArrayList getConsultaAlugueis(NpgsqlConnection conexao)
+        public static ArrayList getConsultaAlugueis(NpgsqlConnection conexao, Consulta consulta = null)
         {
             ArrayList lista = new ArrayList();
             ArrayList listaDados = new ArrayList();
@@ -53,6 +53,12 @@ namespace Locar.Controllers
             try
             {
                 string sql = "SELECT  * FROM aluguel";
+
+                if (consulta != null)
+                {
+                    sql += $" WHERE {consulta.getCondicao()}";
+                }
+
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
                 NpgsqlDataReader dr = cmd.ExecuteReader();
 
@@ -171,6 +177,11 @@ namespace Locar.Controllers
             dados.Add("data_fim", dr["data_fim"]);
 
             return dados;
+        }
+
+        public static ArrayList getAllProperties()
+        {
+            return new Aluguel().getAllProperties();
         }
     }
 }
