@@ -13,6 +13,9 @@ using System.Windows.Forms;
 
 namespace Locar
 {
+    /// <summary>
+    /// Formulário principal
+    /// </summary>
     public partial class FrmPrincipal : Form
     {
         /// <summary>
