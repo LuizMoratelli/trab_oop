@@ -38,7 +38,7 @@
             // 
             this.BtnCarros.Location = new System.Drawing.Point(12, 12);
             this.BtnCarros.Name = "BtnCarros";
-            this.BtnCarros.Size = new System.Drawing.Size(75, 23);
+            this.BtnCarros.Size = new System.Drawing.Size(198, 23);
             this.BtnCarros.TabIndex = 0;
             this.BtnCarros.Text = "Carros";
             this.BtnCarros.UseVisualStyleBackColor = true;
@@ -46,9 +46,9 @@
             // 
             // BtnClientes
             // 
-            this.BtnClientes.Location = new System.Drawing.Point(93, 12);
+            this.BtnClientes.Location = new System.Drawing.Point(232, 12);
             this.BtnClientes.Name = "BtnClientes";
-            this.BtnClientes.Size = new System.Drawing.Size(75, 23);
+            this.BtnClientes.Size = new System.Drawing.Size(198, 23);
             this.BtnClientes.TabIndex = 1;
             this.BtnClientes.Text = "Clientes";
             this.BtnClientes.UseVisualStyleBackColor = true;
@@ -58,7 +58,7 @@
             // 
             this.BtnVendedores.Location = new System.Drawing.Point(12, 41);
             this.BtnVendedores.Name = "BtnVendedores";
-            this.BtnVendedores.Size = new System.Drawing.Size(75, 23);
+            this.BtnVendedores.Size = new System.Drawing.Size(198, 23);
             this.BtnVendedores.TabIndex = 2;
             this.BtnVendedores.Text = "Vendedores";
             this.BtnVendedores.UseVisualStyleBackColor = true;
@@ -66,9 +66,9 @@
             // 
             // BtnAlugueis
             // 
-            this.BtnAlugueis.Location = new System.Drawing.Point(93, 41);
+            this.BtnAlugueis.Location = new System.Drawing.Point(232, 41);
             this.BtnAlugueis.Name = "BtnAlugueis";
-            this.BtnAlugueis.Size = new System.Drawing.Size(75, 23);
+            this.BtnAlugueis.Size = new System.Drawing.Size(198, 23);
             this.BtnAlugueis.TabIndex = 3;
             this.BtnAlugueis.Text = "Alugueis";
             this.BtnAlugueis.UseVisualStyleBackColor = true;
@@ -78,7 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(178, 70);
+            this.ClientSize = new System.Drawing.Size(442, 78);
             this.Controls.Add(this.BtnAlugueis);
             this.Controls.Add(this.BtnVendedores);
             this.Controls.Add(this.BtnClientes);

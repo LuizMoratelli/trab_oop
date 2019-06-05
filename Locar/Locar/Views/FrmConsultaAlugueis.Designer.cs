@@ -197,7 +197,7 @@
             this.Controls.Add(this.BtnNovo);
             this.Controls.Add(this.Dgw);
             this.Name = "FrmConsultaAlugueis";
-            this.Text = "FrmConsultaAlugueis";
+            this.Text = "Consulta de Aluguel";
             ((System.ComponentModel.ISupportInitialize)(this.Dgw)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

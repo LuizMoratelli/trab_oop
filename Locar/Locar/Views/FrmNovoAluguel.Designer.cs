@@ -111,7 +111,7 @@
             this.CBCarro.FormattingEnabled = true;
             this.CBCarro.Location = new System.Drawing.Point(15, 26);
             this.CBCarro.Name = "CBCarro";
-            this.CBCarro.Size = new System.Drawing.Size(162, 21);
+            this.CBCarro.Size = new System.Drawing.Size(537, 21);
             this.CBCarro.TabIndex = 20;
             // 
             // CBCliente
@@ -119,7 +119,7 @@
             this.CBCliente.FormattingEnabled = true;
             this.CBCliente.Location = new System.Drawing.Point(15, 64);
             this.CBCliente.Name = "CBCliente";
-            this.CBCliente.Size = new System.Drawing.Size(162, 21);
+            this.CBCliente.Size = new System.Drawing.Size(537, 21);
             this.CBCliente.TabIndex = 21;
             // 
             // CBVendedor
@@ -127,7 +127,7 @@
             this.CBVendedor.FormattingEnabled = true;
             this.CBVendedor.Location = new System.Drawing.Point(15, 102);
             this.CBVendedor.Name = "CBVendedor";
-            this.CBVendedor.Size = new System.Drawing.Size(162, 21);
+            this.CBVendedor.Size = new System.Drawing.Size(537, 21);
             this.CBVendedor.TabIndex = 22;
             // 
             // TBDataInicio
@@ -135,7 +135,7 @@
             this.TBDataInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.TBDataInicio.Location = new System.Drawing.Point(15, 142);
             this.TBDataInicio.Name = "TBDataInicio";
-            this.TBDataInicio.Size = new System.Drawing.Size(162, 20);
+            this.TBDataInicio.Size = new System.Drawing.Size(537, 20);
             this.TBDataInicio.TabIndex = 23;
             // 
             // TBDataFim
@@ -143,14 +143,14 @@
             this.TBDataFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.TBDataFim.Location = new System.Drawing.Point(15, 181);
             this.TBDataFim.Name = "TBDataFim";
-            this.TBDataFim.Size = new System.Drawing.Size(162, 20);
+            this.TBDataFim.Size = new System.Drawing.Size(537, 20);
             this.TBDataFim.TabIndex = 24;
             // 
             // FrmNovoAluguel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(195, 233);
+            this.ClientSize = new System.Drawing.Size(570, 233);
             this.Controls.Add(this.TBDataFim);
             this.Controls.Add(this.TBDataInicio);
             this.Controls.Add(this.CBVendedor);

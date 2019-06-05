@@ -51,7 +51,7 @@
             // 
             this.TbNome.Location = new System.Drawing.Point(15, 25);
             this.TbNome.Name = "TbNome";
-            this.TbNome.Size = new System.Drawing.Size(162, 20);
+            this.TbNome.Size = new System.Drawing.Size(439, 20);
             this.TbNome.TabIndex = 1;
             // 
             // label2
@@ -67,7 +67,7 @@
             // 
             this.TbDescricao.Location = new System.Drawing.Point(15, 64);
             this.TbDescricao.Name = "TbDescricao";
-            this.TbDescricao.Size = new System.Drawing.Size(162, 20);
+            this.TbDescricao.Size = new System.Drawing.Size(439, 20);
             this.TbDescricao.TabIndex = 3;
             // 
             // label3
@@ -104,14 +104,14 @@
             this.TbDataAquisicao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.TbDataAquisicao.Location = new System.Drawing.Point(15, 103);
             this.TbDataAquisicao.Name = "TbDataAquisicao";
-            this.TbDataAquisicao.Size = new System.Drawing.Size(162, 20);
+            this.TbDataAquisicao.Size = new System.Drawing.Size(439, 20);
             this.TbDataAquisicao.TabIndex = 8;
             // 
             // FrmNovoCarro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(194, 173);
+            this.ClientSize = new System.Drawing.Size(471, 173);
             this.Controls.Add(this.TbDataAquisicao);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnSalvar);

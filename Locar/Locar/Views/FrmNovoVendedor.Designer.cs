@@ -62,7 +62,7 @@
             // 
             this.TbQtdVendas.Location = new System.Drawing.Point(15, 103);
             this.TbQtdVendas.Name = "TbQtdVendas";
-            this.TbQtdVendas.Size = new System.Drawing.Size(162, 20);
+            this.TbQtdVendas.Size = new System.Drawing.Size(422, 20);
             this.TbQtdVendas.TabIndex = 21;
             // 
             // label3
@@ -78,7 +78,7 @@
             // 
             this.TbNome.Location = new System.Drawing.Point(15, 64);
             this.TbNome.Name = "TbNome";
-            this.TbNome.Size = new System.Drawing.Size(162, 20);
+            this.TbNome.Size = new System.Drawing.Size(422, 20);
             this.TbNome.TabIndex = 19;
             // 
             // label2
@@ -94,7 +94,7 @@
             // 
             this.TbCpf.Location = new System.Drawing.Point(15, 25);
             this.TbCpf.Name = "TbCpf";
-            this.TbCpf.Size = new System.Drawing.Size(162, 20);
+            this.TbCpf.Size = new System.Drawing.Size(422, 20);
             this.TbCpf.TabIndex = 17;
             // 
             // label1
@@ -110,7 +110,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(197, 167);
+            this.ClientSize = new System.Drawing.Size(457, 167);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnSalvar);
             this.Controls.Add(this.TbQtdVendas);
@@ -120,7 +120,7 @@
             this.Controls.Add(this.TbCpf);
             this.Controls.Add(this.label1);
             this.Name = "FrmNovoVendedor";
-            this.Text = "FrmNovoVendedor";
+            this.Text = "Novo Vendedor";
             this.ResumeLayout(false);
             this.PerformLayout();
 

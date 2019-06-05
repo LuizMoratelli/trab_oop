@@ -73,7 +73,7 @@
             // 
             this.TbDescricao.Location = new System.Drawing.Point(15, 103);
             this.TbDescricao.Name = "TbDescricao";
-            this.TbDescricao.Size = new System.Drawing.Size(162, 20);
+            this.TbDescricao.Size = new System.Drawing.Size(512, 20);
             this.TbDescricao.TabIndex = 11;
             // 
             // label2
@@ -89,7 +89,7 @@
             // 
             this.TbNome.Location = new System.Drawing.Point(15, 64);
             this.TbNome.Name = "TbNome";
-            this.TbNome.Size = new System.Drawing.Size(162, 20);
+            this.TbNome.Size = new System.Drawing.Size(512, 20);
             this.TbNome.TabIndex = 9;
             // 
             // label1
@@ -106,7 +106,7 @@
             this.TbId.Location = new System.Drawing.Point(15, 25);
             this.TbId.Name = "TbId";
             this.TbId.ReadOnly = true;
-            this.TbId.Size = new System.Drawing.Size(162, 20);
+            this.TbId.Size = new System.Drawing.Size(512, 20);
             this.TbId.TabIndex = 17;
             // 
             // label4
@@ -123,14 +123,14 @@
             this.TbDataAquisicao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.TbDataAquisicao.Location = new System.Drawing.Point(15, 142);
             this.TbDataAquisicao.Name = "TbDataAquisicao";
-            this.TbDataAquisicao.Size = new System.Drawing.Size(162, 20);
+            this.TbDataAquisicao.Size = new System.Drawing.Size(512, 20);
             this.TbDataAquisicao.TabIndex = 18;
             // 
             // FrmAlteraCarro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(194, 206);
+            this.ClientSize = new System.Drawing.Size(544, 206);
             this.Controls.Add(this.TbDataAquisicao);
             this.Controls.Add(this.TbId);
             this.Controls.Add(this.label4);
@@ -142,7 +142,7 @@
             this.Controls.Add(this.TbNome);
             this.Controls.Add(this.label1);
             this.Name = "FrmAlteraCarro";
-            this.Text = "FrmAlteraCarro";
+            this.Text = "Alteração de Carro";
             this.ResumeLayout(false);
             this.PerformLayout();
 

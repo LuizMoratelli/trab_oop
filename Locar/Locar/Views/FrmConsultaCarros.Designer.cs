@@ -37,9 +37,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CBTipo = new System.Windows.Forms.ComboBox();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.data_aquisicao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Dgw)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,9 +48,9 @@
             this.Dgw.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgw.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
+            this.nome,
             this.descricao,
-            this.data_aquisicao,
-            this.nome});
+            this.data_aquisicao});
             this.Dgw.Location = new System.Drawing.Point(12, 52);
             this.Dgw.Name = "Dgw";
             this.Dgw.Size = new System.Drawing.Size(621, 334);
@@ -144,6 +144,13 @@
             this.id.Name = "id";
             this.id.ReadOnly = true;
             // 
+            // nome
+            // 
+            this.nome.DataPropertyName = "nome";
+            this.nome.HeaderText = "Nome";
+            this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
+            // 
             // descricao
             // 
             this.descricao.DataPropertyName = "descricao";
@@ -158,13 +165,6 @@
             this.data_aquisicao.Name = "data_aquisicao";
             this.data_aquisicao.ReadOnly = true;
             this.data_aquisicao.Width = 130;
-            // 
-            // nome
-            // 
-            this.nome.DataPropertyName = "nome";
-            this.nome.HeaderText = "Nome";
-            this.nome.Name = "nome";
-            this.nome.ReadOnly = true;
             // 
             // FrmConsultaCarros
             // 
@@ -198,8 +198,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox CBTipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn data_aquisicao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
     }
 }

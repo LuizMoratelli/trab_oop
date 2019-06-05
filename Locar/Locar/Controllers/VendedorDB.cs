@@ -54,7 +54,7 @@ namespace Locar.Controllers
             {
                 string sql = "SELECT * FROM vendedor WHERE id = @id";
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
-                cmd.Parameters.Add("@cpf", NpgsqlTypes.NpgsqlDbType.Integer).Value = id;
+                cmd.Parameters.Add("@id", NpgsqlTypes.NpgsqlDbType.Integer).Value = id;
 
                 NpgsqlDataReader dr = cmd.ExecuteReader();
                 dr.Read();

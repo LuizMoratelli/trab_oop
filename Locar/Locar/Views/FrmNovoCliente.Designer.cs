@@ -71,7 +71,7 @@
             // 
             this.TbNome.Location = new System.Drawing.Point(15, 64);
             this.TbNome.Name = "TbNome";
-            this.TbNome.Size = new System.Drawing.Size(162, 20);
+            this.TbNome.Size = new System.Drawing.Size(454, 20);
             this.TbNome.TabIndex = 11;
             // 
             // label2
@@ -87,7 +87,7 @@
             // 
             this.TbCpf.Location = new System.Drawing.Point(15, 25);
             this.TbCpf.Name = "TbCpf";
-            this.TbCpf.Size = new System.Drawing.Size(162, 20);
+            this.TbCpf.Size = new System.Drawing.Size(454, 20);
             this.TbCpf.TabIndex = 9;
             // 
             // label1
@@ -104,14 +104,14 @@
             this.TbDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.TbDataNascimento.Location = new System.Drawing.Point(15, 103);
             this.TbDataNascimento.Name = "TbDataNascimento";
-            this.TbDataNascimento.Size = new System.Drawing.Size(162, 20);
+            this.TbDataNascimento.Size = new System.Drawing.Size(454, 20);
             this.TbDataNascimento.TabIndex = 16;
             // 
             // FrmNovoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(194, 167);
+            this.ClientSize = new System.Drawing.Size(486, 167);
             this.Controls.Add(this.TbDataNascimento);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnSalvar);
@@ -121,7 +121,7 @@
             this.Controls.Add(this.TbCpf);
             this.Controls.Add(this.label1);
             this.Name = "FrmNovoCliente";
-            this.Text = "FrmNovoCliente";
+            this.Text = "Novo Cliente";
             this.ResumeLayout(false);
             this.PerformLayout();
 

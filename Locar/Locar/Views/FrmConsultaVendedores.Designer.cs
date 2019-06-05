@@ -180,7 +180,7 @@
             this.Controls.Add(this.BtnNovo);
             this.Controls.Add(this.Dgw);
             this.Name = "FrmConsultaVendedores";
-            this.Text = "FrmConsultaVendedores";
+            this.Text = "Consulta de Vendedores";
             ((System.ComponentModel.ISupportInitialize)(this.Dgw)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -64,7 +64,7 @@
             // 
             this.TbQtdVendas.Location = new System.Drawing.Point(15, 142);
             this.TbQtdVendas.Name = "TbQtdVendas";
-            this.TbQtdVendas.Size = new System.Drawing.Size(162, 20);
+            this.TbQtdVendas.Size = new System.Drawing.Size(432, 20);
             this.TbQtdVendas.TabIndex = 29;
             // 
             // label3
@@ -80,7 +80,7 @@
             // 
             this.TbNome.Location = new System.Drawing.Point(15, 103);
             this.TbNome.Name = "TbNome";
-            this.TbNome.Size = new System.Drawing.Size(162, 20);
+            this.TbNome.Size = new System.Drawing.Size(432, 20);
             this.TbNome.TabIndex = 27;
             // 
             // label2
@@ -96,7 +96,7 @@
             // 
             this.TbCpf.Location = new System.Drawing.Point(15, 64);
             this.TbCpf.Name = "TbCpf";
-            this.TbCpf.Size = new System.Drawing.Size(162, 20);
+            this.TbCpf.Size = new System.Drawing.Size(432, 20);
             this.TbCpf.TabIndex = 25;
             // 
             // label1
@@ -113,7 +113,7 @@
             this.TbId.Location = new System.Drawing.Point(15, 25);
             this.TbId.Name = "TbId";
             this.TbId.ReadOnly = true;
-            this.TbId.Size = new System.Drawing.Size(162, 20);
+            this.TbId.Size = new System.Drawing.Size(432, 20);
             this.TbId.TabIndex = 33;
             // 
             // label4
@@ -129,7 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(185, 205);
+            this.ClientSize = new System.Drawing.Size(455, 205);
             this.Controls.Add(this.TbId);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.BtnCancelar);
@@ -141,7 +141,7 @@
             this.Controls.Add(this.TbCpf);
             this.Controls.Add(this.label1);
             this.Name = "FrmAlteraVendedor";
-            this.Text = "FrmAlteraVendedor";
+            this.Text = "Alteração de Vendedor";
             this.ResumeLayout(false);
             this.PerformLayout();
 

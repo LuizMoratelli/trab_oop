@@ -49,7 +49,7 @@
             this.CBVendedor.FormattingEnabled = true;
             this.CBVendedor.Location = new System.Drawing.Point(15, 141);
             this.CBVendedor.Name = "CBVendedor";
-            this.CBVendedor.Size = new System.Drawing.Size(162, 21);
+            this.CBVendedor.Size = new System.Drawing.Size(494, 21);
             this.CBVendedor.TabIndex = 34;
             // 
             // CBCliente
@@ -57,7 +57,7 @@
             this.CBCliente.FormattingEnabled = true;
             this.CBCliente.Location = new System.Drawing.Point(15, 103);
             this.CBCliente.Name = "CBCliente";
-            this.CBCliente.Size = new System.Drawing.Size(162, 21);
+            this.CBCliente.Size = new System.Drawing.Size(494, 21);
             this.CBCliente.TabIndex = 33;
             // 
             // CBCarro
@@ -65,7 +65,7 @@
             this.CBCarro.FormattingEnabled = true;
             this.CBCarro.Location = new System.Drawing.Point(15, 65);
             this.CBCarro.Name = "CBCarro";
-            this.CBCarro.Size = new System.Drawing.Size(162, 21);
+            this.CBCarro.Size = new System.Drawing.Size(494, 21);
             this.CBCarro.TabIndex = 32;
             // 
             // label5
@@ -138,7 +138,7 @@
             this.TBId.Location = new System.Drawing.Point(15, 25);
             this.TBId.Name = "TBId";
             this.TBId.ReadOnly = true;
-            this.TBId.Size = new System.Drawing.Size(162, 20);
+            this.TBId.Size = new System.Drawing.Size(494, 20);
             this.TBId.TabIndex = 36;
             // 
             // label6
@@ -155,7 +155,7 @@
             this.TBDataInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.TBDataInicio.Location = new System.Drawing.Point(15, 181);
             this.TBDataInicio.Name = "TBDataInicio";
-            this.TBDataInicio.Size = new System.Drawing.Size(162, 20);
+            this.TBDataInicio.Size = new System.Drawing.Size(494, 20);
             this.TBDataInicio.TabIndex = 37;
             // 
             // TBDataFim
@@ -163,14 +163,14 @@
             this.TBDataFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.TBDataFim.Location = new System.Drawing.Point(15, 220);
             this.TBDataFim.Name = "TBDataFim";
-            this.TBDataFim.Size = new System.Drawing.Size(162, 20);
+            this.TBDataFim.Size = new System.Drawing.Size(494, 20);
             this.TBDataFim.TabIndex = 38;
             // 
             // FrmAlteraAluguel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(194, 281);
+            this.ClientSize = new System.Drawing.Size(526, 281);
             this.Controls.Add(this.TBDataFim);
             this.Controls.Add(this.TBDataInicio);
             this.Controls.Add(this.TBId);
@@ -186,7 +186,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FrmAlteraAluguel";
-            this.Text = "FrmAlteraAluguel";
+            this.Text = "Alteração de Aluguel";
             this.ResumeLayout(false);
             this.PerformLayout();
 
