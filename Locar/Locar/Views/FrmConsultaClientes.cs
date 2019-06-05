@@ -25,24 +25,9 @@ namespace Locar.Views
             atualizaTela();
         }
 
-        private ArrayList getAllProperties()
-        {
-            ArrayList campos = new ArrayList();
-
-            foreach (PropertyInfo campo in typeof(Cliente).GetProperties())
-            {
-                if (!Cliente.camposBloqueados.Contains(campo.Name))
-                {
-                    campos.Add(campo.Name);
-                }
-            }
-
-            return campos;
-        }
-
         private void atualizaTela()
         {
-            CBCampo.DataSource = getAllProperties();
+            CBCampo.DataSource = ClienteDB.getAllProperties();
             CBTipo.DataSource = new Consulta().tipos;
             CBTipo.SelectedItem = CBTipo.Items[0];
             Dgw.DataSource = ClienteDB.getConsultaClientes(conexao);

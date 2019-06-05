@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AluguelDB.cs" />
+    <Compile Include="Models\Base.cs" />
     <Compile Include="Controllers\CarroDB.cs" />
     <Compile Include="Controllers\ClienteDB.cs" />
     <Compile Include="Controllers\Conexao.cs" />

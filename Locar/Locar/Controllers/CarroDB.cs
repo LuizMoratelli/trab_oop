@@ -164,5 +164,10 @@ namespace Locar.Controllers
 
             return alterou;
         }
+
+        public static ArrayList getAllProperties()
+        {
+            return new Carro().getAllProperties();
+        }
     }
 }
