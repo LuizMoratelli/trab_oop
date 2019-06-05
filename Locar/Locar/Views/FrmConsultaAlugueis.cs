@@ -28,28 +28,10 @@ namespace Locar.Views
 
         private void atualizaTela()
         {
-            ArrayList alugueis = AluguelDB.getConsultaAlugueis(conexao);
-
-            Dgw.Columns.Add("ID", "ID");
-            Dgw.Columns.Add("Carro", "Carro");
-            Dgw.Columns.Add("Cliente", "Cliente");
-            Dgw.Columns.Add("Vendedor", "Vendedor");
-            Dgw.Columns.Add("Data Início", "Data Início");
-            Dgw.Columns.Add("Data Fim", "Data Fim");
-
-            Dgw.Rows.Clear();
-
-            foreach (Aluguel aluguel in alugueis)
-            {
-                Dgw.Rows.Add(
-                    aluguel.id,
-                    CarroDB.getCarro(conexao, aluguel.carro.id),
-                    ClienteDB.getCliente(conexao, aluguel.cliente.id),
-                    VendedorDB.getVendedor(conexao, aluguel.vendedor.id),
-                    aluguel.data_inicio,
-                    aluguel.data_fim
-                );
-            }
+            CBCampo.DataSource = AluguelDB.getAllProperties();
+            CBTipo.DataSource = new Consulta().tipos;
+            CBTipo.SelectedItem = CBTipo.Items[0];
+            Dgw.DataSource = AluguelDB.getConsultaAlugueis(conexao);
         }
 
         private void BtnNovo_Click(object sender, EventArgs e)
@@ -80,6 +62,20 @@ namespace Locar.Views
             else
             {
                 MessageBox.Show("Não foi possível excluir o aluguel");
+            }
+        }
+
+        private void Consulta()
+        {
+            Consulta consulta = new Consulta(CBCampo.SelectedValue.ToString(), CBTipo.SelectedIndex, TBValor.Text);
+            Dgw.DataSource = AluguelDB.getConsultaAlugueis(conexao, consulta);
+        }
+
+        private void TBValor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                Consulta();
             }
         }
     }
