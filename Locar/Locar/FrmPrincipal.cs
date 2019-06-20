@@ -72,5 +72,11 @@ namespace Locar
             FrmRelCliente form = new FrmRelCliente(conexao);
             form.ShowDialog();
         }
+
+        private void BtnRelVendedores_Click(object sender, EventArgs e)
+        {
+            FrmRelVendedor form = new FrmRelVendedor(conexao);
+            form.ShowDialog();
+        }
     }
 }
