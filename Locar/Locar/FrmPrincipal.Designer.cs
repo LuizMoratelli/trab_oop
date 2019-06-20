@@ -35,6 +35,7 @@
             this.BtnRelCarros = new System.Windows.Forms.Button();
             this.BtnRelClientes = new System.Windows.Forms.Button();
             this.BtnRelVendedores = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnCarros
@@ -107,11 +108,22 @@
             this.BtnRelVendedores.UseVisualStyleBackColor = true;
             this.BtnRelVendedores.Click += new System.EventHandler(this.BtnRelVendedores_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(232, 99);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(198, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Relatório de Aluguéis";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(442, 132);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnRelVendedores);
             this.Controls.Add(this.BtnRelClientes);
             this.Controls.Add(this.BtnRelCarros);
@@ -135,5 +147,6 @@
         private System.Windows.Forms.Button BtnRelCarros;
         private System.Windows.Forms.Button BtnRelClientes;
         private System.Windows.Forms.Button BtnRelVendedores;
+        private System.Windows.Forms.Button button1;
     }
 }
