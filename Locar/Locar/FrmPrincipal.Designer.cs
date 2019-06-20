@@ -33,6 +33,7 @@
             this.BtnVendedores = new System.Windows.Forms.Button();
             this.BtnAlugueis = new System.Windows.Forms.Button();
             this.BtnRelCarros = new System.Windows.Forms.Button();
+            this.BtnRelClientes = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnCarros
@@ -85,11 +86,22 @@
             this.BtnRelCarros.UseVisualStyleBackColor = true;
             this.BtnRelCarros.Click += new System.EventHandler(this.BtnRelCarros_Click);
             // 
+            // BtnRelClientes
+            // 
+            this.BtnRelClientes.Location = new System.Drawing.Point(232, 70);
+            this.BtnRelClientes.Name = "BtnRelClientes";
+            this.BtnRelClientes.Size = new System.Drawing.Size(198, 23);
+            this.BtnRelClientes.TabIndex = 5;
+            this.BtnRelClientes.Text = "Relatório de Clientes";
+            this.BtnRelClientes.UseVisualStyleBackColor = true;
+            this.BtnRelClientes.Click += new System.EventHandler(this.BtnRelClientes_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(442, 113);
+            this.Controls.Add(this.BtnRelClientes);
             this.Controls.Add(this.BtnRelCarros);
             this.Controls.Add(this.BtnAlugueis);
             this.Controls.Add(this.BtnVendedores);
@@ -109,5 +121,6 @@
         private System.Windows.Forms.Button BtnVendedores;
         private System.Windows.Forms.Button BtnAlugueis;
         private System.Windows.Forms.Button BtnRelCarros;
+        private System.Windows.Forms.Button BtnRelClientes;
     }
 }

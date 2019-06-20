@@ -185,6 +185,12 @@
     <Compile Include="Views\FrmRelCarro.Designer.cs">
       <DependentUpon>FrmRelCarro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FrmRelCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmRelCliente.Designer.cs">
+      <DependentUpon>FrmRelCliente.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Models\RelAluguel .rdlc" />
     <EmbeddedResource Include="Models\RelVendedor .rdlc" />
     <EmbeddedResource Include="Models\RelCliente .rdlc" />
@@ -239,6 +245,9 @@
     </Compile>
     <EmbeddedResource Include="Views\FrmRelCarro.resx">
       <DependentUpon>FrmRelCarro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmRelCliente.resx">
+      <DependentUpon>FrmRelCliente.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Locar.Models.Aluguel.datasource" />

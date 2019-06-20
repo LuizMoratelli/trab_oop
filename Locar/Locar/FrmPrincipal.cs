@@ -66,5 +66,11 @@ namespace Locar
             FrmRelCarro form = new FrmRelCarro(conexao);
             form.ShowDialog();
         }
+
+        private void BtnRelClientes_Click(object sender, EventArgs e)
+        {
+            FrmRelCliente form = new FrmRelCliente(conexao);
+            form.ShowDialog();
+        }
     }
 }
