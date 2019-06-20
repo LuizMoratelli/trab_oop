@@ -185,6 +185,9 @@
     <Compile Include="Views\FrmRelCarro.Designer.cs">
       <DependentUpon>FrmRelCarro.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Models\RelAluguel .rdlc" />
+    <EmbeddedResource Include="Models\RelVendedor .rdlc" />
+    <EmbeddedResource Include="Models\RelCliente .rdlc" />
     <EmbeddedResource Include="Models\RelCarro.rdlc" />
     <EmbeddedResource Include="Views\FrmAlteraAluguel.resx">
       <DependentUpon>FrmAlteraAluguel.cs</DependentUpon>
@@ -238,7 +241,9 @@
       <DependentUpon>FrmRelCarro.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Locar.Models.Aluguel.datasource" />
     <None Include="Properties\DataSources\Locar.Models.Carro.datasource" />
+    <None Include="Properties\DataSources\Locar.Models.Cliente.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

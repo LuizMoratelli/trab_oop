@@ -9,10 +9,10 @@
               <Width>2.06025cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.30119cm</Width>
+              <Width>7.55415cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.48166cm</Width>
+              <Width>4.24625cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -94,7 +94,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Descrição</Value>
+                              <Value>cpf</Value>
                               <Style>
                                 <FontSize>14pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -185,21 +185,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="descricao">
+                    <Textbox Name="cpf">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!descricao.Value</Value>
+                              <Value>=Fields!cpf.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>descricao</rd:DefaultName>
+                      <rd:DefaultName>cpf</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -228,16 +228,28 @@
           <TablixMembers>
             <TablixMember>
               <TablixHeader>
-                <Size>4.0875cm</Size>
+                <Size>5.06996cm</Size>
                 <CellContents>
-                  <Textbox Name="Textbox17">
+                  <Textbox Name="Textbox5">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>data aquisicao</Value>
+                            <Value>Data de Nascimento</Value>
+                            <Style>
+                              <FontSize>14pt</FontSize>
+                              <FontWeight>Bold</FontWeight>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value />
                             <Style>
                               <FontSize>14pt</FontSize>
                               <FontWeight>Bold</FontWeight>
@@ -247,7 +259,7 @@
                         <Style />
                       </Paragraph>
                     </Paragraphs>
-                    <rd:DefaultName>Textbox17</rd:DefaultName>
+                    <rd:DefaultName>Textbox5</rd:DefaultName>
                     <Style>
                       <Border>
                         <Color>LightGrey</Color>
@@ -267,34 +279,34 @@
               <KeepWithGroup>After</KeepWithGroup>
             </TablixMember>
             <TablixMember>
-              <Group Name="data_aquisicao">
+              <Group Name="data_nascimento">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!data_aquisicao.Value</GroupExpression>
+                  <GroupExpression>=Fields!data_nascimento.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!data_aquisicao.Value</Value>
+                  <Value>=Fields!data_nascimento.Value</Value>
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>4.0875cm</Size>
+                <Size>5.06996cm</Size>
                 <CellContents>
-                  <Textbox Name="data_aquisicao1">
+                  <Textbox Name="data_nascimento">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>=Fields!data_aquisicao.Value</Value>
+                            <Value>=Fields!data_nascimento.Value</Value>
                             <Style />
                           </TextRun>
                         </TextRuns>
                         <Style />
                       </Paragraph>
                     </Paragraphs>
-                    <rd:DefaultName>data_aquisicao1</rd:DefaultName>
+                    <rd:DefaultName>data_nascimento</rd:DefaultName>
                     <Style>
                       <Border>
                         <Color>LightGrey</Color>
@@ -316,7 +328,7 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSetCarro</DataSetName>
+        <DataSetName>DataSetCliente</DataSetName>
         <Height>1.33229cm</Height>
         <Width>18.93061cm</Width>
         <Style>
@@ -325,14 +337,14 @@
           </Border>
         </Style>
       </Tablix>
-      <Textbox Name="TBQtdCarros">
+      <Textbox Name="TBQtdClientes">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>="Quantidade de registros: " &amp; CountRows("DataSetCarro")</Value>
+                <Value>="Quantidade de registros: " &amp; CountRows("DataSetCliente")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -364,7 +376,7 @@
       </Border>
     </Style>
   </Body>
-  <Width>7.48425in</Width>
+  <Width>7.52058in</Width>
   <Page>
     <PageHeader>
       <Height>2.42562cm</Height>
@@ -378,7 +390,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value EvaluationMode="Constant">Relatório de Carros</Value>
+                  <Value>Relatório de Clientes</Value>
                   <Style>
                     <FontSize>18pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -451,6 +463,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
+          <Top>0cm</Top>
           <Height>0.6cm</Height>
           <Width>7.13021cm</Width>
           <Style>
@@ -480,6 +493,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
+          <Top>0cm</Top>
           <Left>11.74749cm</Left>
           <Height>0.6cm</Height>
           <Width>7.18312cm</Width>
@@ -520,22 +534,22 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>735178fd-fed9-472e-bb45-1faa31b9a558</rd:DataSourceID>
+      <rd:DataSourceID>298d2e92-f183-43d5-88b7-75b66754ce48</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSetCarro">
+    <DataSet Name="DataSetCliente">
       <Query>
         <DataSourceName>LocarModels</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="data_aquisicao">
-          <DataField>data_aquisicao</DataField>
+        <Field Name="cpf">
+          <DataField>cpf</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="descricao">
-          <DataField>descricao</DataField>
+        <Field Name="data_nascimento">
+          <DataField>data_nascimento</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="id">
@@ -549,8 +563,8 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>Locar.Models</rd:DataSetName>
-        <rd:TableName>Carro</rd:TableName>
-        <rd:ObjectDataSourceType>Locar.Models.Carro, Locar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>Cliente</rd:TableName>
+        <rd:ObjectDataSourceType>Locar.Models.Cliente, Locar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

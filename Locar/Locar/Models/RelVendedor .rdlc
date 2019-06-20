@@ -9,10 +9,10 @@
               <Width>2.06025cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.30119cm</Width>
+              <Width>8.74828cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.48166cm</Width>
+              <Width>4.82833cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -87,14 +87,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox8">
+                    <Textbox Name="Textbox12">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Descrição</Value>
+                              <Value>cpf</Value>
                               <Style>
                                 <FontSize>14pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -104,7 +104,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox8</rd:DefaultName>
+                      <rd:DefaultName>Textbox12</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -185,21 +185,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="descricao">
+                    <Textbox Name="cpf">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!descricao.Value</Value>
+                              <Value>=Fields!cpf.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>descricao</rd:DefaultName>
+                      <rd:DefaultName>cpf</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -228,16 +228,28 @@
           <TablixMembers>
             <TablixMember>
               <TablixHeader>
-                <Size>4.0875cm</Size>
+                <Size>3.29375cm</Size>
                 <CellContents>
-                  <Textbox Name="Textbox17">
+                  <Textbox Name="Textbox5">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>data aquisicao</Value>
+                            <Value>Qtd. Vendas</Value>
+                            <Style>
+                              <FontSize>14pt</FontSize>
+                              <FontWeight>Bold</FontWeight>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value />
                             <Style>
                               <FontSize>14pt</FontSize>
                               <FontWeight>Bold</FontWeight>
@@ -247,7 +259,7 @@
                         <Style />
                       </Paragraph>
                     </Paragraphs>
-                    <rd:DefaultName>Textbox17</rd:DefaultName>
+                    <rd:DefaultName>Textbox5</rd:DefaultName>
                     <Style>
                       <Border>
                         <Color>LightGrey</Color>
@@ -264,37 +276,36 @@
               <TablixMembers>
                 <TablixMember />
               </TablixMembers>
-              <KeepWithGroup>After</KeepWithGroup>
             </TablixMember>
             <TablixMember>
-              <Group Name="data_aquisicao">
+              <Group Name="qtd_vendas">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!data_aquisicao.Value</GroupExpression>
+                  <GroupExpression>=Fields!qtd_vendas.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!data_aquisicao.Value</Value>
+                  <Value>=Fields!qtd_vendas.Value</Value>
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>4.0875cm</Size>
+                <Size>3.29375cm</Size>
                 <CellContents>
-                  <Textbox Name="data_aquisicao1">
+                  <Textbox Name="qtd_vendas">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>=Fields!data_aquisicao.Value</Value>
+                            <Value>=Fields!qtd_vendas.Value</Value>
                             <Style />
                           </TextRun>
                         </TextRuns>
                         <Style />
                       </Paragraph>
                     </Paragraphs>
-                    <rd:DefaultName>data_aquisicao1</rd:DefaultName>
+                    <rd:DefaultName>qtd_vendas</rd:DefaultName>
                     <Style>
                       <Border>
                         <Color>LightGrey</Color>
@@ -316,7 +327,7 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSetCarro</DataSetName>
+        <DataSetName>DataSetVendedor</DataSetName>
         <Height>1.33229cm</Height>
         <Width>18.93061cm</Width>
         <Style>
@@ -325,14 +336,14 @@
           </Border>
         </Style>
       </Tablix>
-      <Textbox Name="TBQtdCarros">
+      <Textbox Name="TBQtdVendedores">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>="Quantidade de registros: " &amp; CountRows("DataSetCarro")</Value>
+                <Value>="Quantidade de registros: " &amp; CountRows("DataSetVendedor")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -364,7 +375,7 @@
       </Border>
     </Style>
   </Body>
-  <Width>7.48425in</Width>
+  <Width>7.52058in</Width>
   <Page>
     <PageHeader>
       <Height>2.42562cm</Height>
@@ -378,7 +389,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value EvaluationMode="Constant">Relatório de Carros</Value>
+                  <Value>Relatório de Vendedores</Value>
                   <Style>
                     <FontSize>18pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -392,9 +403,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.3175cm</Top>
-          <Left>5.42457cm</Left>
+          <Left>5.00124cm</Left>
           <Height>0.94396cm</Height>
-          <Width>7.02438cm</Width>
+          <Width>7.87104cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -451,6 +462,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
+          <Top>0cm</Top>
           <Height>0.6cm</Height>
           <Width>7.13021cm</Width>
           <Style>
@@ -480,6 +492,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
+          <Top>0cm</Top>
           <Left>11.74749cm</Left>
           <Height>0.6cm</Height>
           <Width>7.18312cm</Width>
@@ -520,22 +533,18 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>735178fd-fed9-472e-bb45-1faa31b9a558</rd:DataSourceID>
+      <rd:DataSourceID>1e0d03aa-1974-4c0c-b399-e4f7f0f5742b</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSetCarro">
+    <DataSet Name="DataSetVendedor">
       <Query>
         <DataSourceName>LocarModels</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="data_aquisicao">
-          <DataField>data_aquisicao</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="descricao">
-          <DataField>descricao</DataField>
+        <Field Name="cpf">
+          <DataField>cpf</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="id">
@@ -546,11 +555,15 @@
           <DataField>nome</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="qtd_vendas">
+          <DataField>qtd_vendas</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>Locar.Models</rd:DataSetName>
-        <rd:TableName>Carro</rd:TableName>
-        <rd:ObjectDataSourceType>Locar.Models.Carro, Locar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>Vendedor</rd:TableName>
+        <rd:ObjectDataSourceType>Locar.Models.Vendedor, Locar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
