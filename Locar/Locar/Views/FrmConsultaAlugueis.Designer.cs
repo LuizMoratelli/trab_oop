@@ -48,32 +48,47 @@
             // 
             // BtnExcluir
             // 
+            this.BtnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.BtnExcluir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.BtnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
+            this.BtnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnExcluir.ForeColor = System.Drawing.Color.White;
             this.BtnExcluir.Location = new System.Drawing.Point(174, 392);
             this.BtnExcluir.Name = "BtnExcluir";
             this.BtnExcluir.Size = new System.Drawing.Size(75, 23);
             this.BtnExcluir.TabIndex = 7;
             this.BtnExcluir.Text = "Excluir";
-            this.BtnExcluir.UseVisualStyleBackColor = true;
+            this.BtnExcluir.UseVisualStyleBackColor = false;
             this.BtnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
             // 
             // BtnAlterar
             // 
+            this.BtnAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.BtnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.BtnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.BtnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAlterar.ForeColor = System.Drawing.Color.White;
             this.BtnAlterar.Location = new System.Drawing.Point(93, 392);
             this.BtnAlterar.Name = "BtnAlterar";
             this.BtnAlterar.Size = new System.Drawing.Size(75, 23);
             this.BtnAlterar.TabIndex = 6;
             this.BtnAlterar.Text = "Alterar";
-            this.BtnAlterar.UseVisualStyleBackColor = true;
+            this.BtnAlterar.UseVisualStyleBackColor = false;
             this.BtnAlterar.Click += new System.EventHandler(this.BtnAlterar_Click);
             // 
             // BtnNovo
             // 
+            this.BtnNovo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.BtnNovo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.BtnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.BtnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnNovo.ForeColor = System.Drawing.Color.White;
             this.BtnNovo.Location = new System.Drawing.Point(12, 392);
             this.BtnNovo.Name = "BtnNovo";
             this.BtnNovo.Size = new System.Drawing.Size(75, 23);
             this.BtnNovo.TabIndex = 5;
             this.BtnNovo.Text = "Novo";
-            this.BtnNovo.UseVisualStyleBackColor = true;
+            this.BtnNovo.UseVisualStyleBackColor = false;
             this.BtnNovo.Click += new System.EventHandler(this.BtnNovo_Click);
             // 
             // Dgw
@@ -88,7 +103,7 @@
             this.data_fim});
             this.Dgw.Location = new System.Drawing.Point(12, 52);
             this.Dgw.Name = "Dgw";
-            this.Dgw.Size = new System.Drawing.Size(621, 334);
+            this.Dgw.Size = new System.Drawing.Size(644, 334);
             this.Dgw.TabIndex = 4;
             // 
             // id
@@ -180,7 +195,7 @@
             // 
             this.TBValor.Location = new System.Drawing.Point(301, 25);
             this.TBValor.Name = "TBValor";
-            this.TBValor.Size = new System.Drawing.Size(332, 20);
+            this.TBValor.Size = new System.Drawing.Size(355, 20);
             this.TBValor.TabIndex = 12;
             this.TBValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBValor_KeyPress);
             // 
@@ -188,7 +203,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 428);
+            this.ClientSize = new System.Drawing.Size(662, 428);
             this.Controls.Add(this.CBTipo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CBCampo);
