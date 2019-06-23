@@ -28,7 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultaCarros));
             this.Dgw = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.data_aquisicao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnNovo = new System.Windows.Forms.Button();
             this.BtnAlterar = new System.Windows.Forms.Button();
             this.BtnExcluir = new System.Windows.Forms.Button();
@@ -36,10 +41,6 @@
             this.CBCampo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.CBTipo = new System.Windows.Forms.ComboBox();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.data_aquisicao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Dgw)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,6 +56,35 @@
             this.Dgw.Name = "Dgw";
             this.Dgw.Size = new System.Drawing.Size(621, 334);
             this.Dgw.TabIndex = 0;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // nome
+            // 
+            this.nome.DataPropertyName = "nome";
+            this.nome.HeaderText = "Nome";
+            this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
+            // 
+            // descricao
+            // 
+            this.descricao.DataPropertyName = "descricao";
+            this.descricao.HeaderText = "Descrição";
+            this.descricao.Name = "descricao";
+            this.descricao.ReadOnly = true;
+            // 
+            // data_aquisicao
+            // 
+            this.data_aquisicao.DataPropertyName = "data_aquisicao";
+            this.data_aquisicao.HeaderText = "Data de Aquisição";
+            this.data_aquisicao.Name = "data_aquisicao";
+            this.data_aquisicao.ReadOnly = true;
+            this.data_aquisicao.Width = 130;
             // 
             // BtnNovo
             // 
@@ -137,35 +167,6 @@
             this.CBTipo.Size = new System.Drawing.Size(121, 21);
             this.CBTipo.TabIndex = 7;
             // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // nome
-            // 
-            this.nome.DataPropertyName = "nome";
-            this.nome.HeaderText = "Nome";
-            this.nome.Name = "nome";
-            this.nome.ReadOnly = true;
-            // 
-            // descricao
-            // 
-            this.descricao.DataPropertyName = "descricao";
-            this.descricao.HeaderText = "Descrição";
-            this.descricao.Name = "descricao";
-            this.descricao.ReadOnly = true;
-            // 
-            // data_aquisicao
-            // 
-            this.data_aquisicao.DataPropertyName = "data_aquisicao";
-            this.data_aquisicao.HeaderText = "Data de Aquisição";
-            this.data_aquisicao.Name = "data_aquisicao";
-            this.data_aquisicao.ReadOnly = true;
-            this.data_aquisicao.Width = 130;
-            // 
             // FrmConsultaCarros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,6 +180,7 @@
             this.Controls.Add(this.BtnAlterar);
             this.Controls.Add(this.BtnNovo);
             this.Controls.Add(this.Dgw);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmConsultaCarros";
             this.Text = "Consulta de Carros";
             ((System.ComponentModel.ISupportInitialize)(this.Dgw)).EndInit();

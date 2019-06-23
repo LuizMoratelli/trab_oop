@@ -30,10 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.RVAlugueis = new Microsoft.Reporting.WinForms.ReportViewer();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRelAluguel));
             this.AluguelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.RVAlugueis = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.AluguelBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // AluguelBindingSource
+            // 
+            this.AluguelBindingSource.DataSource = typeof(Locar.Models.Aluguel);
             // 
             // RVAlugueis
             // 
@@ -48,16 +53,13 @@
             this.RVAlugueis.Size = new System.Drawing.Size(800, 450);
             this.RVAlugueis.TabIndex = 0;
             // 
-            // AluguelBindingSource
-            // 
-            this.AluguelBindingSource.DataSource = typeof(Locar.Models.Aluguel);
-            // 
             // FrmRelAluguel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.RVAlugueis);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmRelAluguel";
             this.Text = "Relatório de Aluguéis";
             this.Load += new System.EventHandler(this.FrmRelAluguel_Load);

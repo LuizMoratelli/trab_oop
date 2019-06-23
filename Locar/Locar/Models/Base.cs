@@ -16,6 +16,9 @@ namespace Locar.Models
     {
         private string[] camposBloqueados;
 
+        /// <summary>
+        /// Construtor simples sem argumentos
+        /// </summary>
         public Base()
         {
 

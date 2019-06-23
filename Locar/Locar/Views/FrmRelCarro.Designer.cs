@@ -30,12 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.RVCarro = new Microsoft.Reporting.WinForms.ReportViewer();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRelCarro));
             this.CarroBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.RVCarro = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.CarroBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // CarroBindingSource
+            // 
+            this.CarroBindingSource.DataSource = typeof(Locar.Models.Carro);
+            // 
+            // RVCarro
             // 
             this.RVCarro.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DataSetCarro";
@@ -43,14 +48,10 @@
             this.RVCarro.LocalReport.DataSources.Add(reportDataSource1);
             this.RVCarro.LocalReport.ReportEmbeddedResource = "Locar.Models.RelCarro.rdlc";
             this.RVCarro.Location = new System.Drawing.Point(0, 0);
-            this.RVCarro.Name = "reportViewer1";
+            this.RVCarro.Name = "RVCarro";
             this.RVCarro.ServerReport.BearerToken = null;
             this.RVCarro.Size = new System.Drawing.Size(800, 450);
             this.RVCarro.TabIndex = 0;
-            // 
-            // CarroBindingSource
-            // 
-            this.CarroBindingSource.DataSource = typeof(Locar.Models.Carro);
             // 
             // FrmRelCarro
             // 
@@ -58,6 +59,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.RVCarro);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmRelCarro";
             this.Text = "Relatório de Carros";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

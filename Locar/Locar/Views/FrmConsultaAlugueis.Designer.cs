@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultaAlugueis));
             this.BtnExcluir = new System.Windows.Forms.Button();
             this.BtnAlterar = new System.Windows.Forms.Button();
             this.BtnNovo = new System.Windows.Forms.Button();
             this.Dgw = new System.Windows.Forms.DataGridView();
-            this.CBTipo = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.CBCampo = new System.Windows.Forms.ComboBox();
-            this.TBValor = new System.Windows.Forms.TextBox();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.carro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.data_inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.data_fim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CBTipo = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.CBCampo = new System.Windows.Forms.ComboBox();
+            this.TBValor = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Dgw)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,6 +90,48 @@
             this.Dgw.Name = "Dgw";
             this.Dgw.Size = new System.Drawing.Size(621, 334);
             this.Dgw.TabIndex = 4;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // vendedor
+            // 
+            this.vendedor.DataPropertyName = "Vendedor";
+            this.vendedor.HeaderText = "Vendedor";
+            this.vendedor.Name = "vendedor";
+            this.vendedor.ReadOnly = true;
+            // 
+            // carro
+            // 
+            this.carro.DataPropertyName = "Carro";
+            this.carro.HeaderText = "Carro";
+            this.carro.Name = "carro";
+            this.carro.ReadOnly = true;
+            // 
+            // cliente
+            // 
+            this.cliente.DataPropertyName = "Cliente";
+            this.cliente.HeaderText = "Cliente";
+            this.cliente.Name = "cliente";
+            this.cliente.ReadOnly = true;
+            // 
+            // data_inicio
+            // 
+            this.data_inicio.DataPropertyName = "data_inicio";
+            this.data_inicio.HeaderText = "Data de Início";
+            this.data_inicio.Name = "data_inicio";
+            this.data_inicio.ReadOnly = true;
+            // 
+            // data_fim
+            // 
+            this.data_fim.DataPropertyName = "data_fim";
+            this.data_fim.HeaderText = "Data de Fim";
+            this.data_fim.Name = "data_fim";
+            this.data_fim.ReadOnly = true;
             // 
             // CBTipo
             // 
@@ -141,48 +184,6 @@
             this.TBValor.TabIndex = 12;
             this.TBValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBValor_KeyPress);
             // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // vendedor
-            // 
-            this.vendedor.DataPropertyName = "Vendedor";
-            this.vendedor.HeaderText = "Vendedor";
-            this.vendedor.Name = "vendedor";
-            this.vendedor.ReadOnly = true;
-            // 
-            // carro
-            // 
-            this.carro.DataPropertyName = "Carro";
-            this.carro.HeaderText = "Carro";
-            this.carro.Name = "carro";
-            this.carro.ReadOnly = true;
-            // 
-            // cliente
-            // 
-            this.cliente.DataPropertyName = "Cliente";
-            this.cliente.HeaderText = "Cliente";
-            this.cliente.Name = "cliente";
-            this.cliente.ReadOnly = true;
-            // 
-            // data_inicio
-            // 
-            this.data_inicio.DataPropertyName = "data_inicio";
-            this.data_inicio.HeaderText = "Data de Início";
-            this.data_inicio.Name = "data_inicio";
-            this.data_inicio.ReadOnly = true;
-            // 
-            // data_fim
-            // 
-            this.data_fim.DataPropertyName = "data_fim";
-            this.data_fim.HeaderText = "Data de Fim";
-            this.data_fim.Name = "data_fim";
-            this.data_fim.ReadOnly = true;
-            // 
             // FrmConsultaAlugueis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,6 +197,7 @@
             this.Controls.Add(this.BtnAlterar);
             this.Controls.Add(this.BtnNovo);
             this.Controls.Add(this.Dgw);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmConsultaAlugueis";
             this.Text = "Consulta de Aluguel";
             ((System.ComponentModel.ISupportInitialize)(this.Dgw)).EndInit();

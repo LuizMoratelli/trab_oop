@@ -30,10 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.RVCliente = new Microsoft.Reporting.WinForms.ReportViewer();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRelCliente));
             this.ClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.RVCliente = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ClienteBindingSource
+            // 
+            this.ClienteBindingSource.DataSource = typeof(Locar.Models.Cliente);
             // 
             // RVCliente
             // 
@@ -48,16 +53,13 @@
             this.RVCliente.Size = new System.Drawing.Size(800, 450);
             this.RVCliente.TabIndex = 0;
             // 
-            // ClienteBindingSource
-            // 
-            this.ClienteBindingSource.DataSource = typeof(Locar.Models.Cliente);
-            // 
             // FrmRelCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.RVCliente);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmRelCliente";
             this.Text = "Relatório de Clientes";
             this.Load += new System.EventHandler(this.FrmRelCliente_Load);

@@ -12,10 +12,17 @@ using System.Windows.Forms;
 
 namespace Locar.Views
 {
+    /// <summary>
+    /// Relatório de carros
+    /// </summary>
     public partial class FrmRelCarro : Form
     {
         internal NpgsqlConnection conexao;
 
+        /// <summary>
+        /// Inicialização do relatório
+        /// </summary>
+        /// <param name="conexao"></param>
         public FrmRelCarro(NpgsqlConnection conexao)
         {
             this.conexao = conexao;

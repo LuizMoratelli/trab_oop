@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultaVendedores));
             this.BtnExcluir = new System.Windows.Forms.Button();
             this.BtnAlterar = new System.Windows.Forms.Button();
             this.BtnNovo = new System.Windows.Forms.Button();
             this.Dgw = new System.Windows.Forms.DataGridView();
-            this.CBTipo = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.CBCampo = new System.Windows.Forms.ComboBox();
-            this.TBValor = new System.Windows.Forms.TextBox();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qtd_vendas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CBTipo = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.CBCampo = new System.Windows.Forms.ComboBox();
+            this.TBValor = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Dgw)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,6 +86,35 @@
             this.Dgw.Name = "Dgw";
             this.Dgw.Size = new System.Drawing.Size(621, 334);
             this.Dgw.TabIndex = 8;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // cpf
+            // 
+            this.cpf.DataPropertyName = "cpf";
+            this.cpf.HeaderText = "CPF";
+            this.cpf.Name = "cpf";
+            this.cpf.ReadOnly = true;
+            // 
+            // nome
+            // 
+            this.nome.DataPropertyName = "nome";
+            this.nome.HeaderText = "Nome";
+            this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
+            // 
+            // qtd_vendas
+            // 
+            this.qtd_vendas.DataPropertyName = "qtd_vendas";
+            this.qtd_vendas.HeaderText = "Quantidade de Vendas";
+            this.qtd_vendas.Name = "qtd_vendas";
+            this.qtd_vendas.ReadOnly = true;
+            this.qtd_vendas.Width = 150;
             // 
             // CBTipo
             // 
@@ -137,35 +167,6 @@
             this.TBValor.TabIndex = 12;
             this.TBValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBValor_KeyPress);
             // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // cpf
-            // 
-            this.cpf.DataPropertyName = "cpf";
-            this.cpf.HeaderText = "CPF";
-            this.cpf.Name = "cpf";
-            this.cpf.ReadOnly = true;
-            // 
-            // nome
-            // 
-            this.nome.DataPropertyName = "nome";
-            this.nome.HeaderText = "Nome";
-            this.nome.Name = "nome";
-            this.nome.ReadOnly = true;
-            // 
-            // qtd_vendas
-            // 
-            this.qtd_vendas.DataPropertyName = "qtd_vendas";
-            this.qtd_vendas.HeaderText = "Quantidade de Vendas";
-            this.qtd_vendas.Name = "qtd_vendas";
-            this.qtd_vendas.ReadOnly = true;
-            this.qtd_vendas.Width = 150;
-            // 
             // FrmConsultaVendedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,6 +180,7 @@
             this.Controls.Add(this.BtnAlterar);
             this.Controls.Add(this.BtnNovo);
             this.Controls.Add(this.Dgw);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmConsultaVendedores";
             this.Text = "Consulta de Vendedores";
             ((System.ComponentModel.ISupportInitialize)(this.Dgw)).EndInit();

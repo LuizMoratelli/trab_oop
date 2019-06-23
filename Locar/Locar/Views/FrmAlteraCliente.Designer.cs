@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAlteraCliente));
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnSalvar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -142,6 +143,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.TbId);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAlteraCliente";
             this.Text = "Alteração de Cliente";
             this.ResumeLayout(false);

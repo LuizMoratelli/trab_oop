@@ -30,10 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.RVVendedor = new Microsoft.Reporting.WinForms.ReportViewer();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRelVendedor));
             this.VendedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.RVVendedor = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.VendedorBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // VendedorBindingSource
+            // 
+            this.VendedorBindingSource.DataSource = typeof(Locar.Models.Vendedor);
             // 
             // RVVendedor
             // 
@@ -48,16 +53,13 @@
             this.RVVendedor.Size = new System.Drawing.Size(800, 450);
             this.RVVendedor.TabIndex = 0;
             // 
-            // VendedorBindingSource
-            // 
-            this.VendedorBindingSource.DataSource = typeof(Locar.Models.Vendedor);
-            // 
             // FrmRelVendedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.RVVendedor);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmRelVendedor";
             this.Text = "Relatório de Vendedores";
             this.Load += new System.EventHandler(this.FrmRelVendedor_Load);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAlteraAluguel));
             this.CBVendedor = new System.Windows.Forms.ComboBox();
             this.CBCliente = new System.Windows.Forms.ComboBox();
             this.CBCarro = new System.Windows.Forms.ComboBox();
@@ -185,6 +186,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAlteraAluguel";
             this.Text = "Alteração de Aluguel";
             this.ResumeLayout(false);
