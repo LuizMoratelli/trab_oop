@@ -9,7 +9,7 @@
               <Width>2.06025cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.30119cm</Width>
+              <Width>5.85141cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>6.48166cm</Width>
@@ -228,7 +228,7 @@
           <TablixMembers>
             <TablixMember>
               <TablixHeader>
-                <Size>4.0875cm</Size>
+                <Size>4.53729cm</Size>
                 <CellContents>
                   <Textbox Name="Textbox17">
                     <CanGrow>true</CanGrow>
@@ -237,7 +237,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>data aquisicao</Value>
+                            <Value>Data de Aquisição</Value>
                             <Style>
                               <FontSize>14pt</FontSize>
                               <FontWeight>Bold</FontWeight>
@@ -278,7 +278,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>4.0875cm</Size>
+                <Size>4.53729cm</Size>
                 <CellContents>
                   <Textbox Name="data_aquisicao1">
                     <CanGrow>true</CanGrow>
@@ -321,7 +321,7 @@
         <Width>18.93061cm</Width>
         <Style>
           <Border>
-            <Style>Solid</Style>
+            <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
@@ -364,7 +364,7 @@
       </Border>
     </Style>
   </Body>
-  <Width>7.48425in</Width>
+  <Width>7.63008in</Width>
   <Page>
     <PageHeader>
       <Height>2.42562cm</Height>
@@ -451,6 +451,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
+          <Top>0cm</Top>
           <Height>0.6cm</Height>
           <Width>7.13021cm</Width>
           <Style>
@@ -480,6 +481,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
+          <Top>0cm</Top>
           <Left>11.74749cm</Left>
           <Height>0.6cm</Height>
           <Width>7.18312cm</Width>

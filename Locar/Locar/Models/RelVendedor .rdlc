@@ -94,7 +94,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>cpf</Value>
+                              <Value>CPF</Value>
                               <Style>
                                 <FontSize>14pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -332,7 +332,7 @@
         <Width>18.93061cm</Width>
         <Style>
           <Border>
-            <Style>Solid</Style>
+            <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
@@ -462,7 +462,6 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0cm</Top>
           <Height>0.6cm</Height>
           <Width>7.13021cm</Width>
           <Style>
@@ -492,7 +491,6 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
-          <Top>0cm</Top>
           <Left>11.74749cm</Left>
           <Height>0.6cm</Height>
           <Width>7.18312cm</Width>
