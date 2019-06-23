@@ -11,9 +11,15 @@ namespace Locar.Models
     /// <summary>
     /// Classe abstrata que serve de base para as demais classes
     /// </summary>
+    [Serializable]
     public abstract class Base
     {
         private string[] camposBloqueados;
+
+        public Base()
+        {
+
+        }
 
         /// <summary>
         /// Define os campos que serão bloqueados nas views

@@ -103,7 +103,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Cliente</Value>
+                              <Value EvaluationMode="Constant">Cliente</Value>
                               <Style>
                                 <FontSize>14pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -162,14 +162,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox16">
+                    <Textbox Name="Textbox8">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>data fim</Value>
+                              <Value>data inicio</Value>
                               <Style>
                                 <FontSize>14pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -179,7 +179,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox16</rd:DefaultName>
+                      <rd:DefaultName>Textbox8</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -270,7 +270,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Carro.Value</Value>
+                              <Value>=Fields!Carro.Value.nome</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -300,7 +300,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Cliente.Value</Value>
+                              <Value>=Fields!Cliente.Value.nome</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -330,7 +330,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Vendedor.Value</Value>
+                              <Value>=Fields!Vendedor.Value.nome</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -353,21 +353,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="data_fim">
+                    <Textbox Name="data_inicio">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!data_fim.Value</Value>
+                              <Value>=Fields!data_inicio.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>data_fim</rd:DefaultName>
+                      <rd:DefaultName>data_inicio</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -438,7 +438,7 @@
         <Width>18.93061cm</Width>
         <Style>
           <Border>
-            <Style>Solid</Style>
+            <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
@@ -509,7 +509,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.3175cm</Top>
-          <Left>5.42457cm</Left>
+          <Left>6.03311cm</Left>
           <Height>0.94396cm</Height>
           <Width>7.02438cm</Width>
           <Style>
