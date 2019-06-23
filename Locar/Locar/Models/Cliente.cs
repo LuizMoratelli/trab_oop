@@ -9,6 +9,7 @@ namespace Locar.Models
     /// <summary>
     /// Determina um <see cref="Cliente"/>
     /// </summary>
+    [Serializable]
     public class Cliente : Base
     {
         /// <summary>

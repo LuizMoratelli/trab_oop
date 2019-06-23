@@ -74,6 +74,8 @@ namespace Locar.Controllers
                     sql += $" WHERE {consulta.getCondicao()}";
                 }
 
+                sql += $" ORDER BY data_inicio";
+
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
                 NpgsqlDataReader dr = cmd.ExecuteReader();
 

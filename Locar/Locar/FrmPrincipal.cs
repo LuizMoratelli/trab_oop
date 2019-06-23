@@ -60,5 +60,29 @@ namespace Locar
             FrmConsultaAlugueis form = new FrmConsultaAlugueis(conexao);
             form.Show();
         }
+
+        private void BtnRelCarros_Click(object sender, EventArgs e)
+        {
+            FrmRelCarro form = new FrmRelCarro(conexao);
+            form.ShowDialog();
+        }
+
+        private void BtnRelClientes_Click(object sender, EventArgs e)
+        {
+            FrmRelCliente form = new FrmRelCliente(conexao);
+            form.ShowDialog();
+        }
+
+        private void BtnRelVendedores_Click(object sender, EventArgs e)
+        {
+            FrmRelVendedor form = new FrmRelVendedor(conexao);
+            form.ShowDialog();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            FrmRelAluguel form = new FrmRelAluguel(conexao);
+            form.ShowDialog();
+        }
     }
 }

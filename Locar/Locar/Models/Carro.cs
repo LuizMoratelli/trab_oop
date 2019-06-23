@@ -10,6 +10,7 @@ namespace Locar.Models
     /// <summary>
     /// Determina um <see cref="Carro"/>
     /// </summary>
+    [Serializable]
     public class Carro : Base
     {
         /// <summary>
