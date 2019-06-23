@@ -43,7 +43,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CBCampo = new System.Windows.Forms.ComboBox();
             this.TBValor = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Dgw)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnExcluir
@@ -177,7 +179,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(34, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 13);
             this.label1.TabIndex = 14;
@@ -199,11 +201,22 @@
             this.TBValor.TabIndex = 12;
             this.TBValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBValor_KeyPress);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(12, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 17;
+            this.pictureBox2.TabStop = false;
+            // 
             // FrmConsultaAlugueis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(662, 428);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.CBTipo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CBCampo);
@@ -216,6 +229,7 @@
             this.Name = "FrmConsultaAlugueis";
             this.Text = "Consulta de Aluguel";
             ((System.ComponentModel.ISupportInitialize)(this.Dgw)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,5 +251,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn data_inicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn data_fim;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

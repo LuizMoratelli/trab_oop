@@ -39,9 +39,11 @@
             this.BtnExcluir = new System.Windows.Forms.Button();
             this.TBValor = new System.Windows.Forms.TextBox();
             this.CBCampo = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.CBTipo = new System.Windows.Forms.ComboBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Dgw)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // Dgw
@@ -147,15 +149,6 @@
             this.CBCampo.Size = new System.Drawing.Size(156, 21);
             this.CBCampo.TabIndex = 5;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Filtro";
-            // 
             // CBTipo
             // 
             this.CBTipo.AutoCompleteCustomSource.AddRange(new string[] {
@@ -182,13 +175,33 @@
             this.CBTipo.Size = new System.Drawing.Size(121, 21);
             this.CBTipo.TabIndex = 7;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(12, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 19;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(34, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Filtro";
+            // 
             // FrmConsultaCarros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(645, 422);
-            this.Controls.Add(this.CBTipo);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.CBTipo);
             this.Controls.Add(this.CBCampo);
             this.Controls.Add(this.TBValor);
             this.Controls.Add(this.BtnExcluir);
@@ -199,6 +212,7 @@
             this.Name = "FrmConsultaCarros";
             this.Text = "Consulta de Carros";
             ((System.ComponentModel.ISupportInitialize)(this.Dgw)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,11 +226,12 @@
         private System.Windows.Forms.Button BtnExcluir;
         private System.Windows.Forms.TextBox TBValor;
         private System.Windows.Forms.ComboBox CBCampo;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox CBTipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn data_aquisicao;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label1;
     }
 }
