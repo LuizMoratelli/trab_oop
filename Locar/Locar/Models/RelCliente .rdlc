@@ -284,11 +284,6 @@
                   <GroupExpression>=Fields!data_nascimento.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
-              <SortExpressions>
-                <SortExpression>
-                  <Value>=Fields!data_nascimento.Value</Value>
-                </SortExpression>
-              </SortExpressions>
               <TablixHeader>
                 <Size>5.06996cm</Size>
                 <CellContents>
@@ -318,6 +313,7 @@
                       <PaddingBottom>2pt</PaddingBottom>
                     </Style>
                   </Textbox>
+                  <rd:Selected>true</rd:Selected>
                 </CellContents>
               </TablixHeader>
               <TablixMembers>
@@ -354,7 +350,7 @@
           </Paragraph>
         </Paragraphs>
         <Top>1.33229cm</Top>
-        <Left>10.92728cm</Left>
+        <Left>10.86378cm</Left>
         <Height>0.6cm</Height>
         <Width>8.00333cm</Width>
         <ZIndex>1</ZIndex>
@@ -463,7 +459,6 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0cm</Top>
           <Height>0.6cm</Height>
           <Width>7.13021cm</Width>
           <Style>
@@ -493,8 +488,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
-          <Top>0cm</Top>
-          <Left>11.74749cm</Left>
+          <Left>11.68399cm</Left>
           <Height>0.6cm</Height>
           <Width>7.18312cm</Width>
           <ZIndex>1</ZIndex>
